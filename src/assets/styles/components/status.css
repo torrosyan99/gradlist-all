@@ -1,0 +1,22 @@
+.status {
+    width: fit-content;
+    padding: 12px;
+    border-radius: var(--radius-md);
+    line-height: .7;
+    font-size: var(--font-size-sm);
+    letter-spacing: var(--lt-1);
+}
+
+.status--active {
+    background: #3CB970;
+    color: var(--color-surface);
+}
+
+.status--inactive {
+    background: #F3F5F8;
+}
+
+.status--sold {
+    color: #3CB970;
+    background: #E6FAEE;
+}

@@ -66,28 +66,6 @@
     height: 196px;
     border-radius: var(--radius-md);
 }
-.row-card__status {
-    width: fit-content;
-    padding: 12px;
-    border-radius: var(--radius-md);
-    line-height: .7;
-    font-size: var(--font-size-sm);
-    letter-spacing: var(--lt-1);
-}
-
-.row-card__status--active {
-    background: #3CB970;
-    color: var(--color-surface);
-}
-
-.row-card__status--inactive {
-    background: #F3F5F8;
-}
-
-.row-card__status--sold {
-    color: #3CB970;
-    background: #E6FAEE;
-}
 
 .row-card__date {
     font-size: var(--font-size-xs);
@@ -113,7 +91,7 @@
     border-radius: var(--radius-md);
     display: grid;
     place-items: center;
-    background: #E0ECFC;
+    background: var(--color-light-blue);
     flex-shrink: 0;
 }
 

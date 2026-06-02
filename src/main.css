@@ -17,6 +17,7 @@
 @import "assets/styles/components/modal.css";
 @import "assets/styles/components/breadcrumbs.css";
 @import "assets/styles/components/price.css";
+@import "assets/styles/components/status.css";
 @import "assets/styles/components/tabs.css";
 @import "assets/styles/components/icon-button.css";
 @import "assets/styles/components/card.css";
@@ -36,5 +37,6 @@
 @import "assets/styles/sections/listings.css";
 @import "assets/styles/sections/advertisements.css";
 @import "assets/styles/sections/product.css";
+@import "assets/styles/sections/messages.css";
 @import "assets/styles/sections/settings.css";
 
