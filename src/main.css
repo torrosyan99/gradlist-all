@@ -1,0 +1,40 @@
+
+
+@import "assets/styles/settings/fonts.css";
+@import "assets/styles/settings/variables.css";
+
+@import "assets/styles/base/reset.css";
+@import "assets/styles/base/global.css";
+@import "assets/styles/base/typography.css";
+
+@import "assets/styles/components/select.css";
+@import "assets/styles/components/dropdown.css";
+@import "assets/styles/components/norification.css";
+@import "assets/styles/components/title.css";
+@import "assets/styles/components/logo.css";
+@import "assets/styles/components/button.css";
+@import "assets/styles/components/scrollbar.css";
+@import "assets/styles/components/modal.css";
+@import "assets/styles/components/breadcrumbs.css";
+@import "assets/styles/components/price.css";
+@import "assets/styles/components/tabs.css";
+@import "assets/styles/components/icon-button.css";
+@import "assets/styles/components/card.css";
+@import "assets/styles/components/checkbox.css";
+@import "assets/styles/components/input.css";
+@import "assets/styles/components/phone-input.css";
+@import "assets/styles/components/apply.css";
+
+@import "assets/styles/layout/container.css";
+@import "assets/styles/layout/header.css";
+@import "assets/styles/layout/menu.css";
+@import "assets/styles/layout/footer.css";
+@import "assets/styles/layout/profile.css";
+
+
+@import "assets/styles/sections/top.css";
+@import "assets/styles/sections/listings.css";
+@import "assets/styles/sections/advertisements.css";
+@import "assets/styles/sections/product.css";
+@import "assets/styles/sections/settings.css";
+

@@ -1,0 +1,19 @@
+.title {
+  font-weight: var(--font-weight-bold);
+}
+
+.title--semibold {
+    font-weight: var(--font-weight-semibold);
+}
+
+.title--medium {
+    font-weight: var(--font-weight-medium);
+}
+
+.title--center {
+    text-align: center;
+}
+
+.title span {
+    color: var(--color-blue);
+}

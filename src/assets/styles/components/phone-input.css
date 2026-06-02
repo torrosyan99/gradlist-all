@@ -1,0 +1,17 @@
+.phone-input {
+    position: relative;
+}
+.phone-input__item {
+    padding-left: 84px;
+}
+
+.phone-input__start {
+    position: absolute;
+    left: 22px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+

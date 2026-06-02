@@ -1,0 +1,329 @@
+<!doctype html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8"/>
+	<link rel="icon" type="image/svg+xml" href="/icons.svg"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<title>Gradlist</title>
+</head>
+<body class="page-profile">
+
+<header class="header">
+	<div class="container header__inner">
+		<a class="logo" href="/">
+			<svg class="logo__icon" width="37" height="50">
+				<use xlink:href="/icons.svg#logo"></use>
+			</svg>
+			Gradlist
+		</a>
+		<nav class="header__nav">
+			<ul class="header__list">
+				<li class="header__list-item">
+					<a class="header__link" href="#">
+						Объявления
+					</a>
+				</li>
+				<li class="header__list-item">
+					<a class="header__link" href="#">
+						Помощь
+					</a>
+				</li>
+				<li class="header__list-item">
+					<a class="header__link" href="#">
+						Услуги
+					</a>
+				</li>
+				<li class="header__list-item">
+					<a class="header__link" href="#">
+						Избранное
+					</a>
+				</li>
+			</ul>
+			<div class="header__actions">
+				<a class="header__action" href="#" aria-label="Избранное">
+					<svg width="32" height="32">
+						<use xlink:href="/icons.svg#header-heart"></use>
+					</svg>
+				</a>
+
+				<a class="header__action notification" href="#" aria-label="Уведомления">
+					<svg width="32" height="32">
+						<use xlink:href="/icons.svg#notification"></use>
+					</svg>
+					<span class="notification__badge">3</span>
+				</a>
+
+				<a class="header__action" href="#" aria-label="Сообщения">
+					<svg width="32" height="32">
+						<use xlink:href="/icons.svg#header-message"></use>
+					</svg>
+				</a>
+			</div>
+		</nav>
+		<button class="button button--sm button--flex modal-button header__button" data-type="apply">
+			<svg width="24" height="24">
+				<use xlink:href="/icons.svg#plus"></use>
+			</svg>
+			Подать объявление
+		</button>
+		<div class="header__user">
+			<svg width="42" height="42">
+				<use xlink:href="/icons.svg#person"></use>
+			</svg>
+			<svg width="24" height="24">
+				<use xlink:href="/icons.svg#chevron-bottom"></use>
+			</svg>
+		</div>
+	</div>
+</header>
+
+<div class="menu">
+	<nav class="menu__nav">
+		<ul class="menu__list">
+			<li class="menu__item">
+				<a class="menu__link" href="/public">
+					<svg width="32" height="32">
+						<use xlink:href="/icons.svg#menu-home"></use>
+					</svg>
+					Главная
+				</a>
+			</li>
+			<li class="menu__item">
+				<a class="menu__link" href="#">
+					<svg width="32" height="32">
+						<use xlink:href="/icons.svg#menu-heart"></use>
+					</svg>
+					Избранное
+				</a>
+			</li>
+			<li class="menu__item">
+				<a class="menu__link" href="#">
+					<svg width="32" height="32">
+						<use xlink:href="/icons.svg#menu-add"></use>
+					</svg>
+					Создать
+				</a>
+			</li>
+			<li class="menu__item">
+				<a class="menu__link" href="#">
+					<svg width="32" height="32">
+						<use xlink:href="/icons.svg#menu-message"></use>
+					</svg>
+					Сообщения
+				</a>
+			</li>
+			<li class="menu__item">
+				<a class="menu__link" href="#">
+					<svg width="32" height="32">
+						<use xlink:href="/icons.svg#menu-profile"></use>
+					</svg>
+					Профиль
+				</a>
+			</li>
+		</ul>
+	</nav>
+</div>
+
+
+
+<main class="profile">
+	<div class="profile__row container">
+		<aside class="profile__aside">
+			<div class="profile__box">
+				<div class="profile__user">
+					<label class="profile__image">
+						<img src="/images/salesman-img.png" alt="Алексей">
+						<input class="profile__file-input" type="file" accept="image/*" aria-label="Изменить фото">
+						<svg  class="profile__camera" width="32" height="32">
+							<use xlink:href="/icons.svg#camera"></use>
+						</svg>
+					</label>
+					<h5 class="profile__name">Алексей</h5>
+					<div class="profile__rating">
+						<span class="profile__rating-value">4.8</span>
+						<div class="profile__stars" aria-label="Рейтинг 4.8">
+							<svg width="12" height="12">
+								<use xlink:href="/icons.svg#star"></use>
+							</svg>
+							<svg width="12" height="12">
+								<use xlink:href="/icons.svg#star"></use>
+							</svg>
+							<svg width="12" height="12">
+								<use xlink:href="/icons.svg#star"></use>
+							</svg>
+							<svg width="12" height="12">
+								<use xlink:href="/icons.svg#star"></use>
+							</svg>
+							<svg width="12" height="12">
+								<use xlink:href="/icons.svg#star"></use>
+							</svg>
+						</div>
+						<span class="profile__reviews">4 отзыва</span>
+					</div>
+					<p class="profile__follow">9 подписчиков, 6 подписок</p>
+					<p class="profile__date">Зарегистрирован 28.01.22</p>
+				</div>
+				<div class="profile__stats">
+					<div class="profile__stat">
+						<svg width="22" height="22">
+							<use xlink:href="/icons.svg#buying"></use>
+						</svg>
+						4 покупки на сайте
+					</div>
+					<div class="profile__stat">
+						<svg width="22" height="22">
+							<use xlink:href="/icons.svg#selling"></use>
+						</svg>
+						4 продажи на сайте
+					</div>
+				</div>
+				<a class="button button--center button--sm profile__subscribe" href="#">Подписаться</a>
+			</div>
+		</aside>
+		<section class="profile__section advertisements">
+			<div class="profile__banner" aria-hidden="true"></div>
+			<div class="profile__content">
+				<h3 class="profile__title title title--semibold">Объявления</h3>
+				<div class="profile__tabs tabs-buttons">
+					<button class="profile__tab  tabs__item" type="button" data-tab="active">
+						Активные <span class="profile__count">6</span>
+					</button>
+					<button class="profile__tab tabs__item" type="button" data-tab="finished">
+						Завершённые <span class="profile__count">3</span>
+					</button>
+				</div>
+				<div class="tabs-panel" data-tabs-panel="active">
+					<div class="advertisements__cards">
+						<a class="card" href="product.html">
+							<img class="card__img" src="/images/product-similar.png" alt="Квартира">
+							<span class="card__select-button" aria-label="Добавить в избранное">
+							<svg width="24" height="24">
+								<use xlink:href="/icons.svg#heart"></use>
+							</svg>
+						</span>
+							<div class="card__bottom">
+								<p class="card__price">6 500 000 ₽</p>
+								<h5 class="card__title">Продам 2-к квартиру, 65 м<sup>2</sup>, в центре Москвы</h5>
+							</div>
+						</a>
+						<a class="card" href="product.html">
+							<img class="card__img" src="/images/product-similar.png" alt="Квартира">
+							<span class="card__select-button" aria-label="Убрать из избранного">
+							<svg width="24" height="24">
+								<use xlink:href="/icons.svg#orange-heart"></use>
+							</svg>
+						</span>
+							<div class="card__bottom">
+								<p class="card__price">6 500 000 ₽</p>
+								<h5 class="card__title">Продам 2-к квартиру, 65 м<sup>2</sup>, в центре Москвы</h5>
+							</div>
+						</a>
+						<a class="card" href="product.html">
+							<img class="card__img" src="/images/product-similar.png" alt="Квартира">
+							<span class="card__select-button" aria-label="Добавить в избранное">
+							<svg width="24" height="24">
+								<use xlink:href="/icons.svg#heart"></use>
+							</svg>
+						</span>
+							<div class="card__bottom">
+								<p class="card__price">6 500 000 ₽</p>
+								<h5 class="card__title">Продам 2-к квартиру, 65 м<sup>2</sup>, в центре Москвы</h5>
+							</div>
+						</a>
+					</div>
+				</div>
+				<div class="tabs-panel" data-tabs-panel="finished">
+					<div class="advertisements__cards">
+						<a class="card" href="product.html">
+							<img class="card__img" src="/images/product-similar.png" alt="Квартира">
+							<span class="card__select-button" aria-label="Добавить в избранное">
+							<svg width="24" height="24">
+								<use xlink:href="/icons.svg#heart"></use>
+							</svg>
+						</span>
+							<div class="card__bottom">
+								<p class="card__price">6 500 00 ₽</p>
+								<h5 class="card__title">Продам 2-к квартиру, 65 м<sup>2</sup>, в центре Москвы</h5>
+							</div>
+						</a>
+						<a class="card" href="product.html">
+							<img class="card__img" src="/images/product-similar.png" alt="Квартира">
+							<span class="card__select-button" aria-label="Убрать из избранного">
+							<svg width="24" height="24">
+								<use xlink:href="/icons.svg#orange-heart"></use>
+							</svg>
+						</span>
+							<div class="card__bottom">
+								<p class="card__price">6 500 000 ₽</p>
+								<h5 class="card__title">Продам 2-к квартиру, 65 м<sup>2</sup>, в центре Москвы</h5>
+							</div>
+						</a>
+						<a class="card" href="product.html">
+							<img class="card__img" src="/images/product-similar.png" alt="Квартира">
+							<span class="card__select-button" aria-label="Добавить в избранное">
+							<svg width="24" height="24">
+								<use xlink:href="/icons.svg#heart"></use>
+							</svg>
+						</span>
+							<div class="card__bottom">
+								<p class="card__price">6 500 000 ₽</p>
+								<h5 class="card__title">Продам 2-к квартиру, 65 м<sup>2</sup>, в центре Москвы</h5>
+							</div>
+						</a>
+					</div>
+				</div>
+
+
+			</div>
+		</section>
+	</div>
+</main>
+
+<footer class="footer">
+	<div class="container footer__inner">
+		<a class="logo footer__logo">
+			<svg class="logo__icon" width="24" height="33">
+				<use xlink:href="/icons.svg#logo"></use>
+			</svg>
+			Gradlist </a>
+		<nav class="footer__nav">
+			<ul class="footer__list">
+				<li class="footer__item"><a class="footer__link" href="#">Помощь</a></li>
+				<li class="footer__item"><a class="footer__link" href="#">Безопасность</a></li>
+				<li class="footer__item"><a class="footer__link" href="#">Реклама на сайте</a></li>
+				<li class="footer__item"><a class="footer__link" href="#">О компании</a></li>
+				<li class="footer__item"><a class="footer__link" href="#">Приложение</a></li>
+				<li class="footer__item"><a class="footer__link" href="#">Карта сайта</a></li>
+				<li class="footer__item"><a class="footer__link" href="#">Свежие объявления</a></li>
+			</ul>
+			<ul class="footer__list">
+				<li class="footer__item"><a class="footer__s-link" href="#">Условия использования</a></li>
+				<li class="footer__item"><a class="footer__s-link" href="#">Политика конфиденциальности</a></li>
+				<li class="footer__item"><a class="footer__s-link" href="#">Публичная оферта</a></li>
+			</ul>
+		</nav>
+		<ul class="footer__socials-list">
+			<li class="footer__socials-list"><a class="footer__socials-link" href="#">
+				<svg width="30" height="30">
+					<use xlink:href="/icons.svg#tg"></use>
+				</svg>
+			</a></li>
+			<li class="footer__socials-list"><a class="footer__socials-link" href="#">
+				<svg width="30" height="30">
+					<use xlink:href="/icons.svg#max"></use>
+				</svg>
+			</a></li>
+			<li class="footer__socials-list"><a class="footer__socials-link" href="#">
+				<svg width="30" height="30">
+					<use xlink:href="/icons.svg#vk"></use>
+				</svg>
+			</a></li>
+		</ul>
+
+	</div>
+</footer>
+
+
+<script type="module" src="/src/main.js"></script>
+</body>
+</html>

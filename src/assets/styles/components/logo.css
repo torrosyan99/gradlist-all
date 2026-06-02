@@ -1,0 +1,19 @@
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: var(--font-weight-bold);
+    font-size: 32px;
+    color: var(--color-primary);
+}
+
+@media (max-width:  1100px) {
+    .logo {
+        font-size: 24px;
+    }
+
+    .logo__icon {
+        width: 24px;
+        height: 44px;
+    }
+}

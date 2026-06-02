@@ -1,0 +1,26 @@
+.apply {
+    max-width: 660px;
+    width: 100%;
+    min-height: 584px;
+    display: flex;
+    flex-direction: column;
+}
+
+.apply__form {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    flex-grow: 1;
+}
+
+.apply__select {
+    margin-bottom: 12px;
+}
+
+.apply__input {
+    margin-top: 16px;
+}
+
+.apply__button {
+    margin-top: auto;
+}

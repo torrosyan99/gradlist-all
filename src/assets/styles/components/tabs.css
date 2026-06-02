@@ -1,0 +1,20 @@
+
+.tabs-panel {
+    display: none;
+}
+
+.tabs-panel--active {
+    display: block;
+}
+
+@media (max-width: 1000px) {
+    .tabs-buttons {
+        overflow-x: auto;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+    }
+
+    .tabs-buttons::-webkit-scrollbar {
+        display: none;
+    }
+}

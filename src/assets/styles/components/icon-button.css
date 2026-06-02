@@ -1,0 +1,16 @@
+.icon-button {
+    width: 48px;
+    height: 48px;
+}
+
+.icon-button svg {
+    width: 100%;
+    height: 100%;
+}
+
+@media (max-width: 1000px) {
+    .icon-button {
+        width: 38px;
+        height: 38px;
+    }
+}

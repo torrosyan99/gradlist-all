@@ -1,0 +1,481 @@
+<!doctype html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8"/>
+	<link rel="icon" type="image/svg+xml" href="/icons.svg"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<title>Gradlist</title>
+</head>
+<body class="page-product">
+
+<header class="header">
+	<div class="container header__inner">
+		<a class="logo" href="/">
+			<svg class="logo__icon" width="37" height="50">
+				<use xlink:href="/icons.svg#logo"></use>
+			</svg>
+			Gradlist
+		</a>
+		<nav class="header__nav">
+			<ul class="header__list">
+				<li class="header__list-item">
+					<a class="header__link" href="#">
+						Объявления
+					</a>
+				</li>
+				<li class="header__list-item">
+					<a class="header__link" href="#">
+						Помощь
+					</a>
+				</li>
+				<li class="header__list-item">
+					<a class="header__link" href="#">
+						Услуги
+					</a>
+				</li>
+				<li class="header__list-item">
+					<a class="header__link" href="#">
+						Избранное
+					</a>
+				</li>
+			</ul>
+			<div class="header__actions">
+				<a class="header__action" href="#" aria-label="Избранное">
+					<svg width="32" height="32">
+						<use xlink:href="/icons.svg#header-heart"></use>
+					</svg>
+				</a>
+
+				<a class="header__action notification" href="#" aria-label="Уведомления">
+					<svg width="32" height="32">
+						<use xlink:href="/icons.svg#notification"></use>
+					</svg>
+					<span class="notification__badge">3</span>
+				</a>
+
+				<a class="header__action" href="#" aria-label="Сообщения">
+					<svg width="32" height="32">
+						<use xlink:href="/icons.svg#header-message"></use>
+					</svg>
+				</a>
+			</div>
+		</nav>
+		<button class="button button--sm button--flex modal-button header__button" data-type="apply">
+			<svg width="24" height="24">
+				<use xlink:href="/icons.svg#plus"></use>
+			</svg>
+			Подать объявление
+		</button>
+		<div class="header__user">
+			<svg width="42" height="42">
+				<use xlink:href="/icons.svg#person"></use>
+			</svg>
+			<svg width="24" height="24">
+				<use xlink:href="/icons.svg#chevron-bottom"></use>
+			</svg>
+		</div>
+	</div>
+</header>
+
+<div class="menu">
+	<nav class="menu__nav">
+		<ul class="menu__list">
+			<li class="menu__item">
+				<a class="menu__link" href="/public">
+					<svg width="32" height="32">
+						<use xlink:href="/icons.svg#menu-home"></use>
+					</svg>
+					Главная
+				</a>
+			</li>
+			<li class="menu__item">
+				<a class="menu__link" href="#">
+					<svg width="32" height="32">
+						<use xlink:href="/icons.svg#menu-heart"></use>
+					</svg>
+					Избранное
+				</a>
+			</li>
+			<li class="menu__item">
+				<a class="menu__link" href="#">
+					<svg width="32" height="32">
+						<use xlink:href="/icons.svg#menu-add"></use>
+					</svg>
+					Создать
+				</a>
+			</li>
+			<li class="menu__item">
+				<a class="menu__link" href="#">
+					<svg width="32" height="32">
+						<use xlink:href="/icons.svg#menu-message"></use>
+					</svg>
+					Сообщения
+				</a>
+			</li>
+			<li class="menu__item">
+				<a class="menu__link" href="#">
+					<svg width="32" height="32">
+						<use xlink:href="/icons.svg#menu-profile"></use>
+					</svg>
+					Профиль
+				</a>
+			</li>
+		</ul>
+	</nav>
+</div>
+
+
+<main class="main">
+	<div class="breadcrumbs">
+		<div class="container breadcrumbs__inner">
+			<a class="breadcrumbs__link" href="/">Главная</a>
+			<svg width="12" height="12">
+				<use xlink:href="/icons.svg#breadcrumbs-icon"></use>
+			</svg>
+			<a class="breadcrumbs__link" href="#">Объявления</a>
+			<svg width="12" height="12">
+				<use xlink:href="/icons.svg#breadcrumbs-icon"></use>
+			</svg>
+			<a class="breadcrumbs__link breadcrumbs__link--active" href="#">Недвижимость</a></div>
+	</div>
+
+	<section class="product">
+		<div class="container product__inner">
+			<div class="product__top">
+				<div class="product__main-info">
+					<h2 class="product__title title title--semibold"> Продам 2-к квартиру , 65 м<sup>2</sup>, в центре Москвы </h2>
+					<div class="product__meta">
+						<div class="product__meta-item product__location">
+							<svg width="18" height="18">
+								<use xlink:href="/icons.svg#product-location"></use>
+							</svg>
+							Москва, ул. Советская, 17
+						</div>
+						<div class="product__line"></div>
+						<div class="product__meta-item">
+							<svg width="18" height="18">
+								<use xlink:href="/icons.svg#time-clock"></use>
+							</svg>
+							6 часов назад
+						</div>
+
+					</div>
+				</div>
+				<div class="product__top-wrapper">
+					<a class="product__back-button icon-button" href="/">
+						<svg>
+							<use xlink:href="/icons.svg#box-back"></use>
+						</svg>
+					</a>
+					<button class="product__share-button icon-button">
+						<svg>
+							<use xlink:href="/icons.svg#box-share"></use>
+						</svg>
+					</button>
+					<button class="product__select-button icon-button">
+						<svg>
+							<use xlink:href="/icons.svg#box-heart"></use>
+						</svg>
+					</button>
+				</div>
+
+			</div>
+			<div class="product__row">
+				<div class="product__left">
+					<div class="product__slider">
+						<div class="product__main-swiper swiper">
+							<div class="swiper-wrapper">
+								<div class="swiper-slide"><img class="product__main-img"
+								                               src="/images/product-main.png"
+								                               alt="main-product-img"/></div>
+								<div class="swiper-slide"><img class="product__main-img"
+								                               src="/images/product-main.png"
+								                               alt="main-product-img"/></div>
+								<div class="swiper-slide"><img class="product__main-img"
+								                               src="/images/product-main.png"
+								                               alt="main-product-img"/></div>
+								<div class="swiper-slide"><img class="product__main-img"
+								                               src="/images/product-main.png"
+								                               alt="main-product-img"/></div>
+								<div class="swiper-slide"><img class="product__main-img"
+								                               src="/images/product-main.png"
+								                               alt="main-product-img"/></div>
+								<div class="swiper-slide"><img class="product__main-img"
+								                               src="/images/product-main.png"
+								                               alt="main-product-img"/></div>
+								<div class="swiper-slide"><img class="product__main-img"
+								                               src="/images/product-main.png"
+								                               alt="main-product-img"/></div>
+							</div>
+							<button class="product__slider-prev product__slider-button">
+								<svg width="48" height="48">
+									<use xlink:href="/icons.svg#slider-icon"></use>
+								</svg>
+							</button>
+							<button class="product__slider-next product__slider-button">
+								<svg width="48" height="48">
+									<use xlink:href="/icons.svg#slider-icon"></use>
+								</svg>
+							</button>
+						</div>
+						<div class="product__swiper swiper">
+							<div class="swiper-wrapper">
+								<div class="swiper-slide product__slide-item"><img class="product__img"
+								                                                   src="/images/product.png"
+								                                                   alt="product-img"/></div>
+								<div class="swiper-slide product__slide-item"><img class="product__img"
+								                                                   src="/images/product.png"
+								                                                   alt="product-img"/></div>
+								<div class="swiper-slide product__slide-item"><img class="product__img"
+								                                                   src="/images/product.png"
+								                                                   alt="product-img"/></div>
+								<div class="swiper-slide product__slide-item"><img class="product__img"
+								                                                   src="/images/product.png"
+								                                                   alt="product-img"/></div>
+								<div class="swiper-slide product__slide-item"><img class="product__img"
+								                                                   src="/images/product.png"
+								                                                   alt="product-img"/></div>
+								<div class="swiper-slide product__slide-item"><img class="product__img"
+								                                                   src="/images/product.png"
+								                                                   alt="product-img"/></div>
+								<div class="swiper-slide product__slide-item"><img class="product__img"
+								                                                   src="/images/product.png"
+								                                                   alt="product-img"/></div>
+							</div>
+						</div>
+					</div>
+					<div class="product__info tabs">
+						<div class="product__tabs-buttons tabs-buttons">
+							<button class="tabs__item product__tabs-button" data-tab="description">Описание</button>
+							<button class="tabs__item product__tabs-button" data-tab="characteristic">Характеристики
+							</button>
+							<button class="tabs__item product__tabs-button" data-tab="place">Расположение</button>
+						</div>
+						<div class="tabs-panel product__tabs-item" data-tabs-panel="description">
+							<p class="product__text"> Идеальное расположение: центр Москвы, 5 минут пешком до метро,
+								рядом
+								Кремль, Тверская, ГУМ и лучшие рестораны. Полная инфраструктура: школы, сады,
+								поликлиники,
+								парки. Квартира в отличном состоянии: свежий ремонт (ламинат, натяжные потолки, новая
+								сантехника), просторная кухня-гостиная 20 м², 2 уютные спальни, большая лоджия с видом
+								на город.
+								Высота потолков 2,8 м. Все коммуникации в порядке. </p>
+						</div>
+						<div class="tabs-panel product__tabs-item" data-tabs-panel="characteristic">
+							<ul class="product__list">
+								<li class="product__list-item"> Количество комнат: <span>2</span></li>
+								<li class="product__list-item"> Тип комнат: <span>смежные</span></li>
+								<li class="product__list-item"> Общая площадь: <span>41.3 м²</span></li>
+								<li class="product__list-item"> Санузел: <span>совмещенный</span></li>
+								<li class="product__list-item"> Площадь кухни: <span>6 м²</span></li>
+								<li class="product__list-item"> Окна: <span>на улицу, на солнечную сторону</span></li>
+								<li class="product__list-item"> Жилая площадь: <span>29 м²</span></li>
+								<li class="product__list-item"> Ремонт: <span>дизайнерский</span></li>
+								<li class="product__list-item"> Этаж: <span>2 из 5</span></li>
+								<li class="product__list-item"> Мебель:
+									<span>кухня, хранение одежды, спальные места</span></li>
+								<li class="product__list-item"> Дополнительно: <span>гардеробная</span></li>
+								<li class="product__list-item"> Способ продажи: <span>свободная</span></li>
+							</ul>
+						</div>
+						<div class="tabs-panel product__tabs-item" data-tabs-panel="place">
+							<img class="product__map" alt="map" src="/images/map.png"/>
+						</div>
+					</div>
+					<div class="product__details-meta">
+						<span class="product__details-id">id: 1231231231</span>
+						<span class="product__details-views">
+							<svg width="18" height="18">
+								<use xlink:href="/icons.svg#eye"></use>
+							</svg>
+							153 просмотра
+						</span>
+						<button class="product__details-report" type="button">
+							<svg width="18" height="18">
+								<use xlink:href="/icons.svg#red-flag"></use>
+							</svg>
+							<span class="product__details-report-desktop">Пожаловаться</span>
+							<span class="product__details-report-mobile">Жалоба</span>
+						</button>
+					</div>
+					<div class="product__similar">
+						<h3 class="product__similar-title title title--semibold">Похожие объявления</h3>
+						<div class="product__cards-swiper">
+							<div class="swiper-wrapper">
+								<div class="swiper-slide">
+									<a class="card" href="#">
+										<img class="card__img" src="/images/product-similar.png" alt=""/>
+
+										<button class="card__select-button">
+											<svg width="24" height="24">
+												<use xlink:href="/icons.svg#heart"></use>
+											</svg>
+										</button>
+										<div class="card__bottom">
+											<p class="price card__price">6 500 000 ₽</p>
+											<h5 class='card__title'>
+												Продам 2-к квартиру, 65 м<sup>2</sup>, в центре Москвы
+											</h5>
+										</div>
+									</a>
+								</div>
+								<div class="swiper-slide">
+									<a class="card" href="#">
+										<img class="card__img" src="/images/product-similar.png" alt=""/>
+
+										<button class="card__select-button">
+											<svg width="24" height="24">
+												<use xlink:href="/icons.svg#heart"></use>
+											</svg>
+										</button>
+										<div class="card__bottom">
+											<p class="price card__price">6 500 000 ₽</p>
+											<h5 class='card__title'>
+												Продам 2-к квартиру, 65 м<sup>2</sup>, в центре Москвы
+											</h5>
+										</div>
+									</a>
+								</div>
+								<div class="swiper-slide">
+									<a class="card" href="#">
+										<img class="card__img" src="/images/product-similar.png" alt=""/>
+
+										<button class="card__select-button">
+											<svg width="24" height="24">
+												<use xlink:href="/icons.svg#heart"></use>
+											</svg>
+										</button>
+										<div class="card__bottom">
+											<p class="price card__price">6 500 000 ₽</p>
+											<h5 class='card__title'>
+												Продам 2-к квартиру, 65 м<sup>2</sup>, в центре Москвы
+											</h5>
+										</div>
+									</a>
+								</div>
+								<div class="swiper-slide">
+									<a class="card" href="#">
+										<img class="card__img" src="/images/product-similar.png" alt=""/>
+
+										<button class="card__select-button">
+											<svg width="24" height="24">
+												<use xlink:href="/icons.svg#heart"></use>
+											</svg>
+										</button>
+										<div class="card__bottom">
+											<p class="price card__price">6 500 000 ₽</p>
+											<h5 class='card__title'>
+												Продам 2-к квартиру, 65 м<sup>2</sup>, в центре Москвы
+											</h5>
+										</div>
+									</a>
+								</div>
+							</div>
+
+						</div>
+					</div>
+				</div>
+				<aside class="product__aside">
+					<div class="product__box">
+						<p class="product__price price"> 6 500 000 ₽ </p>
+						<div class="product__buttons">
+							<button class="button button--green button--sm product__contact-button">Позвонить</button>
+							<button class="button button--sm product__contact-button">Написать в чате</button>
+						</div>
+						<div class="product__box-bottom">
+							<a class="product__salesman" href="#"><img class="product__salesman-img"
+							                                    src="/images/salesman-img.png" alt="salesman"/>
+								<div class="product__salesman-wrapper">
+									<p class="product__salesman-name"> Алексей </p><span
+										class="product__salesman-position">Частное лицо</span>
+								</div>
+							</a>
+							<div class="product__box-flex">
+								<div class="product__rating">
+									<div class="product__stars">
+										<svg width="12" height="12">
+											<use xlink:href="/icons.svg#star"></use>
+										</svg>
+										<svg width="12" height="12">
+											<use xlink:href="/icons.svg#star"></use>
+										</svg>
+										<svg width="12" height="12">
+											<use xlink:href="/icons.svg#star"></use>
+										</svg>
+										<svg width="12" height="12">
+											<use xlink:href="/icons.svg#star"></use>
+										</svg>
+										<svg width="12" height="12">
+											<use xlink:href="/icons.svg#star"></use>
+										</svg>
+									</div>
+									<span>4.8</span>
+								</div>
+								<div class="product__line"></div>
+								<span class="product__advertisement">4 объявления</span>
+							</div>
+						</div>
+					</div>
+					<div class="blocks">
+						<div class="block"></div>
+						<div class="block"></div>
+					</div>
+				</aside>
+
+			</div>
+		</div>
+	</section>
+
+
+
+
+</main>
+
+<footer class="footer">
+	<div class="container footer__inner">
+		<a class="logo footer__logo">
+			<svg class="logo__icon" width="24" height="33">
+				<use xlink:href="/icons.svg#logo"></use>
+			</svg>
+			Gradlist </a>
+		<nav class="footer__nav">
+			<ul class="footer__list">
+				<li class="footer__item"><a class="footer__link" href="#">Помощь</a></li>
+				<li class="footer__item"><a class="footer__link" href="#">Безопасность</a></li>
+				<li class="footer__item"><a class="footer__link" href="#">Реклама на сайте</a></li>
+				<li class="footer__item"><a class="footer__link" href="#">О компании</a></li>
+				<li class="footer__item"><a class="footer__link" href="#">Приложение</a></li>
+				<li class="footer__item"><a class="footer__link" href="#">Карта сайта</a></li>
+				<li class="footer__item"><a class="footer__link" href="#">Свежие объявления</a></li>
+			</ul>
+			<ul class="footer__list">
+				<li class="footer__item"><a class="footer__s-link" href="#">Условия использования</a></li>
+				<li class="footer__item"><a class="footer__s-link" href="#">Политика конфиденциальности</a></li>
+				<li class="footer__item"><a class="footer__s-link" href="#">Публичная оферта</a></li>
+			</ul>
+		</nav>
+		<ul class="footer__socials-list">
+			<li class="footer__socials-list"><a class="footer__socials-link" href="#">
+				<svg width="30" height="30">
+					<use xlink:href="/icons.svg#tg"></use>
+				</svg>
+			</a></li>
+			<li class="footer__socials-list"><a class="footer__socials-link" href="#">
+				<svg width="30" height="30">
+					<use xlink:href="/icons.svg#max"></use>
+				</svg>
+			</a></li>
+			<li class="footer__socials-list"><a class="footer__socials-link" href="#">
+				<svg width="30" height="30">
+					<use xlink:href="/icons.svg#vk"></use>
+				</svg>
+			</a></li>
+		</ul>
+
+	</div>
+</footer>
+
+
+<script type="module" src="/src/main.js"></script>
+</body>
+</html>

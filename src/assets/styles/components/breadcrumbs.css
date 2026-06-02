@@ -1,0 +1,38 @@
+.breadcrumbs {
+    padding-top: 40px;
+}
+
+.breadcrumbs + section {
+    padding-top: 40px;
+}
+
+.breadcrumbs__inner {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.breadcrumbs__link {
+    color: var(--color-primary);
+    font-size: var(--font-size-sm);
+}
+
+.breadcrumbs__link--active {
+    color: var(--color-secondary);
+}
+
+@media (max-width: 1000px) {
+    .breadcrumbs {
+        display: none;
+    }
+
+    .breadcrumbs + section {
+        padding-top: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .breadcrumbs {
+        padding-top: 25px;
+    }
+}

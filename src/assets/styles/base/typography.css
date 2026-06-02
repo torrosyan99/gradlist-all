@@ -1,0 +1,43 @@
+h1 {
+    font-size: 42px;
+    letter-spacing: var(--lt-1);
+}
+
+h2 {
+    font-size: 32px;
+    letter-spacing: var(--lt-1);
+}
+
+h3 {
+    font-size: 26px;
+}
+
+h4 {
+    font-size: 24px;
+}
+
+h5 {
+    font-size: 20px;
+}
+
+h5.h-18 {
+    font-size: 18px;
+}
+
+sup {
+    font-size: 0.5em;
+}
+
+@media (max-width: 768px ) {
+    h1 {
+        font-size: 26px;
+    }
+
+    h2 {
+        font-size: 24px;
+    }
+
+    h3 {
+        font-size: 24px;
+    }
+}
