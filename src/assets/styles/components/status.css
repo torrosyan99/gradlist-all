@@ -5,6 +5,9 @@
     line-height: .7;
     font-size: var(--font-size-sm);
     letter-spacing: var(--lt-1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .status--active {

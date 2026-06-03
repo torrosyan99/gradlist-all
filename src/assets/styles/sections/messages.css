@@ -5,14 +5,14 @@
 }
 
 .messages__tab {
-    padding: 14px 12px;
+    padding: 0 12px;
+    height: 38px;
     background: var(--color-surface);
     border-radius: var(--radius-md);
     font-size: var(--font-size-sm);
     display: flex;
     align-items: center;
     gap: 6px;
-    --icon-color: var(--color-blue);
 }
 
 .messages__tab--active,
@@ -45,6 +45,7 @@
     position: relative;
     padding: 18px 30px;
     display: flex;
+    align-items: center;
     gap: 15px;
     border-bottom: 1px solid var(--color-border);
 }
@@ -53,10 +54,22 @@
     min-width: 0;
     flex-grow: 1;
 }
+
 .messages__top-img {
+    flex-shrink: 0;
     width: 60px;
     height: 60px;
+    position: relative;
+}
+
+.messages__top-product-img {
+    width: 100%;
+    height: 100%;
     border-radius: var(--radius-full);
+}
+
+.messages__top-user-img {
+    display: none;
 }
 
 .messages__items {
@@ -169,6 +182,7 @@
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
+    max-width: 380px;
 }
 
 .messages__dropdown {
@@ -185,13 +199,13 @@
 }
 
 .messages__place {
+    height: 25px;
     font-size: var(--font-size-xs);
-    --icon-color: var(--color-blue);
     display: none;
     align-items: center;
     gap: 6px;
     border-radius: var(--radius-md);
-    padding: 8px;
+    padding: 0 8px;
 }
 
 .messages__form {
@@ -234,6 +248,7 @@
 .messages__item--mine {
     background: var(--color-light-blue);
 }
+
 .messages__item-wrapper {
     flex-grow: 1;
 }
@@ -243,6 +258,7 @@
     height: 42px;
     border-radius: var(--radius-full);
 }
+
 .messages__item-name {
     color: var(--color-blue);
     margin-bottom: 6px;
@@ -260,7 +276,7 @@
 }
 
 .messages__day {
-    height: 31px;
+    min-height: 31px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -268,11 +284,112 @@
     font-size: var(--font-size-xs);
 }
 
+.messages__back {
+    display: none;
+}
+
 @media (max-width: 1280px) {
+    .messages__users {
+        width: 280px;
+        min-width: 280px;
+    }
+
+    .messages__top-title {
+
+        max-width: 300px;
+    }
+
+}
+
+@media (max-width: 1000px) {
     .messages__users {
         width: 240px;
         min-width: 240px;
     }
+}
 
 
+@media (max-width: 768px) {
+    .messages__tabs {
+        margin: 18px 0 20px;
+    }
+
+    .messages__box {
+        box-shadow: none;
+        width: calc(100% + 48px);
+        margin-left: -24px;
+        height: auto;
+    }
+
+    .messages__content {
+        display: none;
+    }
+
+    .messages__users {
+        max-width: 100%;
+        width: 100%;
+        height: auto;
+        border-right: none;
+    }
+
+    .messages__user-img {
+        width: 24px;
+        height: 24px;
+    }
+
+    .messages__user,
+    .messages__support {
+        padding: 12px 24px;
+    }
+
+    .messages__user--active {
+        background: transparent;
+    }
+
+    .messages__back {
+        flex-shrink: 0;
+        display: block;
+        margin-right: 4px;
+    }
+
+    .messages__content--active {
+        position: fixed;
+        inset: 0;
+        z-index: 200;
+        display: flex;
+        background: var(--color-surface);
+    }
+
+    .messages__top-img {
+        width: 42px;
+        height: 42px;
+    }
+
+    .messages__top-user-img {
+        display: block;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: 20px;
+        height: 20px;
+        border-radius: var(--radius-full);
+    }
+
+    .messages__top-title.h-16 {
+        font-size: 14px;
+    }
+    
+    .messages__place {
+        display: flex;
+    }
+
+    .messages__status {
+        font-size: var(--font-size-xs);
+        padding: 0 8px;
+
+    }
+
+    .messages__top{
+        gap: 4px;
+    }
 }

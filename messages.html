@@ -268,7 +268,7 @@
 					<button class="messages__tab">Непрочитанные</button>
 					<button class="messages__tab">
 						<svg width="14" height="14">
-							<use xlink:href="/icons.svg#heart"></use>
+							<use xlink:href="/icons.svg#messages-heart"></use>
 						</svg>
 						Избранное
 					</button>
@@ -469,21 +469,32 @@
 					</div>
 					<div class="messages__content">
 						<div class="messages__top">
-							<img class="messages__top-img" src="/images/product-main.png" alt=""/>
+							<button class="messages__back">
+								<svg width="32" height="32">
+									<use xlink:href="/icons.svg#messages-back"></use>
+
+								</svg>
+							</button>
+							<div class="messages__top-img">
+								<img class="messages__top-product-img" src="/images/product-main.png" alt=""/>
+								<img class="messages__top-user-img" src="/images/salesman-img.png" alt=""/>
+							</div>
 							<div class="messages__top-wrapper">
 								<h5 class="messages__top-title h-16 title title--medium">
-									Продам 2-к квартиру, 65 м<sup>2</sup>, в центре Москвы
+									Продам 2-к квартиру, 65 м<sup>2</sup>, в центре Москвы asd sad sad sa
 								</h5>
 								<div class="messages__blocks">
-									<div class="status status--inactive">
-										неактивно
-									</div>
 									<div class="messages__place">
-										<svg width="10" height="8">
-											<use xlink:href="/icons.svg#heart"></use>
+										<svg width="12" height="10">
+											<use xlink:href="/icons.svg#messages-heart"></use>
 										</svg>
+
 										чат в избранное
 									</div>
+									<div class="status status--inactive messages__status">
+										неактивно
+									</div>
+
 								</div>
 							</div>
 							<div class="dropdown messages__dropdown">
@@ -520,7 +531,6 @@
 									</button>
 								</div>
 							</div>
-
 						</div>
 						<div class="messages__items custom-scroll">
 							<div class="messages__item messages__item--mine messages__item--checked">
