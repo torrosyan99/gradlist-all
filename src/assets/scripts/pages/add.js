@@ -455,6 +455,7 @@ const FORM_SCHEMAS = {
         fields: [
           { type: 'input', label: 'Заголовок*', name: 'title', placeholder: 'Название объявления' },
           { type: 'input', label: 'Цена, руб*', name: 'price', placeholder: '50 000', inputMode: 'numeric' },
+          { type: 'actions', name: 'actions' },
         ],
       },
     ],
@@ -468,6 +469,8 @@ const FORM_SCHEMAS = {
         fields: [
           { type: 'input', label: 'Заголовок*', name: 'title', placeholder: 'Название объявления' },
           { type: 'input', label: 'Цена, руб*', name: 'price', placeholder: '5 000 000', inputMode: 'numeric' },
+          { type: 'actions', name: 'actions' },
+
         ],
       },
     ],
