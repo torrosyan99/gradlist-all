@@ -9,3 +9,23 @@
 .input::placeholder {
     color: var(--color-secondary);
 }
+
+.input--gray {
+    background: var(--color-bg);
+}
+
+
+.input-file {
+    display: flex;
+    align-items: center;
+    height: 51px;
+    justify-content: space-between;
+    background: var(--color-light-blue);
+    color: var(--color-blue);
+    border-radius: var(--radius-md);
+    padding: 0 22px;
+}
+
+.input-file__input {
+    display: none;
+}

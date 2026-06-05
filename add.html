@@ -1,0 +1,280 @@
+<!doctype html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8"/>
+	<link rel="icon" type="image/svg+xml" href="/icons.svg"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<title>Gradlist</title>
+</head>
+<body class="page-add">
+
+<header class="header">
+	<div class="container header__inner">
+		<a class="logo" href="/">
+			<svg class="logo__icon" width="37" height="50">
+				<use xlink:href="/icons.svg#logo"></use>
+			</svg>
+			Gradlist
+		</a>
+		<nav class="header__nav">
+			<ul class="header__list">
+				<li class="header__list-item">
+					<a class="header__link" href="#">
+						Объявления
+					</a>
+				</li>
+				<li class="header__list-item">
+					<a class="header__link" href="#">
+						Помощь
+					</a>
+				</li>
+				<li class="header__list-item">
+					<a class="header__link" href="#">
+						Услуги
+					</a>
+				</li>
+				<li class="header__list-item">
+					<a class="header__link" href="#">
+						Избранное
+					</a>
+				</li>
+			</ul>
+			<div class="header__actions">
+				<a class="header__action" href="#" aria-label="Избранное">
+					<svg width="32" height="32">
+						<use xlink:href="/icons.svg#header-heart"></use>
+					</svg>
+				</a>
+
+				<a class="header__action notification" href="#" aria-label="Уведомления">
+					<svg width="32" height="32">
+						<use xlink:href="/icons.svg#notification"></use>
+					</svg>
+					<span class="notification__badge">3</span>
+				</a>
+
+				<a class="header__action" href="#" aria-label="Сообщения">
+					<svg width="32" height="32">
+						<use xlink:href="/icons.svg#header-message"></use>
+					</svg>
+				</a>
+			</div>
+		</nav>
+		<button class="button button--sm button--flex modal-button header__button" data-type="apply">
+			<svg width="24" height="24">
+				<use xlink:href="/icons.svg#plus"></use>
+			</svg>
+			Подать объявление
+		</button>
+		<div class="header__user">
+			<svg width="42" height="42">
+				<use xlink:href="/icons.svg#person"></use>
+			</svg>
+			<svg width="24" height="24">
+				<use xlink:href="/icons.svg#chevron-bottom"></use>
+			</svg>
+		</div>
+	</div>
+</header>
+
+<div class="menu">
+	<nav class="menu__nav">
+		<ul class="menu__list">
+			<li class="menu__item">
+				<a class="menu__link" href="/public">
+					<svg width="32" height="32">
+						<use xlink:href="/icons.svg#menu-home"></use>
+					</svg>
+					Главная
+				</a>
+			</li>
+			<li class="menu__item">
+				<a class="menu__link" href="#">
+					<svg width="32" height="32">
+						<use xlink:href="/icons.svg#menu-heart"></use>
+					</svg>
+					Избранное
+				</a>
+			</li>
+			<li class="menu__item">
+				<a class="menu__link" href="#">
+					<svg width="32" height="32">
+						<use xlink:href="/icons.svg#menu-add"></use>
+					</svg>
+					Создать
+				</a>
+			</li>
+			<li class="menu__item">
+				<a class="menu__link" href="#">
+					<svg width="32" height="32">
+						<use xlink:href="/icons.svg#menu-message"></use>
+					</svg>
+					Сообщения
+				</a>
+			</li>
+			<li class="menu__item">
+				<a class="menu__link" href="#">
+					<svg width="32" height="32">
+						<use xlink:href="/icons.svg#menu-profile"></use>
+					</svg>
+					Профиль
+				</a>
+			</li>
+		</ul>
+	</nav>
+</div>
+
+
+<main class="main">
+	<section class="add">
+		<div class="container">
+
+			<div class="add__top">
+				<h2 class="title title--semibold add__title">
+					Создание объявления
+				</h2>
+				<button class="add__draft-button button button--sm button--flex button--light-blue">
+					К черновикам
+					<svg width="20" height="20">
+						<use xlink:href="/icons.svg#blue-arrow-right"></use>
+					</svg>
+				</button>
+			</div>
+			<form class="add__main-form">
+				<div class="add__item">
+					<h5 class="title title--semibold h-18 add__item-title">
+						Раздел
+					</h5>
+					<div class="select select--with-icon">
+						<button class="select__trigger" type="button">
+							<svg class="select__icon" width="20" height="20">
+								<use xlink:href="" />
+							</svg>
+							<span></span>
+							<svg  width="24" height="24">
+								<use xlink:href="/icons.svg#arrow-bottom"></use>
+							</svg>
+						</button>
+						<div class="select__dropdown custom-scroll">
+							<button class="select__option"
+							        data-value="car"
+							        data-icon-value="add-car"
+							        type="button">
+								<svg width="20" height="20">
+									<use xlink:href="/icons.svg#add-car"></use>
+								</svg>
+								Транспорт</button>
+							<button class="select__option"
+							        data-value="estate"
+							        data-icon-value="add-estate"
+							        type="button">
+								<svg width="20" height="20">
+									<use xlink:href="/icons.svg#add-estate"></use>
+								</svg>
+								Недвижимость</button>
+
+						</div>
+						<input type="hidden" name="section">
+					</div>
+				</div>
+<!--				<div class="add__item">-->
+<!--					<h5 class="title title&#45;&#45;semibold h-18 add__item-title">-->
+<!--						Категория-->
+<!--					</h5>-->
+<!--					<div class="select">-->
+<!--						<button class="select__trigger" type="button">-->
+<!--							<span>Выберите страну</span>-->
+<!--							<svg  width="24" height="24">-->
+<!--								<use xlink:href="/icons.svg#arrow-bottom"></use>-->
+<!--							</svg>-->
+<!--						</button>-->
+<!--						<div class="select__dropdown custom-scroll">-->
+<!--							<button class="select__option"-->
+<!--							        data-value="estate"-->
+<!--							        type="button">-->
+<!--								Недвижимость</button>-->
+
+<!--						</div>-->
+<!--						<input type="hidden" name="country">-->
+<!--					</div>-->
+<!--					<div class="select">-->
+<!--						<button class="select__trigger" type="button">-->
+<!--							<span>Выберите страну</span>-->
+<!--							<svg  width="24" height="24">-->
+<!--								<use xlink:href="/icons.svg#arrow-bottom"></use>-->
+<!--							</svg>-->
+<!--						</button>-->
+<!--						<div class="select__dropdown custom-scroll">-->
+<!--							<button class="select__option"-->
+<!--							        data-value="estate"-->
+<!--							        type="button">-->
+<!--								Недвижимость</button>-->
+
+<!--						</div>-->
+<!--						<input type="hidden" name="country">-->
+<!--					</div>-->
+<!--				</div>-->
+<!--				<button class="add__main-form-button button button&#45;&#45;sm">-->
+<!--					Выбрать-->
+<!--				</button>-->
+				<div class="add__dynamic" data-add-dynamic></div>
+
+				<button class="add__main-form-button button button--sm" type="button" data-add-choose disabled hidden>
+					Выбрать
+				</button>
+			</form>
+			<div class="add__builder" data-add-builder hidden></div>
+		</div>
+
+	</section>
+
+</main>
+
+<footer class="footer">
+	<div class="container footer__inner">
+		<a class="logo footer__logo">
+			<svg class="logo__icon" width="24" height="33">
+				<use xlink:href="/icons.svg#logo"></use>
+			</svg>
+			Gradlist </a>
+		<nav class="footer__nav">
+			<ul class="footer__list">
+				<li class="footer__item"><a class="footer__link" href="#">Помощь</a></li>
+				<li class="footer__item"><a class="footer__link" href="#">Безопасность</a></li>
+				<li class="footer__item"><a class="footer__link" href="#">Реклама на сайте</a></li>
+				<li class="footer__item"><a class="footer__link" href="#">О компании</a></li>
+				<li class="footer__item"><a class="footer__link" href="#">Приложение</a></li>
+				<li class="footer__item"><a class="footer__link" href="#">Карта сайта</a></li>
+				<li class="footer__item"><a class="footer__link" href="#">Свежие объявления</a></li>
+			</ul>
+			<ul class="footer__list">
+				<li class="footer__item"><a class="footer__s-link" href="#">Условия использования</a></li>
+				<li class="footer__item"><a class="footer__s-link" href="#">Политика конфиденциальности</a></li>
+				<li class="footer__item"><a class="footer__s-link" href="#">Публичная оферта</a></li>
+			</ul>
+		</nav>
+		<ul class="footer__socials-list">
+			<li class="footer__socials-list"><a class="footer__socials-link" href="#">
+				<svg width="30" height="30">
+					<use xlink:href="/icons.svg#tg"></use>
+				</svg>
+			</a></li>
+			<li class="footer__socials-list"><a class="footer__socials-link" href="#">
+				<svg width="30" height="30">
+					<use xlink:href="/icons.svg#max"></use>
+				</svg>
+			</a></li>
+			<li class="footer__socials-list"><a class="footer__socials-link" href="#">
+				<svg width="30" height="30">
+					<use xlink:href="/icons.svg#vk"></use>
+				</svg>
+			</a></li>
+		</ul>
+
+	</div>
+</footer>
+
+
+<script type="module" src="/src/main.js"></script>
+</body>
+</html>

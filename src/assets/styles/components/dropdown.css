@@ -11,7 +11,9 @@
     position: absolute;
     background: #fff;
     top: 100%;
+    left: 0;
     width: auto;
+    min-width: 100%;
     background: var(--color-surface);
     box-shadow: 0 8px 20px 0 rgba(226, 230, 237, 0.6);
     border-radius: var(--radius-md);

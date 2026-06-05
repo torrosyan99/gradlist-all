@@ -1,0 +1,10 @@
+.back {
+    display: none;
+        align-items: center;
+        gap: 15px;
+        font-size: 24px;
+        font-weight: var(--font-weight-semibold);
+        margin-bottom: 24px;
+}
+
+

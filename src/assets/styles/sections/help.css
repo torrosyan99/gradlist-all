@@ -1,0 +1,142 @@
+.help__content {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.help__box {
+    padding: 20px;
+    border-radius: var(--radius-md);
+    background: var(--color-surface);
+}
+
+.help__box--blue {
+    background: var(--color-blue);
+    color: var(--color-surface);
+}
+
+.help__box--light-blue {
+    background: var(--color-light-blue);
+}
+
+.help__list {
+    padding-top: 5px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.help__link,
+.help__box-text{
+    letter-spacing: var(--lt-1);
+    color: inherit;
+}
+
+.help__support {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.help__support.help__support--grid {
+    grid-column:  1 / 3;
+}
+
+.help__box-title {
+    margin-bottom: 10px;
+}
+
+.help__box-wrapper {
+    flex-grow: 1;
+}
+
+.help__box-button {
+    padding: 0 26px;
+}
+
+.modal-support {
+    max-width: 450px;
+}
+
+.modal-support__form {
+    margin-top: 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.modal-support__label {
+    display: block;
+    margin-bottom: 12px;
+}
+
+.modal-support__text {
+    font-size: var(--font-size-xs);
+    margin-bottom: 12px;
+}
+
+.help__questions-title {
+    margin: 30px 0 5px ;
+}
+
+.help__question {
+    margin: 30px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+.help__question-list {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    font-size: var(--font-size-sm);
+}
+
+.help__question-item--green,
+.help__question-item--cream {
+    padding: 12px;
+    border-radius: var(--radius-md);
+}
+.help__question-item--green {
+    background: #DEF4E7;
+}
+
+.help__question-item--cream {
+    background: #F4F1DE;
+}
+@media (max-width: 768px) {
+    .help__content {
+        grid-template-columns: 1fr;
+    }
+
+    .help__support.help__support--grid {
+        grid-column:  1 / 2;
+    }
+
+    .help__support {
+        flex-direction: column;
+        gap: 10px;
+    text-align: center;
+    }
+
+    .help__link {
+        font-size:  var(--font-size-sm);
+    }
+    .help__box-button {
+        margin-top: 10px;
+    }
+
+    .help__questions-title {
+        display: none;
+    }
+    .help__questions-title + .help__list {
+        padding-top: 24px;
+    }
+
+    .help__question {
+        margin-top: 24px;
+    }
+
+}

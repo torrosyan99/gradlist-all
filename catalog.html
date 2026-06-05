@@ -1,0 +1,2560 @@
+<!doctype html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8"/>
+	<link rel="icon" type="image/svg+xml" href="/icons.svg"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<title>Gradlist</title>
+</head>
+<body class="page-catalog">
+
+<header class="header">
+	<div class="container header__inner">
+		<a class="logo" href="/">
+			<svg class="logo__icon" width="37" height="50">
+				<use xlink:href="/icons.svg#logo"></use>
+			</svg>
+			Gradlist
+		</a>
+		<nav class="header__nav">
+			<ul class="header__list">
+				<li class="header__list-item">
+					<a class="header__link" href="#">
+						Объявления
+					</a>
+				</li>
+				<li class="header__list-item">
+					<a class="header__link" href="#">
+						Помощь
+					</a>
+				</li>
+				<li class="header__list-item">
+					<a class="header__link" href="#">
+						Услуги
+					</a>
+				</li>
+				<li class="header__list-item">
+					<a class="header__link" href="#">
+						Избранное
+					</a>
+				</li>
+			</ul>
+			<div class="header__actions">
+				<a class="header__action" href="#" aria-label="Избранное">
+					<svg width="32" height="32">
+						<use xlink:href="/icons.svg#header-heart"></use>
+					</svg>
+				</a>
+
+				<a class="header__action notification" href="#" aria-label="Уведомления">
+					<svg width="32" height="32">
+						<use xlink:href="/icons.svg#notification"></use>
+					</svg>
+					<span class="notification__badge">3</span>
+				</a>
+
+				<a class="header__action" href="#" aria-label="Сообщения">
+					<svg width="32" height="32">
+						<use xlink:href="/icons.svg#header-message"></use>
+					</svg>
+				</a>
+			</div>
+		</nav>
+		<button class="button button--sm button--flex modal-button header__button" data-type="apply">
+			<svg width="24" height="24">
+				<use xlink:href="/icons.svg#plus"></use>
+			</svg>
+			Подать объявление
+		</button>
+		<div class="header__user">
+			<svg width="42" height="42">
+				<use xlink:href="/icons.svg#person"></use>
+			</svg>
+			<svg width="24" height="24">
+				<use xlink:href="/icons.svg#chevron-bottom"></use>
+			</svg>
+		</div>
+	</div>
+</header>
+
+<div class="menu">
+	<nav class="menu__nav">
+		<ul class="menu__list">
+			<li class="menu__item">
+				<a class="menu__link" href="/public">
+					<svg width="32" height="32">
+						<use xlink:href="/icons.svg#menu-home"></use>
+					</svg>
+					Главная
+				</a>
+			</li>
+			<li class="menu__item">
+				<a class="menu__link" href="#">
+					<svg width="32" height="32">
+						<use xlink:href="/icons.svg#menu-heart"></use>
+					</svg>
+					Избранное
+				</a>
+			</li>
+			<li class="menu__item">
+				<a class="menu__link" href="#">
+					<svg width="32" height="32">
+						<use xlink:href="/icons.svg#menu-add"></use>
+					</svg>
+					Создать
+				</a>
+			</li>
+			<li class="menu__item">
+				<a class="menu__link" href="#">
+					<svg width="32" height="32">
+						<use xlink:href="/icons.svg#menu-message"></use>
+					</svg>
+					Сообщения
+				</a>
+			</li>
+			<li class="menu__item">
+				<a class="menu__link" href="#">
+					<svg width="32" height="32">
+						<use xlink:href="/icons.svg#menu-profile"></use>
+					</svg>
+					Профиль
+				</a>
+			</li>
+		</ul>
+	</nav>
+</div>
+
+<div class="overlay">
+
+</div>
+
+
+<main class="main">
+
+	<section class="top">
+		<div class="container top__container">
+			<div class="top__content">
+				<div class="top__wrapper">
+					<div class="breadcrumbs breadcrumbs--pb">
+						<div class="breadcrumbs__inner">
+							<a class="breadcrumbs__link" href="/">Главная</a>
+							<svg width="12" height="12">
+								<use xlink:href="/icons.svg#breadcrumbs-icon"></use>
+							</svg>
+							<a class="breadcrumbs__link" href="#">Объявления</a>
+							<svg width="12" height="12">
+								<use xlink:href="/icons.svg#breadcrumbs-icon"></use>
+							</svg>
+							<a class="breadcrumbs__link breadcrumbs__link--active" href="#">Недвижимость</a>
+						</div>
+					</div>
+
+					<h1 class="title title--semibold top__title">«Mercedes» в <span>Москве</span></h1>
+					<div class="top__form-wrapper">
+						<form class="top__form">
+							<button class="top__location" type="button">
+								<svg class="top__location-icon" width="28" height="28">
+									<use xlink:href="/icons.svg#location"></use>
+								</svg>
+								<span>Москва</span>
+								<svg class="top__location-chevron" width="24" height="24">
+									<use xlink:href="/icons.svg#chevron-bottom"></use>
+								</svg>
+							</button>
+							<input class="top__input" type="text" value="mercedes"/>
+							<button class="button button--flex button--sm top__form-button">
+								<svg width="24" height="24">
+									<use xlink:href="/icons.svg#search"></use>
+								</svg>
+								<span>
+							Найти
+
+							</span>
+							</button>
+						</form>
+
+						<a class="top__notification" href="#">
+							<div class="notification">
+								<svg width="32" height="32">
+									<use xlink:href="/icons.svg#notification"></use>
+								</svg>
+								<span class="notification__badge">3</span>
+							</div>
+						</a>
+					</div>
+				</div>
+				<div class="top__image-wrapper">
+					<img class="top__image" src="public/images/top-image.png" alt="img"/>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="catalog">
+		<div class="container catalog__row">
+			<div class="catalog__mob">
+				<button class="catalog__location" type="button">
+					<svg class="top__location-icon" width="28" height="28">
+						<use xlink:href="/icons.svg#location"></use>
+					</svg>
+					<span>Москва</span>
+					<svg class="catalog__location-chevron" width="24" height="24">
+						<use xlink:href="/icons.svg#chevron-bottom"></use>
+					</svg>
+				</button>
+			 <button class="catalog__menu-button">
+				 <svg width="16" height="16">
+					 <use xlink:href="/icons.svg#catalog-menu"></use>
+				 </svg>
+				 Фильтры
+			 </button>
+			</div>
+			<div class="catalog__left">
+				<div class="catalog__menu">
+					<div class="catalog__menu-top">
+                       <button class="catalog__menu-close">
+	                       <svg width="24" height="24">
+		                       <use xlink:href="/icons.svg#close"></use>
+	                       </svg>
+                       </button>
+						<h4 class="catalog__menu-top-title">
+							Фильтры
+						</h4>
+						<button class="catalog__reset">
+							Сбросить
+						</button>
+					</div>
+					<div class="catalog__menu-block catalog__mobile-block">
+				    <div class="catalog__flex-wrap">
+					    <div class="select">
+						    <button class="select__trigger" type="button">
+							    <span>Транспорт</span>
+							    <svg width="24" height="24">
+								    <use xlink:href="/icons.svg#arrow-bottom"></use>
+							    </svg>
+						    </button>
+						    <div class="select__dropdown custom-scroll">
+							    <button class="select__option" data-value="bmw" type="button">BdasdasdasdsadsadMW</button>
+							    <button class="select__option" data-value="bmw" type="button">BWM</button>
+							    <button class="select__option" data-value="merc" type="button">MERC</button>
+						    </div>
+						    <input type="hidden" name="car">
+					    </div>
+					    <div class="select">
+						    <button class="select__trigger" type="button">
+							    <span>Марка</span>
+							    <svg width="24" height="24">
+								    <use xlink:href="/icons.svg#arrow-bottom"></use>
+							    </svg>
+						    </button>
+						    <div class="select__dropdown custom-scroll">
+							    <button class="select__option" data-value="bmw" type="button">BMW</button>
+							    <button class="select__option" data-value="bmw" type="button">BWM</button>
+							    <button class="select__option" data-value="merc" type="button">MERC</button>
+						    </div>
+						    <input type="hidden" name="car">
+					    </div>
+
+				    </div>
+					</div>
+					<div class="catalog__menu-block catalog__categories-block">
+						<h5 class="title h-16 catalog__categories-title">Транспорт</h5>
+						<div class="catalog__categories">
+							<button class="catalog__category catalog__category--active">
+								Автомобили
+							</button>
+							<button class="catalog__category">
+								Мотоциклы
+							</button>
+							<button class="catalog__category">
+								Лодки
+							</button>
+							<button class="catalog__category">
+								Самолёты
+							</button>
+							<button class="catalog__category">
+								Снегоходы
+							</button>
+							<button class="catalog__category">
+								Вездеходы
+							</button>
+							<button class="catalog__category">
+								Гидроциклы
+							</button>
+						</div>
+					</div>
+					<div class="catalog__menu-block">
+						<div class="catalog__menu-item">
+							<h5 class="title h-18 catalog__menu-block-title">Транспорт</h5>
+							<div class="catalog__flex-wrap">
+								<label class="catalog__radio">
+									<input class="catalog__radio-input" type="radio" value="all" name="type" checked>
+									<span>Все</span>
+								</label>
+								<label class="catalog__radio">
+									<input class="catalog__radio-input" type="radio" value="probeg" name="type">
+									<span>С пробегом</span>
+								</label>
+								<label class="catalog__radio">
+									<input class="catalog__radio-input" type="radio" value="new" name="type">
+									<span>Новые</span>
+								</label>
+							</div>
+						</div>
+					</div>
+					<div class="catalog__menu-block">
+						<div class="catalog__menu-item">
+							<h5 class="title h-18 catalog__menu-block-title">Цена, ₽</h5>
+							<div class="catalog__grid">
+								<input class="input number-input" type="text" placeholder="От" name="start-price"/>
+								<input class="input number-input" type="text" placeholder="До" name="end-price"/>
+							</div>
+						</div>
+					</div>
+					<div class="catalog__menu-block">
+						<div class="catalog__menu-item">
+							<h5 class="title h-18 catalog__menu-block-title">Марка авто</h5>
+							<div class="select">
+								<button class="select__trigger" type="button">
+									<span>LADA</span>
+									<svg width="24" height="24">
+										<use xlink:href="/icons.svg#arrow-bottom"></use>
+									</svg>
+								</button>
+
+								<div class="select__dropdown custom-scroll">
+									<button class="select__option" data-value="bmw" type="button">BMW</button>
+									<button class="select__option" data-value="bmw" type="button">BWM</button>
+									<button class="select__option" data-value="merc" type="button">MERC</button>
+								</div>
+
+								<input type="hidden" name="car">
+							</div>
+						</div>
+						<div class="catalog__menu-item">
+							<h5 class="title h-18 catalog__menu-block-title">Год выпуска</h5>
+							<div class="catalog__grid">
+								<input class="input number-input" type="text" placeholder="От" name="start-year"/>
+								<input class="input number-input" type="text" placeholder="До" name="end-year"/>
+							</div>
+						</div>
+						<div class="catalog__menu-item">
+							<h5 class="title h-18 catalog__menu-block-title">Пробег, км</h5>
+							<div class="catalog__grid">
+								<input class="input number-input" type="text" placeholder="От" name="start-probeg"/>
+								<input class="input number-input" type="text" placeholder="До" name="end-probeg"/>
+							</div>
+						</div>
+						<div class="catalog__menu-item">
+							<h5 class="title h-18 catalog__menu-block-title">Тип кузова</h5>
+							<div class="select">
+								<button class="select__trigger" type="button">
+									<span>Седан</span>
+									<svg width="24" height="24">
+										<use xlink:href="/icons.svg#arrow-bottom"></use>
+									</svg>
+								</button>
+
+								<div class="select__dropdown custom-scroll">
+									<button class="select__option" data-value="Седан" type="button">Седан</button>
+									<button class="select__option" data-value="Седан" type="button">Седан</button>
+									<button class="select__option" data-value="Седан" type="button">Седан</button>
+								</div>
+
+								<input type="hidden" name="kuzov">
+							</div>
+						</div>
+						<div class="catalog__menu-item">
+							<h5 class="title h-18 catalog__menu-block-title">Количество дверей</h5>
+							<input class="input number-input" type="text" placeholder="3" name="doors"/>
+						</div>
+						<div class="catalog__menu-item">
+							<h5 class="title h-18 catalog__menu-block-title">Тип двигателя</h5>
+							<div class="select">
+								<button class="select__trigger" type="button">
+									<span>Бензин</span>
+									<svg width="24" height="24">
+										<use xlink:href="/icons.svg#arrow-bottom"></use>
+									</svg>
+								</button>
+
+								<div class="select__dropdown custom-scroll">
+									<button class="select__option" data-value="Бензин" type="button">Бензин</button>
+									<button class="select__option" data-value="Бензин" type="button">Бензин</button>
+									<button class="select__option" data-value="Бензин" type="button">Бензин</button>
+								</div>
+
+								<input type="hidden" name="benzin">
+							</div>
+						</div>
+						<div class="catalog__menu-item">
+							<h5 class="title h-18 catalog__menu-block-title">Объем двигателя, см<sup>3</sup></h5>
+							<input class="input number-input" type="text" placeholder="1598" name="volume"/>
+						</div>
+						<div class="catalog__menu-item">
+							<h5 class="title h-18 catalog__menu-block-title">КПП</h5>
+							<div class="select">
+								<button class="select__trigger" type="button">
+									<span>Механическая</span>
+									<svg width="24" height="24">
+										<use xlink:href="/icons.svg#arrow-bottom"></use>
+									</svg>
+								</button>
+
+								<div class="select__dropdown custom-scroll">
+									<button class="select__option" data-value="Механическая" type="button">Механическая</button>
+									<button class="select__option" data-value="Механическая" type="button">Механическая</button>
+									<button class="select__option" data-value="Механическая" type="button">Механическая</button>
+								</div>
+
+								<input type="hidden" name="kpp">
+							</div>
+						</div>
+						<div class="catalog__menu-item">
+							<h5 class="title h-18 catalog__menu-block-title">Привод</h5>
+							<div class="select">
+								<button class="select__trigger" type="button">
+									<span>Передний</span>
+									<svg width="24" height="24">
+										<use xlink:href="/icons.svg#arrow-bottom"></use>
+									</svg>
+								</button>
+
+								<div class="select__dropdown custom-scroll">
+									<button class="select__option" data-value="Передний" type="button">Передний</button>
+									<button class="select__option" data-value="Передний" type="button">Передний</button>
+									<button class="select__option" data-value="Передний" type="button">Передний</button>
+								</div>
+
+								<input type="hidden" name="privod">
+							</div>
+						</div>
+						<div class="catalog__menu-item">
+							<h5 class="title h-18 catalog__menu-block-title">Передний</h5>
+							<div class="select">
+								<button class="select__trigger" type="button">
+									<span>Левый</span>
+									<svg width="24" height="24">
+										<use xlink:href="/icons.svg#arrow-bottom"></use>
+									</svg>
+								</button>
+
+								<div class="select__dropdown custom-scroll">
+									<button class="select__option" data-value="Левый" type="button">Левый</button>
+									<button class="select__option" data-value="Левый" type="button">Левый</button>
+									<button class="select__option" data-value="Левый" type="button">Левый</button>
+								</div>
+
+								<input type="hidden" name="rul">
+							</div>
+						</div>
+						<div class="catalog__menu-item">
+							<h5 class="title h-18 catalog__menu-block-title">Тип кузова</h5>
+							<div class="select">
+								<button class="select__trigger" type="button">
+									<span>Седан</span>
+									<svg width="24" height="24">
+										<use xlink:href="/icons.svg#arrow-bottom"></use>
+									</svg>
+								</button>
+
+								<div class="select__dropdown custom-scroll">
+									<button class="select__option" data-value="Седан" type="button">Седан</button>
+									<button class="select__option" data-value="Седан" type="button">Седан</button>
+									<button class="select__option" data-value="Седан" type="button">Седан</button>
+								</div>
+
+								<input type="hidden" name="kuzov">
+							</div>
+						</div>
+
+
+					</div>
+					<div class="catalog__menu-block">
+						<div class="catalog__menu-item">
+							<h5 class="title h-18 catalog__menu-block-title">Цвет</h5>
+							<div class="catalog__colors custom-scroll">
+								<button class="catalog__color-button">
+									<span class="catalog__color-circle" style="background-color: #FFFFFF; border: 1px solid var(--color-border)"></span>
+									Белый
+								</button>
+								<button class="catalog__color-button">
+									<span class="catalog__color-circle" style="background-color: #B4B4B4;"></span>
+									Серый
+								</button>
+								<button class="catalog__color-button">
+									<span class="catalog__color-circle" style="background-color: #282828;"></span>
+									Чёрный
+								</button>
+								<button class="catalog__color-button">
+									<span class="catalog__color-circle" style="background-color: #6B3919;"></span>
+									Коричневый
+								</button>
+								<button class="catalog__color-button">
+									<span class="catalog__color-circle" style="background-color: #E8D6BE;"></span>
+									Бежевый
+								</button>
+								<button class="catalog__color-button">
+									<span class="catalog__color-circle" style="background-color: #F51A1A;"></span>
+									Красный
+								</button>
+								<button class="catalog__color-button">
+									<span class="catalog__color-circle" style="background-color: #A71712;"></span>
+									Бордовый
+								</button>
+								<button class="catalog__color-button">
+									<span class="catalog__color-circle" style="background-color: #A71712;"></span>
+									Бордовый
+								</button>
+								<button class="catalog__color-button">
+									<span class="catalog__color-circle" style="background-color: #A71712;"></span>
+									Бордовый
+								</button>
+								<button class="catalog__color-button">
+									<span class="catalog__color-circle" style="background-color: #A71712;"></span>
+									Бордовый
+								</button>
+							</div>
+						</div>
+					</div>
+					<div class="catalog__menu-block">
+						<div class="catalog__menu-item">
+							<h5 class="title h-18 catalog__menu-block-title">Были ли ДТП?</h5>
+							<div class="catalog__flex-wrap">
+								<label class="catalog__radio">
+									<input class="catalog__radio-input" type="radio" value="yes" name="dtp" checked>
+									<span>Да</span>
+								</label>
+								<label class="catalog__radio">
+									<input class="catalog__radio-input" type="radio" value="no" name="dtp">
+									<span>Нет</span>
+								</label>
+
+							</div>
+						</div>
+						<div class="catalog__menu-item">
+							<h5 class="title h-18 catalog__menu-block-title">Автомобиль на ходу?</h5>
+							<div class="catalog__flex-wrap">
+								<label class="catalog__radio">
+									<input class="catalog__radio-input" type="radio" value="yes" name="na-xodu" checked>
+									<span>Да</span>
+								</label>
+								<label class="catalog__radio">
+									<input class="catalog__radio-input" type="radio" value="no" name="na-xodu">
+									<span>Нет</span>
+								</label>
+							</div>
+						</div>
+
+					</div>
+				</div>
+				<div class="blocks">
+					<div class="block"></div>
+					<div class="block"></div>
+				</div>
+			</div>
+
+			<div class="catalog__content">
+				<div class="catalog__top">
+					<h3 class="title title--medium">
+						Популярные легковые автомобили
+					</h3>
+					<ul class="catalog__list">
+						<li class="catalog__item">
+							<a class="catalog__item-link" href="#">
+								<span>Audi</span>
+								<span class="catalog__item-count">1 673</span>
+							</a>
+						</li>
+						<li class="catalog__item">
+							<a class="catalog__item-link" href="#">
+								<span>Audi</span>
+								<span class="catalog__item-count">1 673</span>
+							</a>
+						</li>
+						<li class="catalog__item">
+							<a class="catalog__item-link" href="#">
+								<span>Audi</span>
+								<span class="catalog__item-count">1 673</span>
+							</a>
+						</li>
+						<li class="catalog__item">
+							<a class="catalog__item-link" href="#">
+								<span>Audi</span>
+								<span class="catalog__item-count">1 673</span>
+							</a>
+						</li>
+						<li class="catalog__item">
+							<a class="catalog__item-link" href="#">
+								<span>Audi</span>
+								<span class="catalog__item-count">1 673</span>
+							</a>
+						</li>
+						<li class="catalog__item">
+							<a class="catalog__item-link" href="#">
+								<span>BMW</span>
+								<span class="catalog__item-count">5 234</span>
+							</a>
+						</li>
+						<li class="catalog__item">
+							<a class="catalog__item-link" href="#">
+								<span>BMW</span>
+								<span class="catalog__item-count">5 234</span>
+							</a>
+						</li>
+						<li class="catalog__item">
+							<a class="catalog__item-link" href="#">
+								<span>BMW</span>
+								<span class="catalog__item-count">5 234</span>
+							</a>
+						</li>
+						<li class="catalog__item">
+							<a class="catalog__item-link" href="#">
+								<span>BMW</span>
+								<span class="catalog__item-count">5 234</span>
+							</a>
+						</li>
+						<li class="catalog__item">
+							<a class="catalog__item-link" href="#">
+								<span>BMW</span>
+								<span class="catalog__item-count">5 234</span>
+							</a>
+						</li>
+						<li class="catalog__item">
+							<a class="catalog__item-link" href="#">
+								<span>Changan</span>
+								<span class="catalog__item-count">234</span>
+							</a>
+						</li>
+						<li class="catalog__item">
+							<a class="catalog__item-link" href="#">
+								<span>Changan</span>
+								<span class="catalog__item-count">234</span>
+							</a>
+						</li>
+						<li class="catalog__item">
+							<a class="catalog__item-link" href="#">
+								<span>Changan</span>
+								<span class="catalog__item-count">234</span>
+							</a>
+						</li>
+						<li class="catalog__item">
+							<a class="catalog__item-link" href="#">
+								<span>Changan</span>
+								<span class="catalog__item-count">234</span>
+							</a>
+						</li>
+						<li class="catalog__item">
+							<a class="catalog__item-link" href="#">
+								<span>Changan</span>
+								<span class="catalog__item-count">234</span>
+							</a>
+						</li>
+						<li class="catalog__item">
+							<a class="catalog__item-link" href="#">
+								<span>Chery</span>
+								<span class="catalog__item-count">234</span>
+							</a>
+						</li>
+						<li class="catalog__item">
+							<a class="catalog__item-link" href="#">
+								<span>Chery</span>
+								<span class="catalog__item-count">234</span>
+							</a>
+						</li>
+						<li class="catalog__item">
+							<a class="catalog__item-link" href="#">
+								<span>Chery</span>
+								<span class="catalog__item-count">234</span>
+							</a>
+						</li>
+						<li class="catalog__item">
+							<a class="catalog__item-link" href="#">
+								<span>Chery</span>
+								<span class="catalog__item-count">234</span>
+							</a>
+						</li>
+						<li class="catalog__item">
+							<a class="catalog__item-link" href="#">
+								<span>Chery</span>
+								<span class="catalog__item-count">234</span>
+							</a>
+						</li>
+						<li class="catalog__item">
+							<a class="catalog__item-link" href="#">
+								<span>Chevrolet</span>
+								<span class="catalog__item-count">234</span>
+							</a>
+						</li>
+						<li class="catalog__item">
+							<a class="catalog__item-link" href="#">
+								<span>Chevrolet</span>
+								<span class="catalog__item-count">234</span>
+							</a>
+						</li>
+						<li class="catalog__item">
+							<a class="catalog__item-link" href="#">
+								<span>Chevrolet</span>
+								<span class="catalog__item-count">234</span>
+							</a>
+						</li>
+						<li class="catalog__item">
+							<a class="catalog__item-link" href="#">
+								<span>Chevrolet</span>
+								<span class="catalog__item-count">234</span>
+							</a>
+						</li>
+						<li class="catalog__item">
+							<a class="catalog__item-link" href="#">
+								<span>Chevrolet</span>
+								<span class="catalog__item-count">234</span>
+							</a>
+						</li>
+						<li class="catalog__item">
+							<a class="catalog__item-link" href="#">
+								<span>Daewoo</span>
+								<span class="catalog__item-count">234</span>
+							</a>
+						</li>
+						<li class="catalog__item">
+							<a class="catalog__item-link" href="#">
+								<span>Daewoo</span>
+								<span class="catalog__item-count">234</span>
+							</a>
+						</li>
+						<li class="catalog__item">
+							<a class="catalog__item-link" href="#">
+								<span>Daewoo</span>
+								<span class="catalog__item-count">234</span>
+							</a>
+						</li>
+						<li class="catalog__item">
+							<a class="catalog__item-link" href="#">
+								<span>Daewoo</span>
+								<span class="catalog__item-count">234</span>
+							</a>
+						</li>
+						<li class="catalog__item">
+							<a class="catalog__item-link" href="#">
+								<span>Daewoo</span>
+								<span class="catalog__item-count">234</span>
+							</a>
+						</li>
+						<li class="catalog__item">
+							<a class="catalog__item-link" href="#">
+								<span>EXEED</span>
+								<span class="catalog__item-count">234</span>
+							</a>
+						</li>
+						<li class="catalog__item">
+							<a class="catalog__item-link" href="#">
+								<span>EXEED</span>
+								<span class="catalog__item-count">234</span>
+							</a>
+						</li>
+						<li class="catalog__item">
+							<a class="catalog__item-link" href="#">
+								<span>EXEED</span>
+								<span class="catalog__item-count">234</span>
+							</a>
+						</li>
+						<li class="catalog__item">
+							<a class="catalog__item-link" href="#">
+								<span>EXEED</span>
+								<span class="catalog__item-count">234</span>
+							</a>
+						</li>
+						<li class="catalog__item">
+							<a class="catalog__item-link" href="#">
+								<span>EXEED</span>
+								<span class="catalog__item-count">234</span>
+							</a>
+						</li>
+					</ul>
+				</div>
+				<div class="catalog__sort-filter">
+					<button class="catalog__sort">
+						<svg width="18" height="18">
+							<use xlink:href="/icons.svg#sort"></use>
+						</svg>
+						<span>Сортировка</span>
+						<svg width="18" height="18">
+							<use xlink:href="/icons.svg#arrow-bottom-18"></use>
+						</svg>
+					</button>
+					<button class="catalog__filter-reset">
+						<svg width="18" height="18">
+							<use xlink:href="/icons.svg#close-18"></use>
+						</svg>
+						<span>Сбросить фильтры</span>
+					</button>
+				</div>
+				<div class="catalog__cards">
+					<div class="row-card catalog__card">
+						<a class="row-card__img-link" href="#">
+							<img class="row-card__img" src="/images/catalog-img.png" alt=""/>
+                            		<button class="row-card__select-button">
+
+							<svg width="18" height="18">
+								<use xlink:href="/icons.svg#heart"></use>
+							</svg>
+						</button>
+						</a>
+						<div class="row-card__body">
+							<div class="catalog__card-wrapper">
+								<p class="price">
+									6 500 000 ₽
+								</p>
+								<h5 class="row-card__title">
+									Продам 2-к квартиру, 65 м2, в центре Москвы
+								</h5>
+							</div>
+							<div class="catalog__card-info">
+								<p class="catalog__card-name">
+									Алексей
+								</p>
+								<div class="row-card__circle"></div>
+								<div class="catalog__card-rating">
+									<span>4.8</span>
+									<div class="catalog__card-stars">
+										<svg width="12" height="12">
+											<use xlink:href="/icons.svg#star"></use>
+										</svg>
+										<svg width="12" height="12">
+											<use xlink:href="/icons.svg#star"></use>
+										</svg>
+										<svg width="12" height="12">
+											<use xlink:href="/icons.svg#star"></use>
+										</svg>
+										<svg width="12" height="12">
+											<use xlink:href="/icons.svg#star"></use>
+										</svg>
+										<svg width="12" height="12">
+											<use xlink:href="/icons.svg#star"></use>
+										</svg>
+									</div>
+									<span class="catalog__card-reviews">
+4 отзыва
+									</span>
+								</div>
+							</div>
+							<div class="row-card__bottom">
+								<div class="row-card__actions">
+									<button class="row-card__button button button--sm">
+										Написать
+									</button>
+									<button class="row-card__button  button button--green button--sm">
+										Позвонить
+									</button>
+								</div>
+								<div class="row-card__meta">
+									<div class="row-card__meta-item">
+										Москва
+									</div>
+									<div class="row-card__circle"></div>
+									<div class="row-card__meta-item">
+										3ч. назад
+									</div>
+								</div>
+							</div>
+
+							<div class="dropdown row-card__dropdown">
+								<button class="dropdown__trigger" type="button">
+									<svg width="30" height="6">
+										<use xlink:href="/icons.svg#select-icon"></use>
+									</svg>
+								</button>
+
+								<div class="dropdown__menu dropdown__menu--right">
+									<button class="dropdown__item" type="button">
+										<svg width="12" height="12">
+											<use xlink:href="/icons.svg#dropdown-pen"></use>
+										</svg>
+										Редактировать
+									</button>
+									<button class="dropdown__item" type="button">
+										<svg width="12" height="12">
+											<use xlink:href="/icons.svg#dropdown-compare"></use>
+										</svg>
+										Сравнить с конкурентами
+									</button>
+									<button class="dropdown__item" type="button">
+										<svg width="12" height="12">
+											<use xlink:href="/icons.svg#dropdown-autopublish"></use>
+										</svg>
+										Включить автопубликацию
+									</button>
+									<button class="dropdown__item" type="button">
+										<svg width="12" height="12">
+											<use xlink:href="/icons.svg#dropdown-trash"></use>
+										</svg>
+										Снять с публикации
+									</button>
+								</div>
+							</div>
+
+						</div>
+					</div>
+					<div class="row-card catalog__card">
+						<a class="row-card__img-link" href="#">
+							<img class="row-card__img" src="/images/catalog-img.png" alt=""/>
+                            		<button class="row-card__select-button">
+
+							<svg width="18" height="18">
+								<use xlink:href="/icons.svg#heart"></use>
+							</svg>
+						</button>
+						</a>
+						<div class="row-card__body">
+							<div class="catalog__card-wrapper">
+								<p class="price">
+									6 500 000 ₽
+								</p>
+								<h5 class="row-card__title">
+									Продам 2-к квартиру, 65 м2, в центре Москвы
+								</h5>
+							</div>
+							<div class="catalog__card-info">
+								<p class="catalog__card-name">
+									Алексей
+								</p>
+								<div class="row-card__circle"></div>
+								<div class="catalog__card-rating">
+									<span>4.8</span>
+									<div class="catalog__card-stars">
+										<svg width="12" height="12">
+											<use xlink:href="/icons.svg#star"></use>
+										</svg>
+										<svg width="12" height="12">
+											<use xlink:href="/icons.svg#star"></use>
+										</svg>
+										<svg width="12" height="12">
+											<use xlink:href="/icons.svg#star"></use>
+										</svg>
+										<svg width="12" height="12">
+											<use xlink:href="/icons.svg#star"></use>
+										</svg>
+										<svg width="12" height="12">
+											<use xlink:href="/icons.svg#star"></use>
+										</svg>
+									</div>
+									<span class="catalog__card-reviews">
+4 отзыва
+									</span>
+								</div>
+							</div>
+							<div class="row-card__bottom">
+								<div class="row-card__actions">
+									<button class="row-card__button button button--sm">
+										Написать
+									</button>
+									<button class="row-card__button  button button--green button--sm">
+										Позвонить
+									</button>
+								</div>
+								<div class="row-card__meta">
+									<div class="row-card__meta-item">
+										Москва
+									</div>
+									<div class="row-card__circle"></div>
+									<div class="row-card__meta-item">
+										3ч. назад
+									</div>
+								</div>
+							</div>
+
+							<div class="dropdown row-card__dropdown">
+								<button class="dropdown__trigger" type="button">
+									<svg width="30" height="6">
+										<use xlink:href="/icons.svg#select-icon"></use>
+									</svg>
+								</button>
+
+								<div class="dropdown__menu dropdown__menu--right">
+									<button class="dropdown__item" type="button">
+										<svg width="12" height="12">
+											<use xlink:href="/icons.svg#dropdown-pen"></use>
+										</svg>
+										Редактировать
+									</button>
+									<button class="dropdown__item" type="button">
+										<svg width="12" height="12">
+											<use xlink:href="/icons.svg#dropdown-compare"></use>
+										</svg>
+										Сравнить с конкурентами
+									</button>
+									<button class="dropdown__item" type="button">
+										<svg width="12" height="12">
+											<use xlink:href="/icons.svg#dropdown-autopublish"></use>
+										</svg>
+										Включить автопубликацию
+									</button>
+									<button class="dropdown__item" type="button">
+										<svg width="12" height="12">
+											<use xlink:href="/icons.svg#dropdown-trash"></use>
+										</svg>
+										Снять с публикации
+									</button>
+								</div>
+							</div>
+
+						</div>
+					</div>
+					<div class="row-card catalog__card">
+						<a class="row-card__img-link" href="#">
+							<img class="row-card__img" src="/images/catalog-img.png" alt=""/>
+                            		<button class="row-card__select-button">
+
+							<svg width="18" height="18">
+								<use xlink:href="/icons.svg#heart"></use>
+							</svg>
+						</button>
+						</a>
+						<div class="row-card__body">
+							<div class="catalog__card-wrapper">
+								<p class="price">
+									6 500 000 ₽
+								</p>
+								<h5 class="row-card__title">
+									Продам 2-к квартиру, 65 м2, в центре Москвы
+								</h5>
+							</div>
+							<div class="catalog__card-info">
+								<p class="catalog__card-name">
+									Алексей
+								</p>
+								<div class="row-card__circle"></div>
+								<div class="catalog__card-rating">
+									<span>4.8</span>
+									<div class="catalog__card-stars">
+										<svg width="12" height="12">
+											<use xlink:href="/icons.svg#star"></use>
+										</svg>
+										<svg width="12" height="12">
+											<use xlink:href="/icons.svg#star"></use>
+										</svg>
+										<svg width="12" height="12">
+											<use xlink:href="/icons.svg#star"></use>
+										</svg>
+										<svg width="12" height="12">
+											<use xlink:href="/icons.svg#star"></use>
+										</svg>
+										<svg width="12" height="12">
+											<use xlink:href="/icons.svg#star"></use>
+										</svg>
+									</div>
+									<span class="catalog__card-reviews">
+4 отзыва
+									</span>
+								</div>
+							</div>
+							<div class="row-card__bottom">
+								<div class="row-card__actions">
+									<button class="row-card__button button button--sm">
+										Написать
+									</button>
+									<button class="row-card__button  button button--green button--sm">
+										Позвонить
+									</button>
+								</div>
+								<div class="row-card__meta">
+									<div class="row-card__meta-item">
+										Москва
+									</div>
+									<div class="row-card__circle"></div>
+									<div class="row-card__meta-item">
+										3ч. назад
+									</div>
+								</div>
+							</div>
+
+							<div class="dropdown row-card__dropdown">
+								<button class="dropdown__trigger" type="button">
+									<svg width="30" height="6">
+										<use xlink:href="/icons.svg#select-icon"></use>
+									</svg>
+								</button>
+
+								<div class="dropdown__menu dropdown__menu--right">
+									<button class="dropdown__item" type="button">
+										<svg width="12" height="12">
+											<use xlink:href="/icons.svg#dropdown-pen"></use>
+										</svg>
+										Редактировать
+									</button>
+									<button class="dropdown__item" type="button">
+										<svg width="12" height="12">
+											<use xlink:href="/icons.svg#dropdown-compare"></use>
+										</svg>
+										Сравнить с конкурентами
+									</button>
+									<button class="dropdown__item" type="button">
+										<svg width="12" height="12">
+											<use xlink:href="/icons.svg#dropdown-autopublish"></use>
+										</svg>
+										Включить автопубликацию
+									</button>
+									<button class="dropdown__item" type="button">
+										<svg width="12" height="12">
+											<use xlink:href="/icons.svg#dropdown-trash"></use>
+										</svg>
+										Снять с публикации
+									</button>
+								</div>
+							</div>
+
+						</div>
+					</div>
+					<div class="row-card catalog__card">
+						<a class="row-card__img-link" href="#">
+							<img class="row-card__img" src="/images/catalog-img.png" alt=""/>
+                            		<button class="row-card__select-button">
+
+							<svg width="18" height="18">
+								<use xlink:href="/icons.svg#heart"></use>
+							</svg>
+						</button>
+						</a>
+						<div class="row-card__body">
+							<div class="catalog__card-wrapper">
+								<p class="price">
+									6 500 000 ₽
+								</p>
+								<h5 class="row-card__title">
+									Продам 2-к квартиру, 65 м2, в центре Москвы
+								</h5>
+							</div>
+							<div class="catalog__card-info">
+								<p class="catalog__card-name">
+									Алексей
+								</p>
+								<div class="row-card__circle"></div>
+								<div class="catalog__card-rating">
+									<span>4.8</span>
+									<div class="catalog__card-stars">
+										<svg width="12" height="12">
+											<use xlink:href="/icons.svg#star"></use>
+										</svg>
+										<svg width="12" height="12">
+											<use xlink:href="/icons.svg#star"></use>
+										</svg>
+										<svg width="12" height="12">
+											<use xlink:href="/icons.svg#star"></use>
+										</svg>
+										<svg width="12" height="12">
+											<use xlink:href="/icons.svg#star"></use>
+										</svg>
+										<svg width="12" height="12">
+											<use xlink:href="/icons.svg#star"></use>
+										</svg>
+									</div>
+									<span class="catalog__card-reviews">
+4 отзыва
+									</span>
+								</div>
+							</div>
+							<div class="row-card__bottom">
+								<div class="row-card__actions">
+									<button class="row-card__button button button--sm">
+										Написать
+									</button>
+									<button class="row-card__button  button button--green button--sm">
+										Позвонить
+									</button>
+								</div>
+								<div class="row-card__meta">
+									<div class="row-card__meta-item">
+										Москва
+									</div>
+									<div class="row-card__circle"></div>
+									<div class="row-card__meta-item">
+										3ч. назад
+									</div>
+								</div>
+							</div>
+
+							<div class="dropdown row-card__dropdown">
+								<button class="dropdown__trigger" type="button">
+									<svg width="30" height="6">
+										<use xlink:href="/icons.svg#select-icon"></use>
+									</svg>
+								</button>
+
+								<div class="dropdown__menu dropdown__menu--right">
+									<button class="dropdown__item" type="button">
+										<svg width="12" height="12">
+											<use xlink:href="/icons.svg#dropdown-pen"></use>
+										</svg>
+										Редактировать
+									</button>
+									<button class="dropdown__item" type="button">
+										<svg width="12" height="12">
+											<use xlink:href="/icons.svg#dropdown-compare"></use>
+										</svg>
+										Сравнить с конкурентами
+									</button>
+									<button class="dropdown__item" type="button">
+										<svg width="12" height="12">
+											<use xlink:href="/icons.svg#dropdown-autopublish"></use>
+										</svg>
+										Включить автопубликацию
+									</button>
+									<button class="dropdown__item" type="button">
+										<svg width="12" height="12">
+											<use xlink:href="/icons.svg#dropdown-trash"></use>
+										</svg>
+										Снять с публикации
+									</button>
+								</div>
+							</div>
+
+						</div>
+					</div>
+					<div class="row-card catalog__card">
+						<a class="row-card__img-link" href="#">
+							<img class="row-card__img" src="/images/catalog-img.png" alt=""/>
+                            		<button class="row-card__select-button">
+
+							<svg width="18" height="18">
+								<use xlink:href="/icons.svg#heart"></use>
+							</svg>
+						</button>
+						</a>
+						<div class="row-card__body">
+							<div class="catalog__card-wrapper">
+								<p class="price">
+									6 500 000 ₽
+								</p>
+								<h5 class="row-card__title">
+									Продам 2-к квартиру, 65 м2, в центре Москвы
+								</h5>
+							</div>
+							<div class="catalog__card-info">
+								<p class="catalog__card-name">
+									Алексей
+								</p>
+								<div class="row-card__circle"></div>
+								<div class="catalog__card-rating">
+									<span>4.8</span>
+									<div class="catalog__card-stars">
+										<svg width="12" height="12">
+											<use xlink:href="/icons.svg#star"></use>
+										</svg>
+										<svg width="12" height="12">
+											<use xlink:href="/icons.svg#star"></use>
+										</svg>
+										<svg width="12" height="12">
+											<use xlink:href="/icons.svg#star"></use>
+										</svg>
+										<svg width="12" height="12">
+											<use xlink:href="/icons.svg#star"></use>
+										</svg>
+										<svg width="12" height="12">
+											<use xlink:href="/icons.svg#star"></use>
+										</svg>
+									</div>
+									<span class="catalog__card-reviews">
+4 отзыва
+									</span>
+								</div>
+							</div>
+							<div class="row-card__bottom">
+								<div class="row-card__actions">
+									<button class="row-card__button button button--sm">
+										Написать
+									</button>
+									<button class="row-card__button  button button--green button--sm">
+										Позвонить
+									</button>
+								</div>
+								<div class="row-card__meta">
+									<div class="row-card__meta-item">
+										Москва
+									</div>
+									<div class="row-card__circle"></div>
+									<div class="row-card__meta-item">
+										3ч. назад
+									</div>
+								</div>
+							</div>
+
+							<div class="dropdown row-card__dropdown">
+								<button class="dropdown__trigger" type="button">
+									<svg width="30" height="6">
+										<use xlink:href="/icons.svg#select-icon"></use>
+									</svg>
+								</button>
+
+								<div class="dropdown__menu dropdown__menu--right">
+									<button class="dropdown__item" type="button">
+										<svg width="12" height="12">
+											<use xlink:href="/icons.svg#dropdown-pen"></use>
+										</svg>
+										Редактировать
+									</button>
+									<button class="dropdown__item" type="button">
+										<svg width="12" height="12">
+											<use xlink:href="/icons.svg#dropdown-compare"></use>
+										</svg>
+										Сравнить с конкурентами
+									</button>
+									<button class="dropdown__item" type="button">
+										<svg width="12" height="12">
+											<use xlink:href="/icons.svg#dropdown-autopublish"></use>
+										</svg>
+										Включить автопубликацию
+									</button>
+									<button class="dropdown__item" type="button">
+										<svg width="12" height="12">
+											<use xlink:href="/icons.svg#dropdown-trash"></use>
+										</svg>
+										Снять с публикации
+									</button>
+								</div>
+							</div>
+
+						</div>
+					</div>
+					<div class="row-card catalog__card">
+						<a class="row-card__img-link" href="#">
+							<img class="row-card__img" src="/images/catalog-img.png" alt=""/>
+                            		<button class="row-card__select-button">
+
+							<svg width="18" height="18">
+								<use xlink:href="/icons.svg#heart"></use>
+							</svg>
+						</button>
+						</a>
+						<div class="row-card__body">
+							<div class="catalog__card-wrapper">
+								<p class="price">
+									6 500 000 ₽
+								</p>
+								<h5 class="row-card__title">
+									Продам 2-к квартиру, 65 м2, в центре Москвы
+								</h5>
+							</div>
+							<div class="catalog__card-info">
+								<p class="catalog__card-name">
+									Алексей
+								</p>
+								<div class="row-card__circle"></div>
+								<div class="catalog__card-rating">
+									<span>4.8</span>
+									<div class="catalog__card-stars">
+										<svg width="12" height="12">
+											<use xlink:href="/icons.svg#star"></use>
+										</svg>
+										<svg width="12" height="12">
+											<use xlink:href="/icons.svg#star"></use>
+										</svg>
+										<svg width="12" height="12">
+											<use xlink:href="/icons.svg#star"></use>
+										</svg>
+										<svg width="12" height="12">
+											<use xlink:href="/icons.svg#star"></use>
+										</svg>
+										<svg width="12" height="12">
+											<use xlink:href="/icons.svg#star"></use>
+										</svg>
+									</div>
+									<span class="catalog__card-reviews">
+4 отзыва
+									</span>
+								</div>
+							</div>
+							<div class="row-card__bottom">
+								<div class="row-card__actions">
+									<button class="row-card__button button button--sm">
+										Написать
+									</button>
+									<button class="row-card__button  button button--green button--sm">
+										Позвонить
+									</button>
+								</div>
+								<div class="row-card__meta">
+									<div class="row-card__meta-item">
+										Москва
+									</div>
+									<div class="row-card__circle"></div>
+									<div class="row-card__meta-item">
+										3ч. назад
+									</div>
+								</div>
+							</div>
+
+							<div class="dropdown row-card__dropdown">
+								<button class="dropdown__trigger" type="button">
+									<svg width="30" height="6">
+										<use xlink:href="/icons.svg#select-icon"></use>
+									</svg>
+								</button>
+
+								<div class="dropdown__menu dropdown__menu--right">
+									<button class="dropdown__item" type="button">
+										<svg width="12" height="12">
+											<use xlink:href="/icons.svg#dropdown-pen"></use>
+										</svg>
+										Редактировать
+									</button>
+									<button class="dropdown__item" type="button">
+										<svg width="12" height="12">
+											<use xlink:href="/icons.svg#dropdown-compare"></use>
+										</svg>
+										Сравнить с конкурентами
+									</button>
+									<button class="dropdown__item" type="button">
+										<svg width="12" height="12">
+											<use xlink:href="/icons.svg#dropdown-autopublish"></use>
+										</svg>
+										Включить автопубликацию
+									</button>
+									<button class="dropdown__item" type="button">
+										<svg width="12" height="12">
+											<use xlink:href="/icons.svg#dropdown-trash"></use>
+										</svg>
+										Снять с публикации
+									</button>
+								</div>
+							</div>
+
+						</div>
+					</div>
+					<div class="row-card catalog__card">
+						<a class="row-card__img-link" href="#">
+							<img class="row-card__img" src="/images/catalog-img.png" alt=""/>
+							<button class="row-card__select-button">
+
+								<svg width="18" height="18">
+									<use xlink:href="/icons.svg#heart"></use>
+								</svg>
+							</button>
+						</a>
+						<div class="row-card__body">
+							<div class="catalog__card-wrapper">
+								<p class="price">
+									6 500 000 ₽
+								</p>
+								<h5 class="row-card__title">
+									Продам 2-к квартиру, 65 м2, в центре Москвы
+								</h5>
+							</div>
+							<div class="catalog__card-info">
+								<p class="catalog__card-name">
+									Алексей
+								</p>
+								<div class="row-card__circle"></div>
+								<div class="catalog__card-rating">
+									<span>4.8</span>
+									<div class="catalog__card-stars">
+										<svg width="12" height="12">
+											<use xlink:href="/icons.svg#star"></use>
+										</svg>
+										<svg width="12" height="12">
+											<use xlink:href="/icons.svg#star"></use>
+										</svg>
+										<svg width="12" height="12">
+											<use xlink:href="/icons.svg#star"></use>
+										</svg>
+										<svg width="12" height="12">
+											<use xlink:href="/icons.svg#star"></use>
+										</svg>
+										<svg width="12" height="12">
+											<use xlink:href="/icons.svg#star"></use>
+										</svg>
+									</div>
+									<span class="catalog__card-reviews">
+4 отзыва
+									</span>
+								</div>
+							</div>
+							<div class="row-card__bottom">
+								<div class="row-card__actions">
+									<button class="row-card__button button button--sm">
+										Написать
+									</button>
+									<button class="row-card__button  button button--green button--sm">
+										Позвонить
+									</button>
+								</div>
+								<div class="row-card__meta">
+									<div class="row-card__meta-item">
+										Москва
+									</div>
+									<div class="row-card__circle"></div>
+									<div class="row-card__meta-item">
+										3ч. назад
+									</div>
+								</div>
+							</div>
+
+							<div class="dropdown row-card__dropdown">
+								<button class="dropdown__trigger" type="button">
+									<svg width="30" height="6">
+										<use xlink:href="/icons.svg#select-icon"></use>
+									</svg>
+								</button>
+
+								<div class="dropdown__menu dropdown__menu--right">
+									<button class="dropdown__item" type="button">
+										<svg width="12" height="12">
+											<use xlink:href="/icons.svg#dropdown-pen"></use>
+										</svg>
+										Редактировать
+									</button>
+									<button class="dropdown__item" type="button">
+										<svg width="12" height="12">
+											<use xlink:href="/icons.svg#dropdown-compare"></use>
+										</svg>
+										Сравнить с конкурентами
+									</button>
+									<button class="dropdown__item" type="button">
+										<svg width="12" height="12">
+											<use xlink:href="/icons.svg#dropdown-autopublish"></use>
+										</svg>
+										Включить автопубликацию
+									</button>
+									<button class="dropdown__item" type="button">
+										<svg width="12" height="12">
+											<use xlink:href="/icons.svg#dropdown-trash"></use>
+										</svg>
+										Снять с публикации
+									</button>
+								</div>
+							</div>
+
+						</div>
+					</div>
+					<div class="row-card catalog__card">
+						<a class="row-card__img-link" href="#">
+							<img class="row-card__img" src="/images/catalog-img.png" alt=""/>
+							<button class="row-card__select-button">
+
+								<svg width="18" height="18">
+									<use xlink:href="/icons.svg#heart"></use>
+								</svg>
+							</button>
+						</a>
+						<div class="row-card__body">
+							<div class="catalog__card-wrapper">
+								<p class="price">
+									6 500 000 ₽
+								</p>
+								<h5 class="row-card__title">
+									Продам 2-к квартиру, 65 м2, в центре Москвы
+								</h5>
+							</div>
+							<div class="catalog__card-info">
+								<p class="catalog__card-name">
+									Алексей
+								</p>
+								<div class="row-card__circle"></div>
+								<div class="catalog__card-rating">
+									<span>4.8</span>
+									<div class="catalog__card-stars">
+										<svg width="12" height="12">
+											<use xlink:href="/icons.svg#star"></use>
+										</svg>
+										<svg width="12" height="12">
+											<use xlink:href="/icons.svg#star"></use>
+										</svg>
+										<svg width="12" height="12">
+											<use xlink:href="/icons.svg#star"></use>
+										</svg>
+										<svg width="12" height="12">
+											<use xlink:href="/icons.svg#star"></use>
+										</svg>
+										<svg width="12" height="12">
+											<use xlink:href="/icons.svg#star"></use>
+										</svg>
+									</div>
+									<span class="catalog__card-reviews">
+4 отзыва
+									</span>
+								</div>
+							</div>
+							<div class="row-card__bottom">
+								<div class="row-card__actions">
+									<button class="row-card__button button button--sm">
+										Написать
+									</button>
+									<button class="row-card__button  button button--green button--sm">
+										Позвонить
+									</button>
+								</div>
+								<div class="row-card__meta">
+									<div class="row-card__meta-item">
+										Москва
+									</div>
+									<div class="row-card__circle"></div>
+									<div class="row-card__meta-item">
+										3ч. назад
+									</div>
+								</div>
+							</div>
+
+							<div class="dropdown row-card__dropdown">
+								<button class="dropdown__trigger" type="button">
+									<svg width="30" height="6">
+										<use xlink:href="/icons.svg#select-icon"></use>
+									</svg>
+								</button>
+
+								<div class="dropdown__menu dropdown__menu--right">
+									<button class="dropdown__item" type="button">
+										<svg width="12" height="12">
+											<use xlink:href="/icons.svg#dropdown-pen"></use>
+										</svg>
+										Редактировать
+									</button>
+									<button class="dropdown__item" type="button">
+										<svg width="12" height="12">
+											<use xlink:href="/icons.svg#dropdown-compare"></use>
+										</svg>
+										Сравнить с конкурентами
+									</button>
+									<button class="dropdown__item" type="button">
+										<svg width="12" height="12">
+											<use xlink:href="/icons.svg#dropdown-autopublish"></use>
+										</svg>
+										Включить автопубликацию
+									</button>
+									<button class="dropdown__item" type="button">
+										<svg width="12" height="12">
+											<use xlink:href="/icons.svg#dropdown-trash"></use>
+										</svg>
+										Снять с публикации
+									</button>
+								</div>
+							</div>
+
+						</div>
+					</div>
+					<div class="row-card catalog__card">
+						<a class="row-card__img-link" href="#">
+							<img class="row-card__img" src="/images/catalog-img.png" alt=""/>
+							<button class="row-card__select-button">
+
+								<svg width="18" height="18">
+									<use xlink:href="/icons.svg#heart"></use>
+								</svg>
+							</button>
+						</a>
+						<div class="row-card__body">
+							<div class="catalog__card-wrapper">
+								<p class="price">
+									6 500 000 ₽
+								</p>
+								<h5 class="row-card__title">
+									Продам 2-к квартиру, 65 м2, в центре Москвы
+								</h5>
+							</div>
+							<div class="catalog__card-info">
+								<p class="catalog__card-name">
+									Алексей
+								</p>
+								<div class="row-card__circle"></div>
+								<div class="catalog__card-rating">
+									<span>4.8</span>
+									<div class="catalog__card-stars">
+										<svg width="12" height="12">
+											<use xlink:href="/icons.svg#star"></use>
+										</svg>
+										<svg width="12" height="12">
+											<use xlink:href="/icons.svg#star"></use>
+										</svg>
+										<svg width="12" height="12">
+											<use xlink:href="/icons.svg#star"></use>
+										</svg>
+										<svg width="12" height="12">
+											<use xlink:href="/icons.svg#star"></use>
+										</svg>
+										<svg width="12" height="12">
+											<use xlink:href="/icons.svg#star"></use>
+										</svg>
+									</div>
+									<span class="catalog__card-reviews">
+4 отзыва
+									</span>
+								</div>
+							</div>
+							<div class="row-card__bottom">
+								<div class="row-card__actions">
+									<button class="row-card__button button button--sm">
+										Написать
+									</button>
+									<button class="row-card__button  button button--green button--sm">
+										Позвонить
+									</button>
+								</div>
+								<div class="row-card__meta">
+									<div class="row-card__meta-item">
+										Москва
+									</div>
+									<div class="row-card__circle"></div>
+									<div class="row-card__meta-item">
+										3ч. назад
+									</div>
+								</div>
+							</div>
+
+							<div class="dropdown row-card__dropdown">
+								<button class="dropdown__trigger" type="button">
+									<svg width="30" height="6">
+										<use xlink:href="/icons.svg#select-icon"></use>
+									</svg>
+								</button>
+
+								<div class="dropdown__menu dropdown__menu--right">
+									<button class="dropdown__item" type="button">
+										<svg width="12" height="12">
+											<use xlink:href="/icons.svg#dropdown-pen"></use>
+										</svg>
+										Редактировать
+									</button>
+									<button class="dropdown__item" type="button">
+										<svg width="12" height="12">
+											<use xlink:href="/icons.svg#dropdown-compare"></use>
+										</svg>
+										Сравнить с конкурентами
+									</button>
+									<button class="dropdown__item" type="button">
+										<svg width="12" height="12">
+											<use xlink:href="/icons.svg#dropdown-autopublish"></use>
+										</svg>
+										Включить автопубликацию
+									</button>
+									<button class="dropdown__item" type="button">
+										<svg width="12" height="12">
+											<use xlink:href="/icons.svg#dropdown-trash"></use>
+										</svg>
+										Снять с публикации
+									</button>
+								</div>
+							</div>
+
+						</div>
+					</div>
+					<div class="row-card catalog__card">
+						<a class="row-card__img-link" href="#">
+							<img class="row-card__img" src="/images/catalog-img.png" alt=""/>
+							<button class="row-card__select-button">
+
+								<svg width="18" height="18">
+									<use xlink:href="/icons.svg#heart"></use>
+								</svg>
+							</button>
+						</a>
+						<div class="row-card__body">
+							<div class="catalog__card-wrapper">
+								<p class="price">
+									6 500 000 ₽
+								</p>
+								<h5 class="row-card__title">
+									Продам 2-к квартиру, 65 м2, в центре Москвы
+								</h5>
+							</div>
+							<div class="catalog__card-info">
+								<p class="catalog__card-name">
+									Алексей
+								</p>
+								<div class="row-card__circle"></div>
+								<div class="catalog__card-rating">
+									<span>4.8</span>
+									<div class="catalog__card-stars">
+										<svg width="12" height="12">
+											<use xlink:href="/icons.svg#star"></use>
+										</svg>
+										<svg width="12" height="12">
+											<use xlink:href="/icons.svg#star"></use>
+										</svg>
+										<svg width="12" height="12">
+											<use xlink:href="/icons.svg#star"></use>
+										</svg>
+										<svg width="12" height="12">
+											<use xlink:href="/icons.svg#star"></use>
+										</svg>
+										<svg width="12" height="12">
+											<use xlink:href="/icons.svg#star"></use>
+										</svg>
+									</div>
+									<span class="catalog__card-reviews">
+4 отзыва
+									</span>
+								</div>
+							</div>
+							<div class="row-card__bottom">
+								<div class="row-card__actions">
+									<button class="row-card__button button button--sm">
+										Написать
+									</button>
+									<button class="row-card__button  button button--green button--sm">
+										Позвонить
+									</button>
+								</div>
+								<div class="row-card__meta">
+									<div class="row-card__meta-item">
+										Москва
+									</div>
+									<div class="row-card__circle"></div>
+									<div class="row-card__meta-item">
+										3ч. назад
+									</div>
+								</div>
+							</div>
+
+							<div class="dropdown row-card__dropdown">
+								<button class="dropdown__trigger" type="button">
+									<svg width="30" height="6">
+										<use xlink:href="/icons.svg#select-icon"></use>
+									</svg>
+								</button>
+
+								<div class="dropdown__menu dropdown__menu--right">
+									<button class="dropdown__item" type="button">
+										<svg width="12" height="12">
+											<use xlink:href="/icons.svg#dropdown-pen"></use>
+										</svg>
+										Редактировать
+									</button>
+									<button class="dropdown__item" type="button">
+										<svg width="12" height="12">
+											<use xlink:href="/icons.svg#dropdown-compare"></use>
+										</svg>
+										Сравнить с конкурентами
+									</button>
+									<button class="dropdown__item" type="button">
+										<svg width="12" height="12">
+											<use xlink:href="/icons.svg#dropdown-autopublish"></use>
+										</svg>
+										Включить автопубликацию
+									</button>
+									<button class="dropdown__item" type="button">
+										<svg width="12" height="12">
+											<use xlink:href="/icons.svg#dropdown-trash"></use>
+										</svg>
+										Снять с публикации
+									</button>
+								</div>
+							</div>
+
+						</div>
+					</div>
+					<div class="row-card catalog__card">
+						<a class="row-card__img-link" href="#">
+							<img class="row-card__img" src="/images/catalog-img.png" alt=""/>
+							<button class="row-card__select-button">
+
+								<svg width="18" height="18">
+									<use xlink:href="/icons.svg#heart"></use>
+								</svg>
+							</button>
+						</a>
+						<div class="row-card__body">
+							<div class="catalog__card-wrapper">
+								<p class="price">
+									6 500 000 ₽
+								</p>
+								<h5 class="row-card__title">
+									Продам 2-к квартиру, 65 м2, в центре Москвы
+								</h5>
+							</div>
+							<div class="catalog__card-info">
+								<p class="catalog__card-name">
+									Алексей
+								</p>
+								<div class="row-card__circle"></div>
+								<div class="catalog__card-rating">
+									<span>4.8</span>
+									<div class="catalog__card-stars">
+										<svg width="12" height="12">
+											<use xlink:href="/icons.svg#star"></use>
+										</svg>
+										<svg width="12" height="12">
+											<use xlink:href="/icons.svg#star"></use>
+										</svg>
+										<svg width="12" height="12">
+											<use xlink:href="/icons.svg#star"></use>
+										</svg>
+										<svg width="12" height="12">
+											<use xlink:href="/icons.svg#star"></use>
+										</svg>
+										<svg width="12" height="12">
+											<use xlink:href="/icons.svg#star"></use>
+										</svg>
+									</div>
+									<span class="catalog__card-reviews">
+4 отзыва
+									</span>
+								</div>
+							</div>
+							<div class="row-card__bottom">
+								<div class="row-card__actions">
+									<button class="row-card__button button button--sm">
+										Написать
+									</button>
+									<button class="row-card__button  button button--green button--sm">
+										Позвонить
+									</button>
+								</div>
+								<div class="row-card__meta">
+									<div class="row-card__meta-item">
+										Москва
+									</div>
+									<div class="row-card__circle"></div>
+									<div class="row-card__meta-item">
+										3ч. назад
+									</div>
+								</div>
+							</div>
+
+							<div class="dropdown row-card__dropdown">
+								<button class="dropdown__trigger" type="button">
+									<svg width="30" height="6">
+										<use xlink:href="/icons.svg#select-icon"></use>
+									</svg>
+								</button>
+
+								<div class="dropdown__menu dropdown__menu--right">
+									<button class="dropdown__item" type="button">
+										<svg width="12" height="12">
+											<use xlink:href="/icons.svg#dropdown-pen"></use>
+										</svg>
+										Редактировать
+									</button>
+									<button class="dropdown__item" type="button">
+										<svg width="12" height="12">
+											<use xlink:href="/icons.svg#dropdown-compare"></use>
+										</svg>
+										Сравнить с конкурентами
+									</button>
+									<button class="dropdown__item" type="button">
+										<svg width="12" height="12">
+											<use xlink:href="/icons.svg#dropdown-autopublish"></use>
+										</svg>
+										Включить автопубликацию
+									</button>
+									<button class="dropdown__item" type="button">
+										<svg width="12" height="12">
+											<use xlink:href="/icons.svg#dropdown-trash"></use>
+										</svg>
+										Снять с публикации
+									</button>
+								</div>
+							</div>
+
+						</div>
+					</div>
+					<div class="row-card catalog__card">
+						<a class="row-card__img-link" href="#">
+							<img class="row-card__img" src="/images/catalog-img.png" alt=""/>
+							<button class="row-card__select-button">
+
+								<svg width="18" height="18">
+									<use xlink:href="/icons.svg#heart"></use>
+								</svg>
+							</button>
+						</a>
+						<div class="row-card__body">
+							<div class="catalog__card-wrapper">
+								<p class="price">
+									6 500 000 ₽
+								</p>
+								<h5 class="row-card__title">
+									Продам 2-к квартиру, 65 м2, в центре Москвы
+								</h5>
+							</div>
+							<div class="catalog__card-info">
+								<p class="catalog__card-name">
+									Алексей
+								</p>
+								<div class="row-card__circle"></div>
+								<div class="catalog__card-rating">
+									<span>4.8</span>
+									<div class="catalog__card-stars">
+										<svg width="12" height="12">
+											<use xlink:href="/icons.svg#star"></use>
+										</svg>
+										<svg width="12" height="12">
+											<use xlink:href="/icons.svg#star"></use>
+										</svg>
+										<svg width="12" height="12">
+											<use xlink:href="/icons.svg#star"></use>
+										</svg>
+										<svg width="12" height="12">
+											<use xlink:href="/icons.svg#star"></use>
+										</svg>
+										<svg width="12" height="12">
+											<use xlink:href="/icons.svg#star"></use>
+										</svg>
+									</div>
+									<span class="catalog__card-reviews">
+4 отзыва
+									</span>
+								</div>
+							</div>
+							<div class="row-card__bottom">
+								<div class="row-card__actions">
+									<button class="row-card__button button button--sm">
+										Написать
+									</button>
+									<button class="row-card__button  button button--green button--sm">
+										Позвонить
+									</button>
+								</div>
+								<div class="row-card__meta">
+									<div class="row-card__meta-item">
+										Москва
+									</div>
+									<div class="row-card__circle"></div>
+									<div class="row-card__meta-item">
+										3ч. назад
+									</div>
+								</div>
+							</div>
+
+							<div class="dropdown row-card__dropdown">
+								<button class="dropdown__trigger" type="button">
+									<svg width="30" height="6">
+										<use xlink:href="/icons.svg#select-icon"></use>
+									</svg>
+								</button>
+
+								<div class="dropdown__menu dropdown__menu--right">
+									<button class="dropdown__item" type="button">
+										<svg width="12" height="12">
+											<use xlink:href="/icons.svg#dropdown-pen"></use>
+										</svg>
+										Редактировать
+									</button>
+									<button class="dropdown__item" type="button">
+										<svg width="12" height="12">
+											<use xlink:href="/icons.svg#dropdown-compare"></use>
+										</svg>
+										Сравнить с конкурентами
+									</button>
+									<button class="dropdown__item" type="button">
+										<svg width="12" height="12">
+											<use xlink:href="/icons.svg#dropdown-autopublish"></use>
+										</svg>
+										Включить автопубликацию
+									</button>
+									<button class="dropdown__item" type="button">
+										<svg width="12" height="12">
+											<use xlink:href="/icons.svg#dropdown-trash"></use>
+										</svg>
+										Снять с публикации
+									</button>
+								</div>
+							</div>
+
+						</div>
+					</div>
+
+					<div class="row-card catalog__card">
+						<a class="row-card__img-link" href="#">
+							<img class="row-card__img" src="/images/catalog-img.png" alt=""/>
+                            		<button class="row-card__select-button">
+
+							<svg width="18" height="18">
+								<use xlink:href="/icons.svg#heart"></use>
+							</svg>
+						</button>
+						</a>
+						<div class="row-card__body">
+							<div class="catalog__card-wrapper">
+								<p class="price">
+									6 500 000 ₽
+								</p>
+								<h5 class="row-card__title">
+									Продам 2-к квартиру, 65 м2, в центре Москвы
+								</h5>
+							</div>
+							<div class="catalog__card-info">
+								<p class="catalog__card-name">
+									Алексей
+								</p>
+								<div class="row-card__circle"></div>
+								<div class="catalog__card-rating">
+									<span>4.8</span>
+									<div class="catalog__card-stars">
+										<svg width="12" height="12">
+											<use xlink:href="/icons.svg#star"></use>
+										</svg>
+										<svg width="12" height="12">
+											<use xlink:href="/icons.svg#star"></use>
+										</svg>
+										<svg width="12" height="12">
+											<use xlink:href="/icons.svg#star"></use>
+										</svg>
+										<svg width="12" height="12">
+											<use xlink:href="/icons.svg#star"></use>
+										</svg>
+										<svg width="12" height="12">
+											<use xlink:href="/icons.svg#star"></use>
+										</svg>
+									</div>
+									<span class="catalog__card-reviews">
+4 отзыва
+									</span>
+								</div>
+							</div>
+							<div class="row-card__bottom">
+								<div class="row-card__actions">
+									<button class="row-card__button button button--sm">
+										Написать
+									</button>
+									<button class="row-card__button  button button--green button--sm">
+										Позвонить
+									</button>
+								</div>
+								<div class="row-card__meta">
+									<div class="row-card__meta-item">
+										Москва
+									</div>
+									<div class="row-card__circle"></div>
+									<div class="row-card__meta-item">
+										3ч. назад
+									</div>
+								</div>
+							</div>
+
+							<div class="dropdown row-card__dropdown">
+								<button class="dropdown__trigger" type="button">
+									<svg width="30" height="6">
+										<use xlink:href="/icons.svg#select-icon"></use>
+									</svg>
+								</button>
+
+								<div class="dropdown__menu dropdown__menu--right">
+									<button class="dropdown__item" type="button">
+										<svg width="12" height="12">
+											<use xlink:href="/icons.svg#dropdown-pen"></use>
+										</svg>
+										Редактировать
+									</button>
+									<button class="dropdown__item" type="button">
+										<svg width="12" height="12">
+											<use xlink:href="/icons.svg#dropdown-compare"></use>
+										</svg>
+										Сравнить с конкурентами
+									</button>
+									<button class="dropdown__item" type="button">
+										<svg width="12" height="12">
+											<use xlink:href="/icons.svg#dropdown-autopublish"></use>
+										</svg>
+										Включить автопубликацию
+									</button>
+									<button class="dropdown__item" type="button">
+										<svg width="12" height="12">
+											<use xlink:href="/icons.svg#dropdown-trash"></use>
+										</svg>
+										Снять с публикации
+									</button>
+								</div>
+							</div>
+
+						</div>
+					</div>
+					<div class="row-card catalog__card">
+						<a class="row-card__img-link" href="#">
+							<img class="row-card__img" src="/images/catalog-img.png" alt=""/>
+                            		<button class="row-card__select-button">
+
+							<svg width="18" height="18">
+								<use xlink:href="/icons.svg#heart"></use>
+							</svg>
+						</button>
+						</a>
+						<div class="row-card__body">
+							<div class="catalog__card-wrapper">
+								<p class="price">
+									6 500 000 ₽
+								</p>
+								<h5 class="row-card__title">
+									Продам 2-к квартиру, 65 м2, в центре Москвы
+								</h5>
+							</div>
+							<div class="catalog__card-info">
+								<p class="catalog__card-name">
+									Алексей
+								</p>
+								<div class="row-card__circle"></div>
+								<div class="catalog__card-rating">
+									<span>4.8</span>
+									<div class="catalog__card-stars">
+										<svg width="12" height="12">
+											<use xlink:href="/icons.svg#star"></use>
+										</svg>
+										<svg width="12" height="12">
+											<use xlink:href="/icons.svg#star"></use>
+										</svg>
+										<svg width="12" height="12">
+											<use xlink:href="/icons.svg#star"></use>
+										</svg>
+										<svg width="12" height="12">
+											<use xlink:href="/icons.svg#star"></use>
+										</svg>
+										<svg width="12" height="12">
+											<use xlink:href="/icons.svg#star"></use>
+										</svg>
+									</div>
+									<span class="catalog__card-reviews">
+4 отзыва
+									</span>
+								</div>
+							</div>
+							<div class="row-card__bottom">
+								<div class="row-card__actions">
+									<button class="row-card__button button button--sm">
+										Написать
+									</button>
+									<button class="row-card__button  button button--green button--sm">
+										Позвонить
+									</button>
+								</div>
+								<div class="row-card__meta">
+									<div class="row-card__meta-item">
+										Москва
+									</div>
+									<div class="row-card__circle"></div>
+									<div class="row-card__meta-item">
+										3ч. назад
+									</div>
+								</div>
+							</div>
+
+							<div class="dropdown row-card__dropdown">
+								<button class="dropdown__trigger" type="button">
+									<svg width="30" height="6">
+										<use xlink:href="/icons.svg#select-icon"></use>
+									</svg>
+								</button>
+
+								<div class="dropdown__menu dropdown__menu--right">
+									<button class="dropdown__item" type="button">
+										<svg width="12" height="12">
+											<use xlink:href="/icons.svg#dropdown-pen"></use>
+										</svg>
+										Редактировать
+									</button>
+									<button class="dropdown__item" type="button">
+										<svg width="12" height="12">
+											<use xlink:href="/icons.svg#dropdown-compare"></use>
+										</svg>
+										Сравнить с конкурентами
+									</button>
+									<button class="dropdown__item" type="button">
+										<svg width="12" height="12">
+											<use xlink:href="/icons.svg#dropdown-autopublish"></use>
+										</svg>
+										Включить автопубликацию
+									</button>
+									<button class="dropdown__item" type="button">
+										<svg width="12" height="12">
+											<use xlink:href="/icons.svg#dropdown-trash"></use>
+										</svg>
+										Снять с публикации
+									</button>
+								</div>
+							</div>
+
+						</div>
+					</div>
+
+					<div class="row-card catalog__card">
+						<a class="row-card__img-link" href="#">
+							<img class="row-card__img" src="/images/catalog-img.png" alt=""/>
+                            		<button class="row-card__select-button">
+
+							<svg width="18" height="18">
+								<use xlink:href="/icons.svg#heart"></use>
+							</svg>
+						</button>
+						</a>
+						<div class="row-card__body">
+							<div class="catalog__card-wrapper">
+								<p class="price">
+									6 500 000 ₽
+								</p>
+								<h5 class="row-card__title">
+									Продам 2-к квартиру, 65 м2, в центре Москвы
+								</h5>
+							</div>
+							<div class="catalog__card-info">
+								<p class="catalog__card-name">
+									Алексей
+								</p>
+								<div class="row-card__circle"></div>
+								<div class="catalog__card-rating">
+									<span>4.8</span>
+									<div class="catalog__card-stars">
+										<svg width="12" height="12">
+											<use xlink:href="/icons.svg#star"></use>
+										</svg>
+										<svg width="12" height="12">
+											<use xlink:href="/icons.svg#star"></use>
+										</svg>
+										<svg width="12" height="12">
+											<use xlink:href="/icons.svg#star"></use>
+										</svg>
+										<svg width="12" height="12">
+											<use xlink:href="/icons.svg#star"></use>
+										</svg>
+										<svg width="12" height="12">
+											<use xlink:href="/icons.svg#star"></use>
+										</svg>
+									</div>
+									<span class="catalog__card-reviews">
+4 отзыва
+									</span>
+								</div>
+							</div>
+							<div class="row-card__bottom">
+								<div class="row-card__actions">
+									<button class="row-card__button button button--sm">
+										Написать
+									</button>
+									<button class="row-card__button  button button--green button--sm">
+										Позвонить
+									</button>
+								</div>
+								<div class="row-card__meta">
+									<div class="row-card__meta-item">
+										Москва
+									</div>
+									<div class="row-card__circle"></div>
+									<div class="row-card__meta-item">
+										3ч. назад
+									</div>
+								</div>
+							</div>
+
+							<div class="dropdown row-card__dropdown">
+								<button class="dropdown__trigger" type="button">
+									<svg width="30" height="6">
+										<use xlink:href="/icons.svg#select-icon"></use>
+									</svg>
+								</button>
+
+								<div class="dropdown__menu dropdown__menu--right">
+									<button class="dropdown__item" type="button">
+										<svg width="12" height="12">
+											<use xlink:href="/icons.svg#dropdown-pen"></use>
+										</svg>
+										Редактировать
+									</button>
+									<button class="dropdown__item" type="button">
+										<svg width="12" height="12">
+											<use xlink:href="/icons.svg#dropdown-compare"></use>
+										</svg>
+										Сравнить с конкурентами
+									</button>
+									<button class="dropdown__item" type="button">
+										<svg width="12" height="12">
+											<use xlink:href="/icons.svg#dropdown-autopublish"></use>
+										</svg>
+										Включить автопубликацию
+									</button>
+									<button class="dropdown__item" type="button">
+										<svg width="12" height="12">
+											<use xlink:href="/icons.svg#dropdown-trash"></use>
+										</svg>
+										Снять с публикации
+									</button>
+								</div>
+							</div>
+
+						</div>
+					</div>
+
+					<div class="row-card catalog__card">
+						<a class="row-card__img-link" href="#">
+							<img class="row-card__img" src="/images/catalog-img.png" alt=""/>
+                            		<button class="row-card__select-button">
+
+							<svg width="18" height="18">
+								<use xlink:href="/icons.svg#heart"></use>
+							</svg>
+						</button>
+						</a>
+						<div class="row-card__body">
+							<div class="catalog__card-wrapper">
+								<p class="price">
+									6 500 000 ₽
+								</p>
+								<h5 class="row-card__title">
+									Продам 2-к квартиру, 65 м2, в центре Москвы
+								</h5>
+							</div>
+							<div class="catalog__card-info">
+								<p class="catalog__card-name">
+									Алексей
+								</p>
+								<div class="row-card__circle"></div>
+								<div class="catalog__card-rating">
+									<span>4.8</span>
+									<div class="catalog__card-stars">
+										<svg width="12" height="12">
+											<use xlink:href="/icons.svg#star"></use>
+										</svg>
+										<svg width="12" height="12">
+											<use xlink:href="/icons.svg#star"></use>
+										</svg>
+										<svg width="12" height="12">
+											<use xlink:href="/icons.svg#star"></use>
+										</svg>
+										<svg width="12" height="12">
+											<use xlink:href="/icons.svg#star"></use>
+										</svg>
+										<svg width="12" height="12">
+											<use xlink:href="/icons.svg#star"></use>
+										</svg>
+									</div>
+									<span class="catalog__card-reviews">
+4 отзыва
+									</span>
+								</div>
+							</div>
+							<div class="row-card__bottom">
+								<div class="row-card__actions">
+									<button class="row-card__button button button--sm">
+										Написать
+									</button>
+									<button class="row-card__button  button button--green button--sm">
+										Позвонить
+									</button>
+								</div>
+								<div class="row-card__meta">
+									<div class="row-card__meta-item">
+										Москва
+									</div>
+									<div class="row-card__circle"></div>
+									<div class="row-card__meta-item">
+										3ч. назад
+									</div>
+								</div>
+							</div>
+
+							<div class="dropdown row-card__dropdown">
+								<button class="dropdown__trigger" type="button">
+									<svg width="30" height="6">
+										<use xlink:href="/icons.svg#select-icon"></use>
+									</svg>
+								</button>
+
+								<div class="dropdown__menu dropdown__menu--right">
+									<button class="dropdown__item" type="button">
+										<svg width="12" height="12">
+											<use xlink:href="/icons.svg#dropdown-pen"></use>
+										</svg>
+										Редактировать
+									</button>
+									<button class="dropdown__item" type="button">
+										<svg width="12" height="12">
+											<use xlink:href="/icons.svg#dropdown-compare"></use>
+										</svg>
+										Сравнить с конкурентами
+									</button>
+									<button class="dropdown__item" type="button">
+										<svg width="12" height="12">
+											<use xlink:href="/icons.svg#dropdown-autopublish"></use>
+										</svg>
+										Включить автопубликацию
+									</button>
+									<button class="dropdown__item" type="button">
+										<svg width="12" height="12">
+											<use xlink:href="/icons.svg#dropdown-trash"></use>
+										</svg>
+										Снять с публикации
+									</button>
+								</div>
+							</div>
+
+						</div>
+					</div>
+				</div>
+				<div class="catalog__nav">
+					<button class="catalog__nav-prev">
+						<svg width="48" height="48">
+							<use xlink:href="/icons.svg#nav-prev"></use>
+						</svg>
+					</button>
+					<div class="catalog__nav-buttons">
+						<button class="catalog__nav-button catalog__nav-button--active">
+							1
+						</button>
+						<button class="catalog__nav-button">
+							2
+						</button>
+						<button class="catalog__nav-button">
+							3
+						</button>
+						<button class="catalog__nav-button">
+							...
+						</button>
+						<button class="catalog__nav-button">
+							56
+						</button>
+					</div>
+					<button class="catalog__nav-next">
+						<svg width="48" height="48">
+							<use xlink:href="/icons.svg#nav-next"></use>
+						</svg>
+					</button>
+				</div>
+			</div>
+
+		</div>
+	</section>
+
+</main>
+
+<footer class="footer">
+	<div class="container footer__inner">
+		<a class="logo footer__logo">
+			<svg class="logo__icon" width="24" height="33">
+				<use xlink:href="/icons.svg#logo"></use>
+			</svg>
+			Gradlist </a>
+		<nav class="footer__nav">
+			<ul class="footer__list">
+				<li class="footer__item"><a class="footer__link" href="#">Помощь</a></li>
+				<li class="footer__item"><a class="footer__link" href="#">Безопасность</a></li>
+				<li class="footer__item"><a class="footer__link" href="#">Реклама на сайте</a></li>
+				<li class="footer__item"><a class="footer__link" href="#">О компании</a></li>
+				<li class="footer__item"><a class="footer__link" href="#">Приложение</a></li>
+				<li class="footer__item"><a class="footer__link" href="#">Карта сайта</a></li>
+				<li class="footer__item"><a class="footer__link" href="#">Свежие объявления</a></li>
+			</ul>
+			<ul class="footer__list">
+				<li class="footer__item"><a class="footer__s-link" href="#">Условия использования</a></li>
+				<li class="footer__item"><a class="footer__s-link" href="#">Политика конфиденциальности</a></li>
+				<li class="footer__item"><a class="footer__s-link" href="#">Публичная оферта</a></li>
+			</ul>
+		</nav>
+		<ul class="footer__socials-list">
+			<li class="footer__socials-list"><a class="footer__socials-link" href="#">
+				<svg width="30" height="30">
+					<use xlink:href="/icons.svg#tg"></use>
+				</svg>
+			</a></li>
+			<li class="footer__socials-list"><a class="footer__socials-link" href="#">
+				<svg width="30" height="30">
+					<use xlink:href="/icons.svg#max"></use>
+				</svg>
+			</a></li>
+			<li class="footer__socials-list"><a class="footer__socials-link" href="#">
+				<svg width="30" height="30">
+					<use xlink:href="/icons.svg#vk"></use>
+				</svg>
+			</a></li>
+		</ul>
+
+	</div>
+</footer>
+
+
+<script type="module" src="/src/main.js"></script>
+</body>
+</html>

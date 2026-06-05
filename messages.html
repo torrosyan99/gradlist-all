@@ -124,6 +124,72 @@
 	</nav>
 </div>
 
+<div class="overlay">
+	<div class="modal messages-modal modal-black-list" data-modal-type="black-list">
+		<button class="modal__close">
+			<svg width="12" height="12">
+				<use xlink:href="/icons.svg#modal-close"></use>
+			</svg>
+		</button>
+		<h3 class="modal__title">Внести пользователя
+			в чёрный список?</h3>
+		<p class="modal-black-list__text">
+			Пользователь не сможет писать вам в чатах и не увидит ваш номер телефона
+		</p>
+		<div class="messages-modal__buttons">
+			<button class="button button--sm change-modal" data-type="block">Внести</button>
+			<button class="button button--sm button--secondary modal-close">Отмена</button>
+		</div>
+	</div>
+	<div class="modal messages-modal modal-block" data-modal-type="block">
+		<button class="modal__close">
+			<svg width="12" height="12">
+				<use xlink:href="/icons.svg#modal-close"></use>
+			</svg>
+		</button>
+		<h3 class="modal__title">Расскажите, что не так</h3>
+		<form class="modal-block__form">
+			<div class="modal-block__radios">
+				<label class="modal-block__label">
+					<input class="modal-block__input" checked type="radio" value="spam" name="block"/>
+					<span class="modal-block__circle"></span>
+					Спам
+				</label>
+				<label class="modal-block__label">
+					<input class="modal-block__input" type="radio" value="scam" name="block"/>
+					<span class="modal-block__circle"></span>
+					Мошенничество
+				</label>
+				<label class="modal-block__label">
+					<input class="modal-block__input" type="radio" value="insult" name="block"/>
+					<span class="modal-block__circle"></span>
+					Оскорбление и хамство
+				</label>
+				<label class="modal-block__label">
+					<input class="modal-block__input" type="radio" value="other" name="block"/>
+					<span class="modal-block__circle"></span>
+					Другая причина
+				</label>
+			</div>
+
+			<button class="button button--sm button--full" type="submit">Заблокировать</button>
+		</form>
+	</div>
+	<div class="modal messages-modal modal-delete" data-modal-type="delete">
+		<button class="modal__close">
+			<svg width="12" height="12">
+				<use xlink:href="/icons.svg#modal-close"></use>
+			</svg>
+		</button>
+		<h3 class="modal__title">Вы уверены, что хотите удалить диалог?</h3>
+		<div class="messages-modal__buttons">
+			<button class="button button--sm">Удалить</button>
+			<button class="button button--sm button--secondary modal-close">Отмена</button>
+		</div>
+	</div>
+</div>
+
+
 <main class="profile">
 	<div class="profile__row container">
 		<aside class="profile__aside">
@@ -207,7 +273,7 @@
 								</a>
 							</li>
 							<li class="profile__nav-item">
-								<a class="profile__link " href="#">
+								<a class="profile__link profile__link--active" href="#">
 									<svg width="24" height="24">
 										<use xlink:href="/icons.svg#profile-message"></use>
 									</svg>
@@ -240,7 +306,7 @@
 								</a>
 							</li>
 							<li class="profile__nav-item">
-								<a class="profile__link profile__link--active" href="#">
+								<a class="profile__link" href="#">
 									<svg width="24" height="24">
 										<use xlink:href="/icons.svg#profile-settings"></use>
 									</svg>
@@ -472,7 +538,6 @@
 							<button class="messages__back">
 								<svg width="32" height="32">
 									<use xlink:href="/icons.svg#messages-back"></use>
-
 								</svg>
 							</button>
 							<div class="messages__top-img">
@@ -517,13 +582,13 @@
 										</svg>
 										Профиль покупателя
 									</button>
-									<button class="dropdown__item" type="button">
+									<button class="dropdown__item modal-button" type="button" data-type="black-list">
 										<svg width="12" height="12">
 											<use xlink:href="/icons.svg#dropdown-cancel"></use>
 										</svg>
 										Заблокировать
 									</button>
-									<button class="dropdown__item" type="button">
+									<button class="dropdown__item modal-button" type="button" data-type="delete">
 										<svg width="12" height="12">
 											<use xlink:href="/icons.svg#dropdown-trash"></use>
 										</svg>

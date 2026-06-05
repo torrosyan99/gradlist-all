@@ -10,6 +10,20 @@
     text-align: center;
 }
 
+.button--secondary {
+    background: #EAEAEA;
+    color: var(--color-primary);
+}
+
+.button--light-blue {
+    background: var(--color-light-blue);
+    color: var(--color-blue);
+}
+
+.button--full {
+    width: 100%;
+}
+
 .button--flex {
     display: flex;
     align-items: center;
@@ -27,9 +41,14 @@
     background: #1fd270;
 }
 
+.button:disabled,
+.button[disabled] {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
 @media (max-width: 768px) {
     .button {
         padding: 0 12px;
     }
 }
-

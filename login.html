@@ -6,7 +6,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 	<title>Gradlist</title>
 </head>
-<body class="page-home">
+<body class="page-login body-overflow">
 
 <header class="header">
 	<div class="container header__inner">
@@ -124,69 +124,186 @@
 	</nav>
 </div>
 
-<div class="overlay">
-	<div class="modal apply" data-modal-type="apply">
+<div class="overlay overlay--active">
+	<div class="modal auth modal--active modal--showed" data-modal-type="login">
+		<button class="back modal__back  modal-close">
+			<svg width="38" height="38">
+				<use xlink:href="/icons.svg#menu-back"></use>
+			</svg>
+			Вход
+		</button>
 		<button class="modal__close">
 			<svg width="12" height="12">
 				<use xlink:href="/icons.svg#modal-close"></use>
 			</svg>
 		</button>
-		<form class="apply__form">
-			<h2 class="title title--semibold title--center">Выбор города или региона</h2>
-			<div class="apply__form-wrapper">
-				<div class="select apply__select">
-					<button class="select__trigger" type="button">
-						<span>Выберите страну</span>
-						<svg width="24" height="24">
-							<use xlink:href="/icons.svg#arrow-bottom"></use>
-						</svg>
-					</button>
-
-					<div class="select__dropdown custom-scroll">
-						<button class="select__option" data-value="am" type="button">Армения</button>
-						<button class="select__option" data-value="ge" type="button">Грузия</button>
-						<button class="select__option" data-value="ge" type="button">Грузия</button>
-						<button class="select__option" data-value="ge" type="button">Грузия</button>
-						<button class="select__option" data-value="ge" type="button">Грузия</button>
-						<button class="select__option" data-value="ge" type="button">Грузия</button>
-						<button class="select__option" data-value="ge" type="button">Грузия</button>
-						<button class="select__option" data-value="ge" type="button">Грузия</button>
-						<button class="select__option" data-value="ge" type="button">Грузия</button>
-						<button class="select__option" data-value="ge" type="button">Грузия</button>
-						<button class="select__option" data-value="ge" type="button">Грузия</button>
-						<button class="select__option" data-value="ge" type="button">Грузия</button>
-						<button class="select__option" data-value="ge" type="button">Грузия</button>
-						<button class="select__option" data-value="ge" type="button">Грузия</button>
-						<button class="select__option" data-value="ge" type="button">Грузия</button>
-						<button class="select__option" data-value="ge" type="button">Грузия</button>
-						<button class="select__option" data-value="ge" type="button">Грузия</button>
-						<button class="select__option" data-value="ge" type="button">Грузия</button>
-						<button class="select__option" data-value="ge" type="button">Грузия</button>
-					</div>
-
-					<input type="hidden" name="country">
+		<h2 class="auth__title title title--center title--semibold">Вход</h2>
+		<form class="auth__form login">
+			<div class="login__form-item">
+				<h5 class="title title--semibold h-18">
+					Телефон или почта
+				</h5>
+				<input class="input" placeholder="Телефон или почта" type="text" />
+			</div>
+			<div class="login__form-item">
+				<h5 class="title title--semibold h-18">
+					Пароль
+				</h5>
+				<input class="input" placeholder="Пароль" type="password" />
+				<div class="login__wrapper">
+					<label class="checkbox">
+						<input type="checkbox" name="checkbox"/>
+						<span class="checkbox__box"></span>
+						<span class="checkbox__text">Запомнить меня</span>
+					</label>
+					<button class="login__recovery-button change-modal" type="button" data-type="recovery">Забыли пароль?</button>
 				</div>
-				<label class="checkbox">
+			</div>
+			<div class="login__form-item">
+				<button class="button button--full button--sm">
+					Войти
+				</button>
+				<div class="login__variants">
+					<p class="login__varinats-text">
+						Или продолжить через
+					</p>
+					<div class="login__variants-buttons">
+						<button class="login__variants-button">
+							<svg  width="40" height="40">
+								<use xlink:href="/icons.svg#modal-vk"></use>
+							</svg>
+						</button>
+						<button class="login__variants-button">
+							<svg  width="40" height="40">
+								<use xlink:href="/icons.svg#modal-ok"></use>
+							</svg>
+						</button>
+						<button class="login__variants-button">
+							<svg  width="40" height="40">
+								<use xlink:href="/icons.svg#modal-gmail"></use>
+							</svg>
+						</button>
+						<button class="login__variants-button">
+							<svg  width="40" height="40">
+								<use xlink:href="/icons.svg#modal-gos"></use>
+							</svg>
+						</button>
+					</div>
+				</div>
+			</div>
+			<div class="login__form-bottom">
+				<h5 class="title title--semibold h-18">Нет аккаунта?</h5>
+				<button class="button button--sm button--full button--light-blue change-modal"
+				        type="button"
+				        data-type="register">
+					Зарегистрироваться
+				</button>
+			</div>
+		</form>
+	</div>
+	<div class="modal auth" data-modal-type="register">
+		<button class="back modal__back  modal-close">
+			<svg width="38" height="38">
+				<use xlink:href="/icons.svg#menu-back"></use>
+			</svg>
+			Регистрация
+		</button>
+		<button class="modal__close">
+			<svg width="12" height="12">
+				<use xlink:href="/icons.svg#modal-close"></use>
+			</svg>
+		</button>
+		<h2 class="auth__title title title--center title--semibold">Регистрация</h2>
+		<form class="auth__form register">
+			<div class="register__form-item">
+				<h5 class="title title--semibold h-18">
+					Телефон или email
+				</h5>
+				<input class="input" placeholder="Введите елефон или email " type="text" />
+			</div>
+			<div class="register__form-item">
+				<h5 class="title title--semibold h-18">
+					Пароль
+				</h5>
+				<input class="input" placeholder="Введите пароль" type="password" />
+			</div>
+			<div class="register__form-item">
+				<h5 class="title title--semibold h-18">
+					Повторите пароль
+				</h5>
+				<input class="input" placeholder="Введите пароль повторно" type="password" />
+			</div>
+			<div class="register__form-item">
+				<h5 class="title title--semibold h-18">
+					Ваше имя
+				</h5>
+				<input class="input" placeholder="Введите елефон или email " type="text" />
+			</div>
+			<div class="register__form-item">
+				<button class="button button--full button--sm">Зарегистрироваться</button>
+				<label class="checkbox register__checkbox">
 					<input type="checkbox" name="checkbox"/>
 					<span class="checkbox__box"></span>
-					<span class="checkbox__text">Сначала в выбранном регионе</span>
+					<span class="checkbox__text">Я согласен с Политикой конфиденциальности</span>
 				</label>
 			</div>
-			<div class="apply__form-wrapper">
-				<h5 class="title title--center title--semibold">
-					Указать адрес
-				</h5>
-				<input class="input apply__input" name="info" placeholder="Улица и номер дома" />
-			</div>
-			<button class="button button--sm apply__button">
-				Показать объявления
-			</button>
+
 		</form>
+	</div>
+	<div class="modal auth" data-modal-type="recovery">
+		<button class="back modal__back modal-close">
+			<svg width="38" height="38">
+				<use xlink:href="/icons.svg#menu-back"></use>
+			</svg>
+			Восстановление пароля
+		</button>
+		<button class="modal__close">
+			<svg width="12" height="12">
+				<use xlink:href="/icons.svg#modal-close"></use>
+			</svg>
+		</button>
+		<h2 class="auth__title title title--center title--semibold">Восстановление <br /> пароля</h2>
+		<form class="auth__form recovery">
+			<div class="recovery__form-item">
+				<h5 class="title title--semibold h-18">
+					Телефон или email
+				</h5>
+				<input class="input" placeholder="Введите елефон или email" type="text" />
+			</div>
+
+			<div class="recovery__form-item">
+				<button class="button button--full button--sm">Зарегистрироваться</button>
+
+			</div>
+
+		</form>
+	</div>
+	<div class="modal recovery-result" data-modal-type="recovery-result">
+		<button class="back modal__back  modal-close">
+			<svg width="38" height="38">
+				<use xlink:href="/icons.svg#menu-back"></use>
+			</svg>
+			Восстановление пароля
+		</button>
+		<button class="modal__close">
+			<svg width="12" height="12">
+				<use xlink:href="/icons.svg#modal-close"></use>
+			</svg>
+		</button>
+		<h2 class="recovery-result__title title title--center title--semibold">Отправили вам письмо</h2>
+		<p class="recovery-result__text">
+			Внутри - ссылка для восстановления пароля. Если письма на почте нет, загляните в папку «Спам».
+		</p>
+		<p class="recovery-result__bottom">
+			<button class="recovery-result__button change-modal" data-type="login">Войдите</button>
+			, если вспомнили пароль.
+		</p>
 	</div>
 </div>
 
 
 <main class="main">
+
 	<section class="top">
 		<div class="container top__container">
 			<div class="top__content">

@@ -28,7 +28,8 @@
     margin-top: 8px;
 }
 
-.card__select-button {
+.card__select-button,
+.row-card__select-button {
     position: absolute;
     top: 10px;
     right: 10px;
@@ -57,6 +58,7 @@
 
 .row-card__img-link {
     width: 280px;
+    position: relative;
     flex-shrink: 0;
 
 }
@@ -98,13 +100,14 @@
 .row-card__meta {
     display: flex;
     gap: 15px;
+    align-items: center;
+    color: var(--color-secondary);
 }
 
 .row-card__meta-item {
     display: flex;
     gap: 6px;
     align-items: center;
-    color: var(--color-secondary);
     --icon-color: var(--color-secondary);
 }
 
@@ -114,6 +117,13 @@
     right: 25px;
 }
 
+.row-card__circle {
+    background: currentColor;
+    width: 4px;
+    height: 4px;
+    flex-shrink: 0;
+    border-radius: var(--radius-full);
+}
 @media (max-width: 1280px) {
     .row-card {
         flex-direction: column;

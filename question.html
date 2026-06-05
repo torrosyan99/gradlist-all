@@ -1,0 +1,454 @@
+<!doctype html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8"/>
+	<link rel="icon" type="image/svg+xml" href="/icons.svg"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<title>Gradlist</title>
+</head>
+<body class="page-help">
+
+<header class="header">
+	<div class="container header__inner">
+		<a class="logo" href="/">
+			<svg class="logo__icon" width="37" height="50">
+				<use xlink:href="/icons.svg#logo"></use>
+			</svg>
+			Gradlist
+		</a>
+		<nav class="header__nav">
+			<ul class="header__list">
+				<li class="header__list-item">
+					<a class="header__link" href="#">
+						Объявления
+					</a>
+				</li>
+				<li class="header__list-item">
+					<a class="header__link" href="#">
+						Помощь
+					</a>
+				</li>
+				<li class="header__list-item">
+					<a class="header__link" href="#">
+						Услуги
+					</a>
+				</li>
+				<li class="header__list-item">
+					<a class="header__link" href="#">
+						Избранное
+					</a>
+				</li>
+			</ul>
+			<div class="header__actions">
+				<a class="header__action" href="#" aria-label="Избранное">
+					<svg width="32" height="32">
+						<use xlink:href="/icons.svg#header-heart"></use>
+					</svg>
+				</a>
+
+				<a class="header__action notification" href="#" aria-label="Уведомления">
+					<svg width="32" height="32">
+						<use xlink:href="/icons.svg#notification"></use>
+					</svg>
+					<span class="notification__badge">3</span>
+				</a>
+
+				<a class="header__action" href="#" aria-label="Сообщения">
+					<svg width="32" height="32">
+						<use xlink:href="/icons.svg#header-message"></use>
+					</svg>
+				</a>
+			</div>
+		</nav>
+		<button class="button button--sm button--flex modal-button header__button" data-type="apply">
+			<svg width="24" height="24">
+				<use xlink:href="/icons.svg#plus"></use>
+			</svg>
+			Подать объявление
+		</button>
+		<div class="header__user">
+			<svg width="42" height="42">
+				<use xlink:href="/icons.svg#person"></use>
+			</svg>
+			<svg width="24" height="24">
+				<use xlink:href="/icons.svg#chevron-bottom"></use>
+			</svg>
+		</div>
+	</div>
+</header>
+
+<div class="menu">
+	<nav class="menu__nav">
+		<ul class="menu__list">
+			<li class="menu__item">
+				<a class="menu__link" href="/public">
+					<svg width="32" height="32">
+						<use xlink:href="/icons.svg#menu-home"></use>
+					</svg>
+					Главная
+				</a>
+			</li>
+			<li class="menu__item">
+				<a class="menu__link" href="#">
+					<svg width="32" height="32">
+						<use xlink:href="/icons.svg#menu-heart"></use>
+					</svg>
+					Избранное
+				</a>
+			</li>
+			<li class="menu__item">
+				<a class="menu__link" href="#">
+					<svg width="32" height="32">
+						<use xlink:href="/icons.svg#menu-add"></use>
+					</svg>
+					Создать
+				</a>
+			</li>
+			<li class="menu__item">
+				<a class="menu__link" href="#">
+					<svg width="32" height="32">
+						<use xlink:href="/icons.svg#menu-message"></use>
+					</svg>
+					Сообщения
+				</a>
+			</li>
+			<li class="menu__item">
+				<a class="menu__link" href="#">
+					<svg width="32" height="32">
+						<use xlink:href="/icons.svg#menu-profile"></use>
+					</svg>
+					Профиль
+				</a>
+			</li>
+		</ul>
+	</nav>
+</div>
+
+<div class="overlay">
+	<div class="modal modal-support" data-modal-type="support">
+		<button class="modal__close">
+			<svg width="12" height="12">
+				<use xlink:href="/icons.svg#modal-close"></use>
+			</svg>
+		</button>
+		<h3 class="modal__title">Форма для обращения в поддержку</h3>
+		<form class="modal-support__form">
+			<div class="modal-support__form-item">
+				<label class="modal-support__label">Выберите тему обращения</label>
+				<div class="select select--gray modal-support__select">
+					<button class="select__trigger" type="button">
+						<span>Объявление заблокировали</span>
+						<svg width="24" height="24">
+							<use xlink:href="/icons.svg#arrow-bottom"></use>
+						</svg>
+					</button>
+					<div class="select__dropdown custom-scroll">
+						<button class="select__option" data-value="aaaa" type="button">Aaaa</button>
+						<button class="select__option" data-value="bbbb" type="button">Bbbb</button>
+					</div>
+					<input type="hidden" name="topic">
+				</div>
+			</div>
+			<div class="modal-support__form-item">
+				<label class="modal-support__label" for="support-phone">Номер, привязанный к аккаунту</label>
+				<input class="input input--gray phone-input-second" placeholder="+7 (000) 000-00-00" name="phone" id="support-phone"  type="text"/>
+			</div>
+			<div class="modal-support__form-item">
+				<label class="modal-support__label" for="support-name">Как к вам обращаться</label>
+				<input class="input input--gray" placeholder="Ваше имя" name="name" id="support-name" type="text" />
+			</div>
+			<div class="modal-support__form-item">
+				<label class="modal-support__label" for="support-email">Почта, на которую можно ответить</label>
+				<input class="input input--gray" placeholder="username@domain.com" name="email" id="support-email" type="email" />
+			</div>
+			<div class="modal-support__form-item">
+				<label class="modal-support__label" for="support-message">Ваше сообщение</label>
+				<input class="input input--gray" placeholder="username@domain.com" name="message" id="support-message" type="text" />
+			</div>
+			<div class="modal-support__form-item">
+				<p class="modal-support__text">
+					Вы можете прикрепить скриншоты или файлы к запросу. Не более 10 штук, общим размером до 8 Мб.
+				</p>
+				<label class="input-file">
+					<input class="input-file__input" type="file" name="file" />
+					Прикрепить файлы
+					<svg width="16" height="16">
+						<use xlink:href="/icons.svg#file"></use>
+					</svg>
+				</label>
+			</div>
+			<button class="button button--sm button--full">Отправить обращение</button>
+		</form>
+	</div>
+</div>
+
+
+<main class="profile">
+	<div class="profile__row container">
+		<aside class="profile__aside">
+			<div class="profile__menu">
+				<div class="profile__box">
+					<div class="profile__menu-box">
+						<div class="profile__user">
+							<label class="profile__image">
+								<img src="/images/salesman-img.png" alt="Алексей">
+								<input class="profile__file-input" type="file" accept="image/*"
+								       aria-label="Изменить фото">
+								<svg class="profile__camera" width="32" height="32">
+									<use xlink:href="/icons.svg#camera"></use>
+								</svg>
+							</label>
+							<h5 class="profile__name">Алексей</h5>
+							<div class="profile__rating">
+								<span class="profile__rating-value">4.8</span>
+								<div class="profile__stars" aria-label="Рейтинг 4.8">
+									<svg width="12" height="12">
+										<use xlink:href="/icons.svg#star"></use>
+									</svg>
+									<svg width="12" height="12">
+										<use xlink:href="/icons.svg#star"></use>
+									</svg>
+									<svg width="12" height="12">
+										<use xlink:href="/icons.svg#star"></use>
+									</svg>
+									<svg width="12" height="12">
+										<use xlink:href="/icons.svg#star"></use>
+									</svg>
+									<svg width="12" height="12">
+										<use xlink:href="/icons.svg#star"></use>
+									</svg>
+								</div>
+								<span class="profile__reviews">4 отзыва</span>
+							</div>
+							<p class="profile__follow">9 подписчиков, 6 подписок</p>
+							<p class="profile__date">Зарегистрирован 28.01.22</p>
+						</div>
+						<div class="profile__stats">
+							<div class="profile__stat">
+								<svg width="22" height="22">
+									<use xlink:href="/icons.svg#buying"></use>
+								</svg>
+								4 покупки на сайте
+							</div>
+							<div class="profile__stat">
+								<svg width="22" height="22">
+									<use xlink:href="/icons.svg#selling"></use>
+								</svg>
+								4 продажи на сайте
+							</div>
+						</div>
+					</div>
+					<nav class="profile__nav">
+						<ul class="profile__nav-list">
+							<li class="profile__nav-item">
+								<a class="profile__link" href="#">
+
+									<svg width="24" height="24">
+										<use xlink:href="/icons.svg#profile-advertisements"></use>
+									</svg>
+									<span class="profile__advertisement">
+									Мои объявления
+									<span class="profile__advertisement-value">9 объявлений</span>
+									</span>
+								</a>
+							</li>
+							<li class="profile__nav-item">
+								<a class="profile__link " href="#">
+									<svg width="24" height="24">
+										<use xlink:href="/icons.svg#profile-wallet"></use>
+									</svg>
+									<span class="profile__wallet">
+									     Кошелёк
+										<span class="profile__rub">
+											1 256 ₽
+										</span>
+									</span>
+								</a>
+							</li>
+							<li class="profile__nav-item">
+								<a class="profile__link profile__link--active" href="#">
+									<svg width="24" height="24">
+										<use xlink:href="/icons.svg#profile-message"></use>
+									</svg>
+									Сообщения
+								</a>
+							</li>
+							<li class="profile__nav-item">
+								<a class="profile__link " href="#">
+									<svg width="24" height="24">
+										<use xlink:href="/icons.svg#profile-store"></use>
+									</svg>
+									Магазин
+								</a>
+							</li>
+							<li class="profile__nav-item">
+								<a class="profile__link " href="#">
+									<svg width="24" height="24">
+										<use xlink:href="/icons.svg#profile-selected"></use>
+									</svg>
+									Избранное
+								</a>
+							</li>
+
+							<li class="profile__nav-item">
+								<a class="profile__link " href="#">
+									<svg width="24" height="24">
+										<use xlink:href="/icons.svg#profile-order"></use>
+									</svg>
+									Доставка
+								</a>
+							</li>
+							<li class="profile__nav-item">
+								<a class="profile__link" href="#">
+									<svg width="24" height="24">
+										<use xlink:href="/icons.svg#profile-settings"></use>
+									</svg>
+									Настройки
+								</a>
+							</li>
+							<li class="profile__nav-item">
+								<a class="profile__link" href="#">
+									<svg width="24" height="24">
+										<use xlink:href="/icons.svg#profile-help"></use>
+									</svg>
+									Помощь
+								</a>
+							</li>
+						</ul>
+					</nav>
+				</div>
+			</div>
+		</aside>
+		<section class="profile__section help">
+			<div class="profile__content">
+				<button class="profile__menu-button">
+					<svg width="38" height="38">
+						<use xlink:href="/icons.svg#menu-back"></use>
+					</svg>
+					Скидки на товары
+				</button>
+				<div class="breadcrumbs">
+					<div class="breadcrumbs__inner">
+						<a class="breadcrumbs__link" href="question-categories.html">Все темы</a>
+						<svg width="12" height="12">
+							<use xlink:href="/icons.svg#breadcrumbs-icon"></use>
+						</svg>
+						<a class="breadcrumbs__link" href="#">Безопасная сделка для продавца</a>
+						<svg width="12" height="12">
+							<use xlink:href="/icons.svg#breadcrumbs-icon"></use>
+						</svg>
+						<a class="breadcrumbs__link breadcrumbs__link--active" href="#">Скидки на товары</a>
+					</div>
+				</div>
+				<h3 class="help__questions-title title title--semibold">Скидки на товары</h3>
+				<div class="help__question">
+					<div class="help__question-item">
+						<h5 class="help__question-title h-18 title title--semibold">Почему появляются скидки на товары?</h5>
+						<ul class="help__question-list">
+							<li class="help__question-item">
+								Скидку на товар устанавливает сам продавец. Разницу в стоимости продавец получает бонусами Юлы — их можно тратить на частичную оплату услуг продвижения.
+							</li>
+							<li class="help__question-item">
+								Также у покупателя может быть купон, который дает скидку на товар. Юла полностью компенсирует разницу в стоимости: продавец получает деньги в полном объеме, кроме нашей комиссии — она составляет до 10% от цены товара.
+						</li>
+							<li class="help__question-item">
+								Когда купон сработает, покупатель увидит соответствующую подсказку около кнопки Купить.						</li>
+
+						</ul>
+					</div>
+					<div class="help__question-item">
+						<h5 class="help__question-title h-18 title title--semibold">Как установить скидку на товар и получить кэшбек?</h5>
+						<ul class="help__question-list">
+							<li class="help__question-item">
+								Чтобы установить скидку на один товар, откройте объявление и нажмите Сделать скидку.							</li>
+							<li class="help__question-item help__question-item--green">
+								Скидку можно установить на любой товар, который продается через Безопасную сделку.
+							</li>
+							<li class="help__question-item">
+								В течение 30 дней можно продать до пяти товаров со скидкой. Месяц начинается с заключения первой сделки.
+							</li>
+							<li class="help__question-item help__question-item--cream">
+								Размер скидки Юла считает автоматически. Бонусы поступают продавцу сразу после того, как будет завершена Безопасная сделка.							</li>
+						</ul>
+					</div>
+					<div class="help__question-item">
+						<h5 class="help__question-title h-18 title title--semibold">Как отключить скидку?</h5>
+						<ul class="help__question-list">
+							<li class="help__question-item">Чтобы отключить скидку, нажмите на три точки на странице объявления и выберите Убрать скидку.		</li>
+						</ul>
+					</div>
+					<div class="help__question-item">
+						<h5 class="help__question-title h-18 title title--semibold">Как покупатель узнает о скидке на товар?</h5>
+						<ul class="help__question-list">
+							<li class="help__question-item">Покупатели видят товары со скидкой в ленте — они отмечены специальным значком. В объявлениях мы показываем обе цены — и старую, и новую со скидкой.	</li>
+						</ul>
+					</div>
+				</div>
+				<div class="help__box help__support">
+					<svg width="64" height="64">
+						<use xlink:href="/icons.svg#messages"></use>
+					</svg>
+					<div class="help__box-wrapper">
+						<h5 class="help__box-title title">Не нашли решение проблемы?</h5>
+						<p class="help__box-text">Задайте вопрос через форму</p>
+					</div>
+					<button
+							class="button button--sm modal-button help__box-button"
+							data-type="support"
+					>Обратиться в поддержку
+					</button>
+				</div>
+
+			</div>
+		</section>
+	</div>
+</main>
+
+<footer class="footer">
+	<div class="container footer__inner">
+		<a class="logo footer__logo">
+			<svg class="logo__icon" width="24" height="33">
+				<use xlink:href="/icons.svg#logo"></use>
+			</svg>
+			Gradlist </a>
+		<nav class="footer__nav">
+			<ul class="footer__list">
+				<li class="footer__item"><a class="footer__link" href="#">Помощь</a></li>
+				<li class="footer__item"><a class="footer__link" href="#">Безопасность</a></li>
+				<li class="footer__item"><a class="footer__link" href="#">Реклама на сайте</a></li>
+				<li class="footer__item"><a class="footer__link" href="#">О компании</a></li>
+				<li class="footer__item"><a class="footer__link" href="#">Приложение</a></li>
+				<li class="footer__item"><a class="footer__link" href="#">Карта сайта</a></li>
+				<li class="footer__item"><a class="footer__link" href="#">Свежие объявления</a></li>
+			</ul>
+			<ul class="footer__list">
+				<li class="footer__item"><a class="footer__s-link" href="#">Условия использования</a></li>
+				<li class="footer__item"><a class="footer__s-link" href="#">Политика конфиденциальности</a></li>
+				<li class="footer__item"><a class="footer__s-link" href="#">Публичная оферта</a></li>
+			</ul>
+		</nav>
+		<ul class="footer__socials-list">
+			<li class="footer__socials-list"><a class="footer__socials-link" href="#">
+				<svg width="30" height="30">
+					<use xlink:href="/icons.svg#tg"></use>
+				</svg>
+			</a></li>
+			<li class="footer__socials-list"><a class="footer__socials-link" href="#">
+				<svg width="30" height="30">
+					<use xlink:href="/icons.svg#max"></use>
+				</svg>
+			</a></li>
+			<li class="footer__socials-list"><a class="footer__socials-link" href="#">
+				<svg width="30" height="30">
+					<use xlink:href="/icons.svg#vk"></use>
+				</svg>
+			</a></li>
+		</ul>
+
+	</div>
+</footer>
+
+
+<script type="module" src="/src/main.js"></script>
+</body>
+</html>

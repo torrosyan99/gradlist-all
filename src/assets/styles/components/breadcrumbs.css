@@ -1,8 +1,12 @@
-.breadcrumbs {
+.breadcrumbs--pt {
     padding-top: 40px;
 }
 
-.breadcrumbs + section {
+.breadcrumbs--pb {
+     padding-bottom: 40px;
+ }
+
+.breadcrumbs--pt + section {
     padding-top: 40px;
 }
 
@@ -26,13 +30,13 @@
         display: none;
     }
 
-    .breadcrumbs + section {
+    .breadcrumbs--pt + section {
         padding-top: 20px;
     }
 }
 
 @media (max-width: 768px) {
-    .breadcrumbs {
+    .breadcrumbs--pt {
         padding-top: 25px;
     }
 }

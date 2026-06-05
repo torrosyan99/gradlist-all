@@ -258,6 +258,7 @@
     }
 
     .profile__menu-button {
+        text-align: start;
         display: flex;
         align-items: center;
         gap: 15px;

@@ -9,3 +9,13 @@ if (inputs.length > 0) {
     })
   )
 }
+
+const phoneInputs = document.querySelectorAll('.phone-input-second');
+
+if (phoneInputs.length > 0) {
+  [...phoneInputs].forEach(
+    input => new IMask(input, {
+      mask: '+7 (000) 000-00-00'
+    })
+  )
+}
