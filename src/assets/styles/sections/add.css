@@ -55,7 +55,7 @@
     gap: 25px;
 }
 
-.add__item .select + .select {
+.add__dynamic div[data-add-sub]{
     margin-top: 8px ;
 }
 .add__main-form-button {
