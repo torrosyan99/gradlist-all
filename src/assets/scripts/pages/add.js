@@ -627,12 +627,6 @@ const FORM_SCHEMAS = {
             name: 'running',
             options: [{value: 'yes', label: 'Да'}, {value: 'no', label: 'Нет'}],
             defaultValue: 'yes'
-          },{
-            type: 'segmented',
-            label: 'Автомобиль на хоdsadду?',
-            name: 'runnadsaing',
-            options: [{value: 'yes', label: 'Да'}, {value: 'no', label: 'Нет'}],
-            defaultValue: 'yes'
           },
           {
             type: 'checkboxes',
