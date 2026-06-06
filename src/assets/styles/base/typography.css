@@ -21,10 +21,10 @@ h5 {
 }
 
 h5.h-18 {
-    font-size: 18px;
+    font-size: var(--font-size-lg);
 }
 h5.h-16 {
-    font-size: 16px;
+    font-size: var(--font-size-base);
 }
 
 sup {

@@ -273,8 +273,9 @@
     .add__photos {
         display: flex;
         gap: 10px;
-        overflow: auto;
+        overflow-x: auto;
         scrollbar-width: none;
+        overflow-y:  hidden;
         -ms-overflow-style: none;
     }
 

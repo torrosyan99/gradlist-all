@@ -291,7 +291,7 @@
         display: block;
         color: var(--color-secondary);
         letter-spacing: var(--lt-1);
-        font-weight: 400;
+        font-weight: var(--font-weight-regular);
         margin-top: 8px;
     }
 

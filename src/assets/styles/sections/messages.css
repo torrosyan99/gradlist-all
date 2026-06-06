@@ -343,7 +343,7 @@
     flex-direction: column;
     justify-content: center;
     gap: 24px;
-    font-size: 18px;
+    font-size: var(--font-size-lg);
     font-weight: var(--font-weight-medium);
     background: transparent;
     box-shadow: none;
@@ -437,7 +437,7 @@
     }
 
     .messages__top-title.h-16 {
-        font-size: 14px;
+        font-size: var(--font-size-sm);
     }
 
     .messages__place {
