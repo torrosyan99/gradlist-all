@@ -19,28 +19,28 @@
 		<nav class="header__nav">
 			<ul class="header__list">
 				<li class="header__list-item">
-					<a class="header__link" href="#">
+					<a class="header__link" href="advertisements.html">
 						Объявления
 					</a>
 				</li>
 				<li class="header__list-item">
-					<a class="header__link" href="#">
+					<a class="header__link" href="questions.html">
 						Помощь
 					</a>
 				</li>
 				<li class="header__list-item">
-					<a class="header__link" href="#">
+					<a class="header__link" href="catalog.html">
 						Услуги
 					</a>
 				</li>
 				<li class="header__list-item">
-					<a class="header__link" href="#">
+					<a class="header__link" href="favorites.html">
 						Избранное
 					</a>
 				</li>
 			</ul>
 			<div class="header__actions">
-				<a class="header__action" href="#" aria-label="Избранное">
+				<a class="header__action" href="favorites.html" aria-label="Избранное">
 					<svg width="32" height="32">
 						<use xlink:href="/icons.svg#header-heart"></use>
 					</svg>
@@ -53,27 +53,27 @@
 					<span class="notification__badge">3</span>
 				</a>
 
-				<a class="header__action" href="#" aria-label="Сообщения">
+				<a class="header__action" href="messages.html" aria-label="Сообщения">
 					<svg width="32" height="32">
 						<use xlink:href="/icons.svg#header-message"></use>
 					</svg>
 				</a>
 			</div>
 		</nav>
-		<button class="button button--sm button--flex modal-button header__button" data-type="apply">
+		<a class="button  button--flex header__button" href="/add.html">
 			<svg width="24" height="24">
 				<use xlink:href="/icons.svg#plus"></use>
 			</svg>
 			Подать объявление
-		</button>
-		<div class="header__user">
+		</a>
+		<a class="header__user" href="profile.html" aria-label="Профиль">
 			<svg width="42" height="42">
 				<use xlink:href="/icons.svg#person"></use>
 			</svg>
 			<svg width="24" height="24">
 				<use xlink:href="/icons.svg#chevron-bottom"></use>
 			</svg>
-		</div>
+		</a>
 	</div>
 </header>
 
@@ -81,7 +81,7 @@
 	<nav class="menu__nav">
 		<ul class="menu__list">
 			<li class="menu__item">
-				<a class="menu__link" href="/public">
+				<a class="menu__link" href="index.html">
 					<svg width="32" height="32">
 						<use xlink:href="/icons.svg#menu-home"></use>
 					</svg>
@@ -89,7 +89,7 @@
 				</a>
 			</li>
 			<li class="menu__item">
-				<a class="menu__link" href="#">
+				<a class="menu__link" href="favorites.html">
 					<svg width="32" height="32">
 						<use xlink:href="/icons.svg#menu-heart"></use>
 					</svg>
@@ -97,7 +97,7 @@
 				</a>
 			</li>
 			<li class="menu__item">
-				<a class="menu__link" href="#">
+				<a class="menu__link" href="add.html">
 					<svg width="32" height="32">
 						<use xlink:href="/icons.svg#menu-add"></use>
 					</svg>
@@ -105,7 +105,7 @@
 				</a>
 			</li>
 			<li class="menu__item">
-				<a class="menu__link" href="#">
+				<a class="menu__link" href="messages.html">
 					<svg width="32" height="32">
 						<use xlink:href="/icons.svg#menu-message"></use>
 					</svg>
@@ -113,7 +113,7 @@
 				</a>
 			</li>
 			<li class="menu__item">
-				<a class="menu__link" href="#">
+				<a class="menu__link" href="profile.html">
 					<svg width="32" height="32">
 						<use xlink:href="/icons.svg#menu-profile"></use>
 					</svg>
@@ -178,7 +178,7 @@
 				</h5>
 				<input class="input apply__input" name="info" placeholder="Улица и номер дома" />
 			</div>
-			<button class="button button--sm apply__button">
+			<button class="button  apply__button">
 				Показать объявления
 			</button>
 		</form>
@@ -203,8 +203,38 @@
 									<use xlink:href="/icons.svg#chevron-bottom"></use>
 								</svg>
 							</button>
-							<input class="top__input" type="text"/>
-							<button class="button button--flex button--sm top__form-button">
+							<div class="top__search">
+								<input class="top__input" type="text" name="query" autocomplete="off"/>
+								<div class="top__search-panel" aria-label="Подсказки поиска">
+									<div class="top__chips" aria-label="Быстрые запросы">
+										<button class="top__chip" type="button">cls</button>
+										<button class="top__chip" type="button">benz</button>
+										<button class="top__chip" type="button">cla</button>
+										<button class="top__chip" type="button">геликоматер</button>
+									</div>
+									<div class="top__suggestions" role="listbox">
+										<button class="top__suggestion" type="button">
+											<svg width="22" height="22">
+												<use xlink:href="/icons.svg#top-round-home"></use>
+											</svg>
+											Mercedes
+										</button>
+										<button class="top__suggestion" type="button">
+											<svg width="22" height="22">
+												<use xlink:href="/icons.svg#top-car"></use>
+											</svg>
+											Автомобили
+										</button>
+										<button class="top__suggestion" type="button">
+											<svg width="22" height="22">
+												<use xlink:href="/icons.svg#top-car"></use>
+											</svg>
+											Mercedes
+										</button>
+									</div>
+								</div>
+							</div>
+							<button class="button button--flex top__form-button">
 								<svg width="24" height="24">
 									<use xlink:href="/icons.svg#search"></use>
 								</svg>
@@ -455,7 +485,6 @@
 			</div>
 		</div>
 	</section>
-
 	<section class="listings">
 		<div class="container">
 			<h4 class="listings__title title title--medium">
@@ -975,7 +1004,6 @@
 			</div>
 		</div>
 	</section>
-
 </main>
 
 <footer class="footer">

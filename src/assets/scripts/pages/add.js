@@ -1,6 +1,19 @@
-import { initSelects } from '../components/select.js';
+import {initSelects} from '../components/select.js';
+
+// Страница "Создание объявления", построенная на схемах (data-driven).
+//
+// Поток:
+// 1) Пользователь выбирает "Раздел" (селект из add.html).
+// 2) Мы рендерим следующий шаг(и) (категория/подкатегория) в [data-add-dynamic].
+// 3) Когда выбор доходит до листа в ADD_TREE, становится доступна кнопка "Выбрать".
+// 4) По клику "Выбрать" строим форму по схеме из FORM_SCHEMAS и рендерим в [data-add-builder].
+//
+// Примечания:
+// - Это прототип UI: отправки/сохранения формы здесь нет, только отрисовка.
+// - Значения кладем в hidden inputs, чтобы использовать существующий компонент select.
 
 function escapeHtml(value) {
+  // Защитное экранирование строк, которые вставляются в HTML через шаблонные строки.
   return String(value)
     .replaceAll('&', '&amp;')
     .replaceAll('<', '&lt;')
@@ -9,7 +22,15 @@ function escapeHtml(value) {
     .replaceAll("'", '&#39;');
 }
 
-function renderSelect({ name, placeholder, options, withIcon = false }) {
+function renderSelect({
+                        name,
+                        placeholder,
+                        options,
+                        withIcon = false,
+                        selectedValue = '',
+                        extraAttrs = '',
+                      }) {
+  // Рендерит разметку, совместимую с components/select.js и событием "select:change".
   const selectClass = withIcon ? 'select select--with-icon' : 'select';
 
   const iconMarkup = withIcon
@@ -19,6 +40,10 @@ function renderSelect({ name, placeholder, options, withIcon = false }) {
       </svg>
     `
     : '';
+
+  const selected = selectedValue ? options.find((o) => o.value === selectedValue) : null;
+  const triggerText = selected?.label ?? (placeholder ?? '');
+  const hiddenValue = selected?.value ?? '';
 
   const optionsMarkup = options.map((opt) => {
     const icon = opt.iconValue
@@ -39,10 +64,10 @@ function renderSelect({ name, placeholder, options, withIcon = false }) {
   }).join('');
 
   return `
-    <div class="${selectClass}" data-add-select="${escapeHtml(name)}">
+    <div class="${selectClass}" data-add-select="${escapeHtml(name)}" ${extraAttrs}>
       <button class="select__trigger" type="button">
         ${iconMarkup}
-        <span>${escapeHtml(placeholder ?? '')}</span>
+        <span>${escapeHtml(triggerText)}</span>
         <svg width="24" height="24">
           <use xlink:href="/icons.svg#arrow-bottom"></use>
         </svg>
@@ -50,14 +75,17 @@ function renderSelect({ name, placeholder, options, withIcon = false }) {
       <div class="select__dropdown custom-scroll">
         ${optionsMarkup}
       </div>
-      <input type="hidden" name="${escapeHtml(name)}" value="">
+      <input type="hidden" name="${escapeHtml(name)}" value="${escapeHtml(hiddenValue)}">
     </div>
   `;
 }
 
 
 function normalizeCarAutoNewSchema() {
-  // Build 'new' based on 'used' at runtime (remove mileage).
+  // Собираем схему "без пробега" на базе схемы "с пробегом".
+  // Храним одну основную схему (used) и получаем new, удаляя поле пробега.
+  // Если car_auto_new уже задан явно в FORM_SCHEMAS, не перетираем его.
+  if (FORM_SCHEMAS.car_auto_new) return;
   const used = FORM_SCHEMAS.car_auto_used;
   const cloned = JSON.parse(JSON.stringify(used));
   cloned.title = 'Автомобили (без пробега)';
@@ -69,14 +97,20 @@ function normalizeCarAutoNewSchema() {
 }
 
 function renderField(field) {
-  const label = field.label ? `<div class="add__label">${escapeHtml(field.label)}</div>` : '';
+  // Рендер одного поля из схем FORM_SCHEMAS[*].sections[*].fields[*].
+  const label = field.label ? `<h5 class="title title--semibold h-18 add__item-title">
+${escapeHtml(field.label)}</h5>` : '';
+  const isRequiredByStar = typeof field.label === 'string' && field.label.includes('*');
+  const isRequired = field.required === true || isRequiredByStar;
+  const requiredAttr = isRequired ? ' data-add-required="true"' : '';
 
   if (field.type === 'input') {
     const inputMode = field.inputMode ? ` inputmode="${escapeHtml(field.inputMode)}"` : '';
     return `
       <div class="add__field">
         ${label}
-        <input class="input" name="${escapeHtml(field.name)}" placeholder="${escapeHtml(field.placeholder ?? '')}"${inputMode}>
+        <input class="input" name="${escapeHtml(field.name)}" placeholder="${escapeHtml(
+      field.placeholder ?? '')}"${inputMode}${requiredAttr}>
       </div>
     `;
   }
@@ -85,16 +119,19 @@ function renderField(field) {
     return `
       <div class="add__field add__field--full">
         ${label}
-        <textarea class="add__textarea" name="${escapeHtml(field.name)}" placeholder="${escapeHtml(field.placeholder ?? '')}"></textarea>
+        <textarea class="add__textarea" name="${escapeHtml(field.name)}"${requiredAttr} placeholder="${escapeHtml(
+      field.placeholder ?? '')}"></textarea>
       </div>
     `;
   }
 
   if (field.type === 'select') {
+    const selectRequiredAttr = isRequired ? 'data-add-required="true"' : '';
     const selectHtml = renderSelect({
       name: field.name,
       placeholder: field.placeholder ?? '',
       options: field.options ?? [],
+      extraAttrs: selectRequiredAttr,
     });
 
     return `
@@ -107,13 +144,15 @@ function renderField(field) {
 
   if (field.type === 'segmented') {
     const opts = field.options ?? [];
-    const defaultValue = field.defaultValue ?? (opts[0]?.value ?? '');
-    const buttons = opts.map((o) => {
-      const active = o.value === defaultValue ? ' add__segmented-btn--active' : '';
+    const buttons = opts.map((o, i) => {
       return `
-        <button class="add__segmented-btn${active}" type="button" data-add-segment-value="${escapeHtml(o.value)}">
-          ${escapeHtml(o.label)}
-        </button>
+ 
+        <label class="add__segmented-label radio-input">
+<input class="add__radio-input" 
+type="radio" 
+value="${escapeHtml(o.label)}" ${i === 0 ? 'selected' : ''} name="${escapeHtml(field.name)}">
+<span> ${escapeHtml(o.label)}</span>
+</label>
       `;
     }).join('');
 
@@ -122,7 +161,6 @@ function renderField(field) {
         ${label}
         <div class="add__segmented" data-add-segmented="${escapeHtml(field.name)}">
           ${buttons}
-          <input type="hidden" name="${escapeHtml(field.name)}" value="${escapeHtml(defaultValue)}">
         </div>
       </div>
     `;
@@ -134,7 +172,8 @@ function renderField(field) {
       const id = `${field.name}-${idx}`;
       return `
         <label class="checkbox add__checkbox">
-          <input type="checkbox" name="${escapeHtml(field.name)}" value="${escapeHtml(text)}" id="${escapeHtml(id)}">
+          <input type="checkbox" 
+          name="${escapeHtml(field.name)}" value="${escapeHtml(text)}" id="${escapeHtml(id)}">
           <span class="checkbox__box"></span>
           <span class="checkbox__text">${escapeHtml(text)}</span>
         </label>
@@ -143,7 +182,8 @@ function renderField(field) {
 
     return `
       <div class="add__field add__field--full">
-        ${label ? label : `<div class="add__label">${escapeHtml(field.label ?? '')}</div>`}
+        ${label ? label :
+      `<h5 class="title title--semibold h-18 add__item-title">${escapeHtml(field.label ?? '')}</h5>`}
         <div class="add__checkboxes">
           ${items}
         </div>
@@ -152,12 +192,14 @@ function renderField(field) {
   }
 
   if (field.type === 'map') {
-    const chips = (field.chips ?? []).map((chip) => `<button class="add__chip" type="button">${escapeHtml(chip)}</button>`).join('');
+    const chips =
+      (field.chips ?? []).map((chip) => `<button class="add__chip" type="button">
+${escapeHtml(chip)}</button>`).join('');
 
     return `
-      <div class="add__field add__field--full">
+      <div class="add__field add__field--full" data-add-map>
         ${label}
-        <input class="input" name="${escapeHtml(field.name)}" placeholder="${escapeHtml(field.placeholder ?? '')}">
+        <input class="input" name="${escapeHtml(field.name)}" placeholder="${escapeHtml(field.placeholder ?? '')}"${requiredAttr}>
         ${chips ? `<div class="add__chips">${chips}</div>` : ''}
         <div class="add__map">
           <img class="add__map-img" src="${escapeHtml(field.imageSrc ?? '')}" alt="Карта">
@@ -172,10 +214,11 @@ function renderField(field) {
     return `
       <div class="add__field add__field--full">
         <div class="add__photos" data-add-photos data-add-photos-max="${escapeHtml(max)}">
-          <input class="add__photos-input" type="file" accept="${escapeHtml(accept)}" ${field.multiple === false ? '' : 'multiple'} hidden>
+          <input class="add__photos-input" type="file" accept="${escapeHtml(accept)}" ${field.multiple === false ? '' :
+      'multiple'} hidden>
           <button class="add__photo add__photo--add" type="button" aria-label="Добавить фото" data-add-photos-add>
-            <svg width="24" height="24">
-              <use xlink:href="/icons.svg#plus"></use>
+            <svg width="48" height="48">
+              <use xlink:href="/icons.svg#add-plus"></use>
             </svg>
           </button>
         </div>
@@ -187,8 +230,8 @@ function renderField(field) {
     return `
       <div class="add__field add__field--full">
         <div class="add__actions">
-          <button class="button button--sm" type="button">Опубликовать</button>
-          <button class="button button--sm button--secondary" type="button">Сохранить в черновик</button>
+          <button class="button " type="button">Опубликовать</button>
+          <button class="button  button--secondary" type="button">Сохранить в черновик</button>
         </div>
         <label class="checkbox add__agree">
           <input type="checkbox" name="agree" value="yes">
@@ -202,19 +245,101 @@ function renderField(field) {
   return '';
 }
 
+function renderSegmentedInner(field) {
+  // Общий рендер segmented-контрола для случаев, когда нужен кастомный layout (пара в одной строке).
+  const label = field.label ? `<h5 class="title title--semibold h-18 add__item-title">${escapeHtml(field.label)}</h5>` :
+    '';
+  const opts = field.options ?? [];
+  const defaultValue = field.defaultValue ?? (opts[0]?.value ?? '');
+  const buttons = opts.map((o) => {
+    return `
+      <label class="add__segmented-label radio-input">
+          <input class="add__radio-input" type="radio" value="${escapeHtml(o.label)}" name="${escapeHtml(field.name)}">
+           <span>${escapeHtml(o.label)}</span>
+      </label>
+    `;
+  }).join('');
+
+  return `
+    ${label}
+    <div class="add__segmented" data-add-segmented="${escapeHtml(field.name)}">
+      ${buttons}
+      <input type="hidden" name="${escapeHtml(field.name)}" value="${escapeHtml(defaultValue)}">
+    </div>
+  `;
+}
+
+function renderSegmentedPair(a, b) {
+  // Требование макета: два подряд segmented должны стоять рядом в одной строке.
+  return `
+    <div class="add__field add__segmented-pair add__field--full">
+      <div class="add__segmented-pair-item">
+        ${renderSegmentedInner(a)}
+      </div>
+      <div class="add__segmented-pair-item">
+        ${renderSegmentedInner(b)}
+      </div>
+    </div>
+  `;
+}
+
+function renderSegmentedRow(fields) {
+  // Любое количество подряд идущих segmented объединяем в один ряд (full width).
+  const items = (fields ?? []).map((f) => {
+    return `
+      <div class="add__segmented-row-item">
+        ${renderSegmentedInner(f)}
+      </div>
+    `;
+  }).join('');
+
+  return `
+    <div class="add__field add__segmented-row add__field--full">
+      ${items}
+    </div>
+  `;
+}
+
 function renderSchema(schema) {
   const sectionsHtml = (schema.sections ?? []).map((section) => {
-    const note = section.requiredNote ? `<div class="add__required-note">${escapeHtml(section.requiredNote)}</div>` : '';
-    const fields = (section.fields ?? []).map(renderField).join('');
+    const note = section.requiredNote ? `<div class="add__required-note">${escapeHtml(section.requiredNote)}</div>` :
+      '';
+    const list = section.fields ?? [];
+    const rendered = [];
 
-    const gridClass = (section.fields ?? []).some((f) => f.type === 'map' || f.type === 'checkboxes' || f.type === 'photos' || f.type === 'actions' || f.type === 'textarea')
+    for (let i = 0; i < list.length; i++) {
+      const f = list[i];
+      const next = list[i + 1];
+
+      // Два подряд segmented объединяем в один блок (как в дизайне: "Был ли ДТП?" + "Автомобиль на ходу?").
+      if (f?.type === 'segmented') {
+        let j = i;
+        while (j < list.length && list[j]?.type === 'segmented') j += 1;
+        const runLen = j - i;
+
+        if (runLen >= 2) {
+          rendered.push(renderSegmentedRow(list.slice(i, j)));
+          i = j - 1;
+          continue;
+        }
+      }
+
+      rendered.push(renderField(f));
+    }
+
+    const fields = rendered.join('');
+
+    // Некоторые типы полей сами содержат сетки/блоки и должны занимать всю ширину.
+    const gridClass = (section.fields ?? []).some(
+      (f) => f.type === 'map' || f.type === 'checkboxes' || f.type === 'photos' || f.type === 'actions' || f.type ===
+        'textarea')
       ? 'add__grid add__grid--mixed'
       : 'add__grid';
 
     return `
       <div class="add__block">
         <div class="add__section-header">
-          <h3 class="title title--semibold add__section-title">${escapeHtml(section.title)}</h3>
+          <h3 class="add__section-title">${escapeHtml(section.title)}</h3>
           ${note}
         </div>
         <div class="${gridClass}">
@@ -232,21 +357,27 @@ function renderSchema(schema) {
 }
 
 function getNodePath(state) {
+  // Превращает текущий выбор (section + произвольная глубина state.path) в ключ схемы формы (если дошли до листа).
   const section = state.section && ADD_TREE[state.section];
   if (!section) return null;
 
-  const category = state.category && section.children?.[state.category];
-  if (!category) return { section, category: null, leaf: null };
+  let node = section;
+  const keys = Array.isArray(state.path) ? state.path : [];
 
-  if (category.form) return { section, category, leaf: { form: category.form } };
+  for (const key of keys) {
+    if (!key) break;
+    node = node?.children?.[key];
+    if (!node) return {section, node: null, leaf: null};
+  }
 
-  const sub = state.sub && category.children?.[state.sub];
-  if (!sub) return { section, category, leaf: null };
-
-  return { section, category, leaf: { form: sub.form } };
+  const form = node?.form ?? null;
+  return {section, node, leaf: form ? {form} : null};
 }
 
 function initPhotos(root) {
+  // Простой UI для фотографий:
+  // - Берет файлы из <input type="file"> и добавляет превью в сетку.
+  // - Ограничивает количество по [data-add-photos-max].
   root.querySelectorAll('[data-add-photos]').forEach((photosRoot) => {
     if (photosRoot.dataset.addPhotosInitialized === 'true') return;
     photosRoot.dataset.addPhotosInitialized = 'true';
@@ -284,7 +415,7 @@ function initPhotos(root) {
           </button>
         `;
 
-        // Keep the File on the element so it can be collected on submit later.
+        // Сохраняем File на DOM-элементе, чтобы при отправке формы можно было собрать список.
         item._file = file;
         item._objectUrl = url;
 
@@ -300,7 +431,7 @@ function initPhotos(root) {
 
     input.addEventListener('change', () => {
       addFiles(input.files);
-      // Allow selecting the same file again after delete.
+      // Разрешаем выбрать тот же файл снова после удаления.
       input.value = '';
     });
 
@@ -319,6 +450,24 @@ function initPhotos(root) {
     syncAddVisibility();
   });
 }
+
+function initMapChips(root) {
+  root.querySelectorAll('[data-add-map]').forEach((mapBlock) => {
+    const input = mapBlock.querySelector('input');
+    if (!input) return;
+
+    mapBlock.addEventListener('click', (e) => {
+      const chip = e.target.closest('.add__chip');
+      if (!chip) return;
+
+      input.value = chip.textContent.trim();
+
+      input.dispatchEvent(new Event('input', {bubbles: true}));
+      input.dispatchEvent(new Event('change', {bubbles: true}));
+    });
+  });
+}
+
 const ADD_TREE = {
   car: {
     label: 'Транспорт',
@@ -326,19 +475,28 @@ const ADD_TREE = {
       automobiles: {
         label: 'Автомобили',
         children: {
-          used: { label: 'С пробегом', form: 'car_auto_used' },
-          new: { label: 'Без пробега', form: 'car_auto_new' },
+          used: {
+            label: 'С пробегом',  form: 'car_auto_used'
+          },
+          new: {
+            label: 'Без пробега', form: 'car_auto_new',
+          },
         },
       },
+
     },
   },
   estate: {
     label: 'Недвижимость',
     children: {
-      rent: { label: 'Аренда', form: 'estate_rent_stub' },
-      sale: { label: 'Продажа', form: 'estate_sale_stub' },
+      rent: {label: 'Квартиры', children: {
+        secondary: {
+          label: 'Вторичка', form: 'estate_rent_secondary',
+        }
+        }},
     },
   },
+
 };
 
 const FORM_SCHEMAS = {
@@ -349,28 +507,28 @@ const FORM_SCHEMAS = {
         title: 'Общая информация',
         requiredNote: '*обязательные к заполнению поля',
         fields: [
-          { type: 'input', label: 'Заголовок*', name: 'title', placeholder: 'Название объявления' },
+          {type: 'input', label: 'Заголовок*', name: 'title', placeholder: 'Название объявления'},
           {
             type: 'select',
             label: 'Срок публикации*',
             name: 'publish_term',
             placeholder: 'Выберите срок',
             options: [
-              { value: '1w', label: '1 неделя' },
-              { value: '2w', label: '2 недели' },
-              { value: '1m', label: '1 месяц' },
+              {value: '1w', label: '1 неделя'},
+              {value: '2w', label: '2 недели'},
+              {value: '1m', label: '1 месяц'},
             ],
           },
-          { type: 'input', label: 'Цена, руб*', name: 'price', placeholder: '1 000 000', inputMode: 'numeric' },
+          {type: 'input', label: 'Цена, руб*', name: 'price', placeholder: '1 000 000', inputMode: 'numeric'},
           {
             type: 'select',
             label: 'Регион*',
             name: 'region',
             placeholder: 'Выберите регион',
             options: [
-              { value: 'ru_all', label: 'Вся Россия' },
-              { value: 'ru_msk', label: 'Москва' },
-              { value: 'ru_spb', label: 'Санкт-Петербург' },
+              {value: 'ru_all', label: 'Вся Россия'},
+              {value: 'ru_msk', label: 'Москва'},
+              {value: 'ru_spb', label: 'Санкт-Петербург'},
             ],
           },
           {
@@ -389,19 +547,93 @@ const FORM_SCHEMAS = {
       {
         title: 'Информация о товаре',
         fields: [
-          { type: 'select', label: 'Марка авто*', name: 'brand', placeholder: 'Выберите', options: [{ value: 'lada', label: 'LADA' }, { value: 'toyota', label: 'Toyota' }] },
-          { type: 'input', label: 'Год выпуска', name: 'year', placeholder: '2026', inputMode: 'numeric' },
-          { type: 'select', label: 'Тип кузова', name: 'body', placeholder: 'Выберите', options: [{ value: 'sedan', label: 'Седан' }, { value: 'suv', label: 'Внедорожник' }] },
-          { type: 'input', label: 'Количество дверей', name: 'doors', placeholder: '3', inputMode: 'numeric' },
-          { type: 'select', label: 'Тип двигателя', name: 'engine_type', placeholder: 'Выберите', options: [{ value: 'gasoline', label: 'Бензин' }, { value: 'diesel', label: 'Дизель' }, { value: 'electric', label: 'Электро' }] },
-          { type: 'input', label: 'Объем двигателя, см³', name: 'engine_volume', placeholder: '1598', inputMode: 'numeric' },
-          { type: 'input', label: 'Пробег, км', name: 'mileage', placeholder: '120 000', inputMode: 'numeric' },
-          { type: 'select', label: 'КПП', name: 'gearbox', placeholder: 'Выберите', options: [{ value: 'manual', label: 'Механическая' }, { value: 'auto', label: 'Автомат' }] },
-          { type: 'select', label: 'Привод', name: 'drive', placeholder: 'Выберите', options: [{ value: 'fwd', label: 'Передний' }, { value: 'rwd', label: 'Задний' }, { value: 'awd', label: 'Полный' }] },
-          { type: 'select', label: 'Руль', name: 'steering', placeholder: 'Выберите', options: [{ value: 'left', label: 'Левый' }, { value: 'right', label: 'Правый' }] },
-          { type: 'select', label: 'Цвет', name: 'color', placeholder: 'Выберите', options: [{ value: 'white', label: 'Белый' }, { value: 'black', label: 'Черный' }, { value: 'gray', label: 'Серый' }] },
-          { type: 'segmented', label: 'Был ли ДТП?', name: 'crash', options: [{ value: 'yes', label: 'Да' }, { value: 'no', label: 'Нет' }], defaultValue: 'yes' },
-          { type: 'segmented', label: 'Автомобиль на ходу?', name: 'running', options: [{ value: 'yes', label: 'Да' }, { value: 'no', label: 'Нет' }], defaultValue: 'yes' },
+          {
+            type: 'select', label: 'Марка авто*', name: 'brand',
+            placeholder: 'Выберите',
+            options:
+              [
+                {value: 'lada', label: 'LADA'},
+                {value: 'toyota', label: 'Toyota'}
+              ]
+          },
+          {type: 'input', label: 'Год выпуска', name: 'year', placeholder: '2026', inputMode: 'numeric'},
+          {
+            type: 'select',
+            label: 'Тип кузова',
+            name: 'body',
+            placeholder: 'Выберите',
+            options: [{value: 'sedan', label: 'Седан'}, {value: 'suv', label: 'Внедорожник'}]
+          },
+          {type: 'input', label: 'Количество дверей', name: 'doors', placeholder: '3', inputMode: 'numeric'},
+          {
+            type: 'select',
+            label: 'Тип двигателя',
+            name: 'engine_type',
+            placeholder: 'Выберите',
+            options: [
+              {value: 'gasoline', label: 'Бензин'}, {value: 'diesel', label: 'Дизель'},
+              {value: 'electric', label: 'Электро'}
+            ]
+          },
+          {
+            type: 'input',
+            label: 'Объем двигателя, см³',
+            name: 'engine_volume',
+            placeholder: '1598',
+            inputMode: 'numeric'
+          },
+          {
+            type: 'select',
+            label: 'КПП',
+            name: 'gearbox',
+            placeholder: 'Выберите',
+            options: [{value: 'manual', label: 'Механическая'}, {value: 'auto', label: 'Автомат'}]
+          },
+          {
+            type: 'select',
+            label: 'Привод',
+            name: 'drive',
+            placeholder: 'Выберите',
+            options: [
+              {value: 'fwd', label: 'Передний'}, {value: 'rwd', label: 'Задний'}, {value: 'awd', label: 'Полный'}
+            ]
+          },
+          {
+            type: 'select',
+            label: 'Руль',
+            name: 'steering',
+            placeholder: 'Выберите',
+            options: [{value: 'left', label: 'Левый'}, {value: 'right', label: 'Правый'}]
+          },
+          {
+            type: 'select',
+            label: 'Цвет',
+            name: 'color',
+            placeholder: 'Выберите',
+            options: [
+              {value: 'white', label: 'Белый'}, {value: 'black', label: 'Черный'}, {value: 'gray', label: 'Серый'}
+            ]
+          },
+          {
+            type: 'segmented',
+            label: 'Был ли ДТП?',
+            name: 'crash',
+            options: [{value: 'yes', label: 'Да'}, {value: 'no', label: 'Нет'}],
+            defaultValue: 'yes'
+          },
+          {
+            type: 'segmented',
+            label: 'Автомобиль на ходу?',
+            name: 'running',
+            options: [{value: 'yes', label: 'Да'}, {value: 'no', label: 'Нет'}],
+            defaultValue: 'yes'
+          },{
+            type: 'segmented',
+            label: 'Автомобиль на хоdsadду?',
+            name: 'runnadsaing',
+            options: [{value: 'yes', label: 'Да'}, {value: 'no', label: 'Нет'}],
+            defaultValue: 'yes'
+          },
           {
             type: 'checkboxes',
             label: 'Дополнительные опции',
@@ -434,52 +666,102 @@ const FORM_SCHEMAS = {
       {
         title: 'Текстовое описание',
         fields: [
-          { type: 'textarea', label: '', name: 'description', placeholder: 'Введите текст' },
+          {type: 'textarea', label: '', name: 'description', placeholder: 'Введите текст'},
+
         ],
       },
       {
         title: 'Фотографии товара',
         fields: [
-          { type: 'photos', name: 'photos' },
-          { type: 'actions', name: 'actions' },
+          {type: 'photos', name: 'photos'},
+          {type: 'actions', name: 'actions'},
         ],
       },
     ],
   },
-  estate_rent_stub: {
-    title: 'Недвижимость (аренда)',
+  car_auto_new: {
+    title: 'Автомобили (новая)',
     sections: [
       {
         title: 'Общая информация',
         requiredNote: '*обязательные к заполнению поля',
         fields: [
-          { type: 'input', label: 'Заголовок*', name: 'title', placeholder: 'Название объявления' },
-          { type: 'input', label: 'Цена, руб*', name: 'price', placeholder: '50 000', inputMode: 'numeric' },
-          { type: 'actions', name: 'actions' },
-        ],
-      },
-    ],
-  },
-  estate_sale_stub: {
-    title: 'Недвижимость (продажа)',
-    sections: [
-      {
-        title: 'Общая информация',
-        requiredNote: '*обязательные к заполнению поля',
-        fields: [
-          { type: 'input', label: 'Заголовок*', name: 'title', placeholder: 'Название объявления' },
-          { type: 'input', label: 'Цена, руб*', name: 'price', placeholder: '5 000 000', inputMode: 'numeric' },
-          { type: 'actions', name: 'actions' },
+          {type: 'input', label: 'Заголовок*', name: 'title', placeholder: 'Название объявления'},
+          {
+            type: 'select',
+            label: 'Срок публикации*',
+            name: 'publish_term',
+            placeholder: 'Выберите срок',
+            options: [
+              {value: '1w', label: '1 неделя'},
+              {value: '2w', label: '2 недели'},
+              {value: '1m', label: '1 месяц'},
+            ],
+          },
+          {type: 'actions', name: 'actions'},
 
         ],
       },
-    ],
+
+    ]
   },
+  estate_rent_secondary: {
+    title: 'Квартиры вторичка',
+    sections: [
+      {
+        title: 'Общая информация',
+        requiredNote: '*обязательные к заполнению поля',
+        fields: [
+          {type: 'input',
+            label: 'Заголовок*',
+            name: 'title', placeholder: 'Название объявления'},
+          {
+            type: 'select',
+            label: 'Срок публикации*',
+            name: 'publish_term',
+            placeholder: 'Выберите срок',
+            options: [
+              {value: '1w', label: '1 неделя'},
+              {value: '2w', label: '2 недели'},
+              {value: '1m', label: '1 месяц'},
+            ],
+          },
+          {type: 'input', label: 'Цена, руб*', name: 'price', placeholder: '1 000 000', inputMode: 'numeric'},
+          {
+            type: 'select',
+            label: 'Регион*',
+            name: 'region',
+            placeholder: 'Выберите регион',
+            options: [
+              {value: 'ru_all', label: 'Вся Россия'},
+              {value: 'ru_msk', label: 'Москва'},
+              {value: 'ru_spb', label: 'Санкт-Петербург'},
+            ],
+          },
+          {
+            type: 'map',
+            label: 'Адрес, где находится квартира*',
+            name: 'address',
+            placeholder: 'Введите адрес',
+            chips: [
+              'Россия, г. Копейск, Калинина ул., д. 1 кв.98',
+              'Россия, г. Чита, Набережная ул., д. 10 кв.74',
+            ],
+            imageSrc: '/images/map.png',
+          },
+          {type: 'actions', name: 'actions'},
+        ],
+      },
+
+
+    ]
+  }
 };
 
 export function initAddPage() {
   normalizeCarAutoNewSchema();
 
+  // Базовая разметка из add.html (контейнеры для шагов и билдера формы).
   const form = document.querySelector('.add__main-form');
   const dynamic = document.querySelector('[data-add-dynamic]');
   const chooseBtn = document.querySelector('[data-add-choose]');
@@ -487,90 +769,208 @@ export function initAddPage() {
 
   if (!form || !dynamic || !chooseBtn || !builder) return;
 
-  // Hide "Choose" until the user reaches a leaf in the category tree.
+  // Кнопку "Выбрать" показываем только когда выбор дошел до листа дерева категорий.
   chooseBtn.hidden = true;
 
+  // Состояние выбора (повторяет путь по дереву категорий).
   const state = {
     section: '',
-    category: '',
-    sub: '',
+    path: [],
   };
 
-  function resetBelow(level) {
-    if (level === 'section') {
-      state.category = '';
-      state.sub = '';
-    }
-    if (level === 'category') {
-      state.sub = '';
+  let requiredValidation = null;
+
+  function initRequiredValidation(root) {
+    const requiredEls = Array.from(
+      root.querySelectorAll('input[data-add-required="true"], textarea[data-add-required="true"]'),
+    );
+    const requiredSelects = Array.from(root.querySelectorAll('.select[data-add-required="true"]'));
+
+    const REQUIRED_MESSAGE_TEXT = 'не заполнено';
+
+    function getOrCreateFieldMessage(fieldEl, describedForEl) {
+      if (!fieldEl) return null;
+      let msg = fieldEl.querySelector('.add__field-error');
+      if (!msg) {
+        msg = document.createElement('div');
+        msg.className = 'add__field-error';
+        msg.hidden = true;
+        msg.textContent = REQUIRED_MESSAGE_TEXT;
+        fieldEl.appendChild(msg);
+      }
+
+      // Best-effort accessibility wiring.
+      if (describedForEl && describedForEl instanceof Element) {
+        if (!msg.id) {
+          const name = describedForEl.getAttribute('name') || describedForEl.getAttribute('data-add-select') || '';
+          const safe = String(name).replaceAll(/[^a-zA-Z0-9_-]+/g, '_');
+          msg.id = safe ? `add_req_msg_${safe}` : `add_req_msg_${Math.random().toString(16).slice(2)}`;
+        }
+        const prev = describedForEl.getAttribute('aria-describedby') || '';
+        if (!prev.split(/\\s+/).includes(msg.id)) {
+          describedForEl.setAttribute('aria-describedby', `${prev} ${msg.id}`.trim());
+        }
+      }
+
+      return msg;
     }
 
-    dynamic.innerHTML = '';
+    function setFieldMessage(fieldEl, describedForEl, on) {
+      const msg = getOrCreateFieldMessage(fieldEl, describedForEl);
+      if (!msg) return;
+      msg.hidden = !on;
+    }
+
+    function setError(el, on) {
+      el.classList.toggle('input--error', on);
+      el.setAttribute('aria-invalid', on ? 'true' : 'false');
+      setFieldMessage(el.closest('.add__field'), el, on);
+    }
+
+    function setSelectError(selectEl, on) {
+      selectEl.classList.toggle('select-error', on);
+      const trigger = selectEl.querySelector('.select__trigger') || selectEl.querySelector('.select__empty-trigger');
+      if (trigger) trigger.setAttribute('aria-invalid', on ? 'true' : 'false');
+      setFieldMessage(selectEl.closest('.add__field'), trigger || selectEl, on);
+    }
+
+    function validateOne(el) {
+      const ok = String(el.value ?? '').trim().length > 0;
+      setError(el, !ok);
+      return ok;
+    }
+
+    function validateSelect(selectEl) {
+      const hidden = selectEl.querySelector('input[type="hidden"]');
+      const ok = String(hidden?.value ?? '').trim().length > 0;
+      setSelectError(selectEl, !ok);
+      return ok;
+    }
+
+    requiredEls.forEach((el) => {
+      el.addEventListener('blur', () => validateOne(el));
+      el.addEventListener('input', () => {
+        // Убираем ошибку сразу как пользователь ввел что-то валидное.
+        if (el.classList.contains('input--error') && String(el.value ?? '').trim().length > 0) {
+          setError(el, false);
+        }
+      });
+    });
+
+    // Снимаем ошибку с required select как только выбрали значение.
+    root.addEventListener('select:change', (e) => {
+      const selectEl = e.target.closest('.select[data-add-required="true"]');
+      if (!selectEl) return;
+      if (String(e.detail?.value ?? '').trim().length > 0) {
+        setSelectError(selectEl, false);
+      }
+    });
+
+    function validateAll() {
+      let firstInvalid = null;
+      requiredEls.forEach((el) => {
+        const ok = validateOne(el);
+        if (!ok && !firstInvalid) firstInvalid = el;
+      });
+
+      requiredSelects.forEach((sel) => {
+        const ok = validateSelect(sel);
+        if (!ok && !firstInvalid) firstInvalid = sel;
+      });
+
+      if (firstInvalid) {
+        const focusEl =
+          firstInvalid instanceof Element && firstInvalid.classList.contains('select')
+            ? (firstInvalid.querySelector('.select__trigger') || firstInvalid.querySelector('.select__empty-trigger'))
+            : firstInvalid;
+        focusEl?.focus?.();
+        (focusEl ?? firstInvalid).scrollIntoView({block: 'center', behavior: 'smooth'});
+        return false;
+      }
+
+      return true;
+    }
+
+    return {validateAll};
+  }
+
+  function resetBuilder() {
     chooseBtn.disabled = true;
     chooseBtn.hidden = true;
     builder.hidden = true;
     builder.innerHTML = '';
+    requiredValidation = null;
   }
 
-  function renderCategoryStep(sectionKey) {
-    const section = ADD_TREE[sectionKey];
-    if (!section) return;
-
-    const categories = Object.entries(section.children ?? {}).map(([value, node]) => ({
-      value,
-      label: node.label,
-    }));
-
-    dynamic.innerHTML = `
-      <div class="add__item">
-        <h5 class="title title--semibold h-18 add__item-title">Категория</h5>
-        ${renderSelect({
-          name: 'category',
-          placeholder: 'Выберите категорию',
-          options: categories,
-        })}
-        <div data-add-sub></div>
-      </div>
-    `;
-
-    initSelects(dynamic);
-  }
-
-  function renderSubStep(sectionKey, categoryKey) {
-    const section = ADD_TREE[sectionKey];
-    const category = section?.children?.[categoryKey];
-    const subRoot = dynamic.querySelector('[data-add-sub]');
-    if (!category || !subRoot) return;
-
-    const children = category.children ?? null;
-    if (!children) {
-      subRoot.innerHTML = '';
-      state.sub = '';
-      return;
+  function resetBelow(level) {
+    // Сбрасывает зависимые выборы и UI, когда меняется более высокий уровень.
+    if (level === 'section') {
+      state.path = [];
     }
 
-    const subOptions = Object.entries(children).map(([value, node]) => ({
-      value,
-      label: node.label,
-    }));
-
-    subRoot.innerHTML = renderSelect({
-      name: 'sub',
-      placeholder: 'Выберите',
-      options: subOptions,
-    });
-
-    initSelects(subRoot);
+    dynamic.innerHTML = '';
+    resetBuilder();
   }
 
   function updateChooseAvailability() {
+    // "Выбрать" доступна только если текущий путь указывает на схему формы.
     const path = getNodePath(state);
     const formKey = path?.leaf?.form ?? null;
     chooseBtn.disabled = !formKey;
     chooseBtn.hidden = !formKey;
   }
 
+  function renderPathSteps() {
+    // Рендерит цепочку селектов любой глубины по ADD_TREE.
+    if (!state.section) {
+      dynamic.innerHTML = '';
+      return;
+    }
+
+    let node = ADD_TREE[state.section];
+    if (!node) {
+      dynamic.innerHTML = '';
+      return;
+    }
+
+    let selectsHtml = '';
+
+    for (let level = 0; node?.children; level += 1) {
+      const options = Object.entries(node.children ?? {}).map(([value, child]) => ({
+        value,
+        label: child.label,
+      }));
+
+      const selectedValue = state.path[level] ?? '';
+      const placeholder = level === 0 ? 'Выберите категорию' : 'Выберите';
+
+      selectsHtml += `
+        ${renderSelect({
+        name: `add_path_${level}`,
+        placeholder,
+        options,
+        selectedValue,
+        extraAttrs: `data-add-path-level="${level}"`,
+      })}
+      `;
+
+      if (!selectedValue) break;
+      const next = node.children?.[selectedValue];
+      if (!next) break;
+      node = next;
+    }
+
+    dynamic.innerHTML = `
+      <div class="add__item">
+        <h5 class="title title--semibold h-18 add__item-title">Категория</h5>
+        ${selectsHtml}
+      </div>
+    `;
+    initSelects(dynamic);
+  }
+
   function renderBuilder() {
+    // Строит финальную форму по схеме, найденной в листе дерева категорий.
     const path = getNodePath(state);
     const formKey = path?.leaf?.form ?? null;
     if (!formKey) return;
@@ -583,8 +983,11 @@ export function initAddPage() {
 
     initSelects(builder);
     initPhotos(builder);
+    initMapChips(builder);
+    requiredValidation = initRequiredValidation(builder);
 
-    // Local segmented controls: toggle active state and sync hidden input.
+
+    // Локальная логика segmented: переключаем активную кнопку и синхронизируем hidden input.
     builder.querySelectorAll('[data-add-segmented]').forEach((seg) => {
       seg.addEventListener('click', (e) => {
         const btn = e.target.closest('[data-add-segment-value]');
@@ -599,53 +1002,48 @@ export function initAddPage() {
     });
   }
 
-  // Listen for changes from existing "Раздел" select.
+  // Слушаем изменения селектов (components/select.js генерирует событие "select:change").
   form.addEventListener('select:change', (e) => {
     const selectEl = e.target.closest('.select');
     const name = selectEl?.querySelector('input[type="hidden"]')?.name;
     const value = e.detail?.value ?? '';
 
     if (name === 'section') {
+      // Шаг 1: выбран раздел -> показываем категории.
       state.section = value;
       resetBelow('section');
-      if (state.section) renderCategoryStep(state.section);
+      renderPathSteps();
       updateChooseAvailability();
       return;
     }
 
-    if (name === 'category') {
-      state.category = value;
-      resetBelow('category');
-      // Re-render category item to keep current selection visible, then add sub-step if exists.
-      renderCategoryStep(state.section);
-      // Restore category selection text/value in DOM (select component handles view only on click; this re-render loses it).
-      const catSelect = dynamic.querySelector('[data-add-select="category"]');
-      if (catSelect) {
-        const hidden = catSelect.querySelector('input[type="hidden"]');
-        const span = catSelect.querySelector('.select__trigger span');
-        const label = ADD_TREE[state.section]?.children?.[state.category]?.label ?? '';
-        if (hidden) hidden.value = state.category;
-        if (span) span.textContent = label;
+    // Динамические уровни пути по дереву категорий (любая глубина).
+    const levelRaw = selectEl?.dataset?.addPathLevel;
+    if (levelRaw != null && levelRaw !== '') {
+      const level = Number(levelRaw);
+      if (!Number.isNaN(level) && level >= 0) {
+        state.path[level] = value;
+        state.path.length = level + 1;
+        resetBuilder();
+        renderPathSteps();
+        updateChooseAvailability();
       }
-
-      renderSubStep(state.section, state.category);
-      updateChooseAvailability();
-      return;
-    }
-
-    if (name === 'sub') {
-      state.sub = value;
-      builder.hidden = true;
-      builder.innerHTML = '';
-      updateChooseAvailability();
     }
   });
 
   chooseBtn.addEventListener('click', () => {
+    // Финальный шаг: пользователь подтверждает путь по категориям, рендерим форму по схеме.
     builder.hidden = true;
     builder.innerHTML = '';
     renderBuilder();
   });
+
+  // При клике "Опубликовать" прогоняем простую валидацию обязательных полей.
+  builder.addEventListener('click', (e) => {
+    const btn = e.target.closest('.add__actions .button');
+    if (!btn) return;
+    if (!/Опубликовать/i.test(btn.textContent || '')) return;
+
+    requiredValidation?.validateAll();
+  });
 }
-
-

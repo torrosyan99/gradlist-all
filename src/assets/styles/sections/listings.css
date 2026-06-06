@@ -24,7 +24,7 @@
     color: var(--color-primary);
     padding: 10px 10px 15px;
     border-radius: var(--radius-md);
-    box-shadow: 0 8px 20px 0 rgba(226, 230, 237, 0.6);
+    box-shadow: var(--shadow);
     background: var(--color-surface);
     position: relative;
 }

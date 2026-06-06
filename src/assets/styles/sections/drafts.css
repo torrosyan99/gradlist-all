@@ -1,0 +1,30 @@
+.drafts {
+    padding-top: 46px;
+}
+
+.drafts__top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px 20px;
+    margin-bottom: 30px;
+}
+
+.drafts__title {
+    letter-spacing: var(--lt-1);
+}
+
+
+
+@media (max-width: 1000px) {
+    .drafts {
+        padding-top: 24px;
+    }
+    .drafts__top {
+        margin-bottom: 0;
+    }
+.drafts__button {
+    display: none;
+}
+}
+

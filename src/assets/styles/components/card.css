@@ -124,6 +124,57 @@
     flex-shrink: 0;
     border-radius: var(--radius-full);
 }
+
+/* Row card: reusable seller/rating meta */
+.row-card__info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: var(--font-size-sm);
+}
+
+.row-card__name {
+    font-weight: var(--font-weight-semibold);
+}
+
+.row-card__rating {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.row-card__stars {
+    display: flex;
+    gap: 4px;
+}
+
+.row-card__reviews {
+    display: block;
+    font-size: var(--font-size-sm);
+    color: var(--color-secondary);
+    padding-left: 10px;
+    height: 14px;
+    line-height: 14px;
+    border-left: 1px solid var(--color-border);
+}
+
+/* Row card variant used on catalog page */
+.row-card--catalog .row-card__body {
+    gap: 20px;
+}
+
+.row-card--catalog .row-card__img {
+    height: 216px;
+}
+
+.row-card--catalog .row-card__title {
+    margin-top: 6px;
+}
+
+.row-card--catalog .row-card__meta {
+    gap: 8px;
+    font-size: var(--font-size-sm);
+}
 @media (max-width: 1280px) {
     .row-card {
         flex-direction: column;
@@ -171,5 +222,21 @@
 
     .row-card__button {
         width: 100%;
+    }
+}
+
+@media (max-width: 1000px) {
+    .row-card--catalog .row-card__meta {
+        margin-left: 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .row-card--catalog .row-card__img {
+        height: 196px;
+    }
+
+    .row-card--catalog .row-card__actions {
+        flex-direction: column;
     }
 }

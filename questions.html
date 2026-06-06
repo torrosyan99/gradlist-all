@@ -19,28 +19,28 @@
 		<nav class="header__nav">
 			<ul class="header__list">
 				<li class="header__list-item">
-					<a class="header__link" href="#">
+					<a class="header__link" href="advertisements.html">
 						Объявления
 					</a>
 				</li>
 				<li class="header__list-item">
-					<a class="header__link" href="#">
+					<a class="header__link header__link--active" href="questions.html">
 						Помощь
 					</a>
 				</li>
 				<li class="header__list-item">
-					<a class="header__link" href="#">
+					<a class="header__link" href="catalog.html">
 						Услуги
 					</a>
 				</li>
 				<li class="header__list-item">
-					<a class="header__link" href="#">
+					<a class="header__link" href="favorites.html">
 						Избранное
 					</a>
 				</li>
 			</ul>
 			<div class="header__actions">
-				<a class="header__action" href="#" aria-label="Избранное">
+				<a class="header__action" href="favorites.html" aria-label="Избранное">
 					<svg width="32" height="32">
 						<use xlink:href="/icons.svg#header-heart"></use>
 					</svg>
@@ -53,27 +53,27 @@
 					<span class="notification__badge">3</span>
 				</a>
 
-				<a class="header__action" href="#" aria-label="Сообщения">
+				<a class="header__action" href="messages.html" aria-label="Сообщения">
 					<svg width="32" height="32">
 						<use xlink:href="/icons.svg#header-message"></use>
 					</svg>
 				</a>
 			</div>
 		</nav>
-		<button class="button button--sm button--flex modal-button header__button" data-type="apply">
+		<a class="button button--flex header__button" href="/add.html">
 			<svg width="24" height="24">
 				<use xlink:href="/icons.svg#plus"></use>
 			</svg>
 			Подать объявление
-		</button>
-		<div class="header__user">
+		</a>
+		<a class="header__user" href="profile.html" aria-label="Профиль">
 			<svg width="42" height="42">
 				<use xlink:href="/icons.svg#person"></use>
 			</svg>
 			<svg width="24" height="24">
 				<use xlink:href="/icons.svg#chevron-bottom"></use>
 			</svg>
-		</div>
+		</a>
 	</div>
 </header>
 
@@ -81,7 +81,7 @@
 	<nav class="menu__nav">
 		<ul class="menu__list">
 			<li class="menu__item">
-				<a class="menu__link" href="/public">
+				<a class="menu__link" href="index.html">
 					<svg width="32" height="32">
 						<use xlink:href="/icons.svg#menu-home"></use>
 					</svg>
@@ -89,7 +89,7 @@
 				</a>
 			</li>
 			<li class="menu__item">
-				<a class="menu__link" href="#">
+				<a class="menu__link" href="favorites.html">
 					<svg width="32" height="32">
 						<use xlink:href="/icons.svg#menu-heart"></use>
 					</svg>
@@ -97,7 +97,7 @@
 				</a>
 			</li>
 			<li class="menu__item">
-				<a class="menu__link" href="#">
+				<a class="menu__link" href="add.html">
 					<svg width="32" height="32">
 						<use xlink:href="/icons.svg#menu-add"></use>
 					</svg>
@@ -105,7 +105,7 @@
 				</a>
 			</li>
 			<li class="menu__item">
-				<a class="menu__link" href="#">
+				<a class="menu__link" href="messages.html">
 					<svg width="32" height="32">
 						<use xlink:href="/icons.svg#menu-message"></use>
 					</svg>
@@ -113,7 +113,7 @@
 				</a>
 			</li>
 			<li class="menu__item">
-				<a class="menu__link" href="#">
+				<a class="menu__link" href="profile.html">
 					<svg width="32" height="32">
 						<use xlink:href="/icons.svg#menu-profile"></use>
 					</svg>
@@ -122,9 +122,6 @@
 			</li>
 		</ul>
 	</nav>
-</div>
-
-<div class="overlay">
 </div>
 
 <main class="profile">
@@ -143,9 +140,9 @@
 								</svg>
 							</label>
 							<h5 class="profile__name">Алексей</h5>
-							<div class="profile__rating">
-								<span class="profile__rating-value">4.8</span>
-								<div class="profile__stars" aria-label="Рейтинг 4.8">
+							<div class="rating rating--center">
+								<span class="rating__value">4.8</span>
+								<div class="rating__stars" aria-label="Рейтинг 4.8">
 									<svg width="12" height="12">
 										<use xlink:href="/icons.svg#star"></use>
 									</svg>
@@ -162,7 +159,7 @@
 										<use xlink:href="/icons.svg#star"></use>
 									</svg>
 								</div>
-								<span class="profile__reviews">4 отзыва</span>
+								<span class="rating__reviews">4 отзыва</span>
 							</div>
 							<p class="profile__follow">9 подписчиков, 6 подписок</p>
 							<p class="profile__date">Зарегистрирован 28.01.22</p>
@@ -210,7 +207,7 @@
 								</a>
 							</li>
 							<li class="profile__nav-item">
-								<a class="profile__link profile__link--active" href="#">
+								<a class="profile__link" href="#">
 									<svg width="24" height="24">
 										<use xlink:href="/icons.svg#profile-message"></use>
 									</svg>
@@ -251,7 +248,7 @@
 								</a>
 							</li>
 							<li class="profile__nav-item">
-								<a class="profile__link" href="#">
+								<a class="profile__link profile__link--active" href="#">
 									<svg width="24" height="24">
 										<use xlink:href="/icons.svg#profile-help"></use>
 									</svg>
@@ -267,7 +264,7 @@
 			<div class="profile__content">
 				<button class="profile__menu-button">
 					<svg width="38" height="38">
-						<use xlink:href="/icons.svg#menu-back"></use>
+						<use xlink:href="/icons.svg#back"></use>
 					</svg>
 					Безопасная сделка для продавца
 				</button>
@@ -285,16 +282,16 @@
 				<h3 class="help__questions-title title title--semibold">Безопасная сделка для продавца</h3>
 				<ul class="help__list">
 					<li class="help__item">
-						<a class="help__link" href="#">Скидки на товары</a>
+						<a class="help__link" href="question.html">Скидки на товары</a>
 					</li>
 					<li class="help__item">
-						<a class="help__link" href="#">Получение денежных средств</a>
+						<a class="help__link" href="question.html">Получение денежных средств</a>
 					</li>
 					<li class="help__item">
-						<a class="help__link" href="#">Сделка с доставкой</a>
+						<a class="help__link" href="question.html">Сделка с доставкой</a>
 					</li>
 					<li class="help__item">
-						<a class="help__link" href="#">Сделка без доставки</a>
+						<a class="help__link" href="question.html">Сделка без доставки</a>
 					</li>
 				</ul>
 			</div>

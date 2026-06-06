@@ -20,9 +20,13 @@ import {initProductPage} from "./assets/scripts/pages/product.js";
 import {initMessagesPage} from "./assets/scripts/pages/messages.js";
 import {initCatalogPage} from "./assets/scripts/pages/catalog.js";
 import {initAddPage} from "./assets/scripts/pages/add.js";
+import { initFavoritesPage } from './assets/scripts/pages/favorites.js';
+import { initDraftsPage } from './assets/scripts/pages/drafts.js';
 
 if (document.body.classList.contains('page-home')) initHomePage();
 if (document.body.classList.contains('page-product')) initProductPage();
 if (document.body.classList.contains('page-messages')) initMessagesPage();
 if (document.body.classList.contains('page-catalog')) initCatalogPage();
 if (document.body.classList.contains('page-add')) initAddPage();
+if (document.body.classList.contains('page-favorites')) initFavoritesPage();
+if (document.body.classList.contains('page-drafts')) initDraftsPage();

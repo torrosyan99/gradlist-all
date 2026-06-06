@@ -22,7 +22,7 @@
     border-radius: 10px;
     padding: 30px;
     background: var(--color-surface);
-    box-shadow: 0 8px 20px 0 rgba(226, 230, 237, 0.6);
+    box-shadow: var(--shadow);
 }
 
 .profile__user {
@@ -66,33 +66,11 @@
 
 .profile__rating {
     margin-top: 8px;
-    display: flex;
-    align-items: center;
     justify-content: center;
-    gap: 10px;
 }
 
-.profile__rating-value {
-    font-weight: var(--font-weight-medium);
-}
-
-.profile__stars {
-    display: flex;
-    align-items: center;
-    gap: 4px;
-}
-
-.profile__reviews,
 .profile__date {
     color: var(--color-secondary);
-}
-
-.profile__reviews {
-    height: 14px;
-    font-size: var(--font-size-sm);
-    padding-left: 8px;
-    line-height: 1;
-    border-left: 1px solid #d5d9df;
 }
 
 .profile__follow {
@@ -215,6 +193,10 @@
     font-weight: var(--font-weight-semibold);
 }
 
+.profile .rating {
+    margin-top: 12px;
+}
+
 .profile__menu-button,
 .profile__advertisement-value{
     display: none;
@@ -226,6 +208,9 @@
     }
 }
 @media (max-width: 1000px) {
+    .profile {
+        padding-top: 24px;
+    }
 
     .profile__row {
         flex-direction: column;
@@ -287,6 +272,10 @@
            color: var(--color-primary);
     }
 
+    .profile .rating {
+        margin-top: 8px;
+    }
+
     .profile__link svg {
         order: 1;
         margin-left: auto;
@@ -312,13 +301,15 @@
         margin-left: 0;
         font-size: var(--font-size-base);
     }
+
+    .profile__aside > .profile__box {
+        margin-bottom: 40px;
+    }
 }
 
 
 @media (max-width: 768px) {
-    .profile {
-        padding-top: 24px;
-    }
+
 
 
     .profile__banner {

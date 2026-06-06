@@ -24,12 +24,11 @@
     transition: opacity 0.2s ease, transform 0.2s ease;
     position: relative;
     padding: 30px;
-    background: var(--color-surface);
+    background: var(--color-bg);
 }
 
-.modal__title {
-    font-size: 26px;
-    font-weight: var(--font-weight-medium);
+.modal--white {
+    background: var(--color-surface);
 }
 
 .modal .modal__close {
@@ -55,7 +54,7 @@
         padding: 0;
         overflow: hidden;
     }
-    .overlay  .modal {
+    .overlay  .modal.modal {
         overflow: auto;
         max-width: 100%;
         width: 100%;

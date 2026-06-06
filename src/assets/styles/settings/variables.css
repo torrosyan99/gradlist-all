@@ -30,6 +30,9 @@
     --radius-full: 50%;
 
     /* Shadows */
+    --shadow:  0 8px 20px 0 rgba(226, 230, 237, 0.6);
+
+    /* Letter Spacings */
     --lt-1: -0.01em;
     --lt-2: -0.02em;
 }

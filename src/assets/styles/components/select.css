@@ -5,9 +5,9 @@
 
 .select__trigger {
     width: 100%;
-    height: 56px;
+    height: 51px;
     padding: 0 22px;
-    box-shadow: 0 8px 20px 0 rgba(226, 230, 237, 0.6);
+    box-shadow: var(--shadow);
     background: var(--color-surface);
     border-radius: var(--radius-md);
     display: flex;
@@ -31,12 +31,10 @@
     width: auto;
     min-width: 100%;
     background: var(--color-surface);
-    box-shadow: 0 8px 20px 0 rgba(226, 230, 237, 0.6);
+    box-shadow: var(--shadow);
     border-radius: var(--radius-md);
     opacity: 0;
     visibility: hidden;
-    transform: translateY(-8px);
-    transition: .2s;
     z-index: 30;
     pointer-events: none;
 }
@@ -49,7 +47,6 @@
 .select.select--active .select__dropdown {
     opacity: 1;
     visibility: visible;
-    transform: translateY(0);
     pointer-events: painted;
 }
 
@@ -64,6 +61,22 @@
 
 }
 
+.select__option-label {
+    flex: 1 1 auto;
+    min-width: 0;
+}
+
+.select__option-check {
+    margin-left: auto;
+    flex: 0 0 auto;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.select__option[aria-selected="true"] .select__option-check {
+    opacity: 1;
+}
+
 .select--with-icon .select__trigger {
     gap: 10px;
     justify-content: normal;
@@ -71,4 +84,10 @@
 
 .select--with-icon .select__trigger svg:last-child {
     margin-left: auto;
+}
+
+.select.select-error .select__trigger,
+.select.select-error .select__empty-trigger {
+    outline: 1px solid var(--color-danger);
+    outline-offset: -1px;
 }

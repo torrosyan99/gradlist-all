@@ -6,6 +6,10 @@
     flex-direction: column;
 }
 
+.apply .title {
+    letter-spacing: var(--lt-1);
+}
+
 .apply__form {
     display: flex;
     flex-direction: column;

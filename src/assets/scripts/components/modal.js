@@ -63,8 +63,7 @@ if (overlay) {
 
   document.body.addEventListener('click', ({target}) => {
     const modalButton = target.closest('.modal-button');
-    if (modalButton) openModal(activeModal)
-
+    if (modalButton) openModal(modalButton.dataset.type)
   });
 
   overlay.addEventListener('click', closeModal);

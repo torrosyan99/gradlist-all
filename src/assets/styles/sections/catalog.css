@@ -43,58 +43,6 @@
 
 .catalog__cards {
     margin-top: 25px;
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 20px;
-}
-
-.catalog__card .row-card__body {
-    gap: 20px;
-}
-
-.catalog__card .row-card__img {
-    height: 216px;
-}
-
-.catalog__card .row-card__title {
-    margin-top: 6px;
-}
-
-.catalog__card .row-card__meta {
-    gap: 8px;
-    font-size: var(--font-size-sm);
-}
-
-.catalog__card-info {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    font-size: var(--font-size-sm);
-}
-
-.catalog__card-rating {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.catalog__card-stars {
-    display: flex;
-    gap: 4px;
-}
-
-.catalog__card-name {
-    font-weight: var(--font-weight-semibold);
-}
-
-.catalog__card-reviews {
-    display: block;
-    font-size: var(--font-size-sm);
-    color: var(--color-secondary);
-    padding-left: 10px;
-    height: 14px;
-    line-height: 14px;
-    border-left: 1px solid var(--color-border);
 }
 
 .catalog__nav {
@@ -175,22 +123,6 @@
     flex-wrap: wrap;
 }
 
-.catalog__radio-input {
-    display: none;
-}
-
-.catalog__radio span {
-    display: block;
-    padding: 16px 22px;
-    border-radius: var(--radius-md);
-    background: var(--color-surface);
-    box-shadow: 0 8px 20px 0 rgba(226, 230, 237, 0.6);
-}
-
-.catalog__radio-input:checked + span {
-    background: var(--color-blue);
-    color: var(--color-surface);
-}
 
 .catalog__grid {
     display: grid;
@@ -230,9 +162,7 @@
         gap: 0 20px;
     }
 
-    .catalog__cards {
-        grid-template-columns: repeat(2, 1fr);
-    }
+
 }
 
 @media (max-width: 1000px) {
@@ -246,12 +176,6 @@
     .catalog__top,
     .catalog__filter-reset, .catalog__categories-block{
         display: none;
-    }
-
-
-
-    .catalog__card .row-card__meta {
-        margin-left: 0;
     }
 
     .catalog__mob {
@@ -339,18 +263,5 @@
         padding-top: 0;
     }
 
-    .catalog__cards {
-        grid-template-columns: 1fr;
-    }
-
-
-    .catalog__card .row-card__img {
-        height: 196px;
-    }
-
-
-    .catalog__card .row-card__actions {
-        flex-direction: column;
-    }
 
 }

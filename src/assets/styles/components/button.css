@@ -5,8 +5,8 @@
     color: var(--color-surface);
     font-weight: var(--font-weight-medium);
     border-radius: var(--radius-md);
-    height: 56px;
-    line-height: 56px;
+    height: 48px;
+    line-height: 48px;
     text-align: center;
 }
 
@@ -32,9 +32,9 @@
     line-height: 1;
 }
 
-.button--sm {
+.button--lg {
     height: 48px;
-    line-height: 48px;
+    line-height: 1;
 }
 
 .button--green {

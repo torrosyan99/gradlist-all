@@ -16,15 +16,18 @@
 @import "assets/styles/components/scrollbar.css";
 @import "assets/styles/components/back.css";
 @import "assets/styles/components/modal.css";
+@import "assets/styles/components/radio-input.css";
 @import "assets/styles/components/breadcrumbs.css";
 @import "assets/styles/components/price.css";
 @import "assets/styles/components/status.css";
 @import "assets/styles/components/tabs.css";
 @import "assets/styles/components/icon-button.css";
+@import "assets/styles/components/rating.css";
 @import "assets/styles/components/card.css";
 @import "assets/styles/components/checkbox.css";
 @import "assets/styles/components/input.css";
 @import "assets/styles/components/phone-input.css";
+@import "assets/styles/components/cards.css";
 @import "assets/styles/components/apply.css";
 @import "assets/styles/components/auth.css";
 
@@ -37,11 +40,11 @@
 
 @import "assets/styles/sections/top.css";
 @import "assets/styles/sections/listings.css";
-@import "assets/styles/sections/advertisements.css";
 @import "assets/styles/sections/product.css";
 @import "assets/styles/sections/messages.css";
 @import "assets/styles/sections/settings.css";
 @import "assets/styles/sections/help.css";
 @import "assets/styles/sections/catalog.css";
 @import "assets/styles/sections/add.css";
-
+@import "assets/styles/sections/favorites.css";
+@import "assets/styles/sections/drafts.css";

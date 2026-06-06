@@ -19,28 +19,28 @@
 		<nav class="header__nav">
 			<ul class="header__list">
 				<li class="header__list-item">
-					<a class="header__link" href="#">
+					<a class="header__link" href="advertisements.html">
 						Объявления
 					</a>
 				</li>
 				<li class="header__list-item">
-					<a class="header__link" href="#">
+					<a class="header__link" href="questions.html">
 						Помощь
 					</a>
 				</li>
 				<li class="header__list-item">
-					<a class="header__link" href="#">
+					<a class="header__link" href="catalog.html">
 						Услуги
 					</a>
 				</li>
 				<li class="header__list-item">
-					<a class="header__link" href="#">
+					<a class="header__link" href="favorites.html">
 						Избранное
 					</a>
 				</li>
 			</ul>
 			<div class="header__actions">
-				<a class="header__action" href="#" aria-label="Избранное">
+				<a class="header__action" href="favorites.html" aria-label="Избранное">
 					<svg width="32" height="32">
 						<use xlink:href="/icons.svg#header-heart"></use>
 					</svg>
@@ -53,27 +53,27 @@
 					<span class="notification__badge">3</span>
 				</a>
 
-				<a class="header__action" href="#" aria-label="Сообщения">
+				<a class="header__action" href="messages.html" aria-label="Сообщения">
 					<svg width="32" height="32">
 						<use xlink:href="/icons.svg#header-message"></use>
 					</svg>
 				</a>
 			</div>
 		</nav>
-		<button class="button button--sm button--flex modal-button header__button" data-type="apply">
+		<a class="button  button--flex header__button" href="/add.html">
 			<svg width="24" height="24">
 				<use xlink:href="/icons.svg#plus"></use>
 			</svg>
 			Подать объявление
-		</button>
-		<div class="header__user">
+		</a>
+		<a class="header__user" href="profile.html" aria-label="Профиль">
 			<svg width="42" height="42">
 				<use xlink:href="/icons.svg#person"></use>
 			</svg>
 			<svg width="24" height="24">
 				<use xlink:href="/icons.svg#chevron-bottom"></use>
 			</svg>
-		</div>
+		</a>
 	</div>
 </header>
 
@@ -81,7 +81,7 @@
 	<nav class="menu__nav">
 		<ul class="menu__list">
 			<li class="menu__item">
-				<a class="menu__link" href="/public">
+				<a class="menu__link" href="index.html">
 					<svg width="32" height="32">
 						<use xlink:href="/icons.svg#menu-home"></use>
 					</svg>
@@ -89,7 +89,7 @@
 				</a>
 			</li>
 			<li class="menu__item">
-				<a class="menu__link" href="#">
+				<a class="menu__link" href="favorites.html">
 					<svg width="32" height="32">
 						<use xlink:href="/icons.svg#menu-heart"></use>
 					</svg>
@@ -97,7 +97,7 @@
 				</a>
 			</li>
 			<li class="menu__item">
-				<a class="menu__link" href="#">
+				<a class="menu__link" href="add.html">
 					<svg width="32" height="32">
 						<use xlink:href="/icons.svg#menu-add"></use>
 					</svg>
@@ -105,7 +105,7 @@
 				</a>
 			</li>
 			<li class="menu__item">
-				<a class="menu__link" href="#">
+				<a class="menu__link" href="messages.html">
 					<svg width="32" height="32">
 						<use xlink:href="/icons.svg#menu-message"></use>
 					</svg>
@@ -113,7 +113,7 @@
 				</a>
 			</li>
 			<li class="menu__item">
-				<a class="menu__link" href="#">
+				<a class="menu__link" href="profile.html">
 					<svg width="32" height="32">
 						<use xlink:href="/icons.svg#menu-profile"></use>
 					</svg>
@@ -124,21 +124,26 @@
 	</nav>
 </div>
 
-
 <main class="main">
 	<section class="add">
 		<div class="container">
 
 			<div class="add__top">
+				<a class="add__back back back--page" href="#">
+					<svg width="38" height="38">
+						<use xlink:href="/icons.svg#back"></use>
+					</svg>
+					Создание объявления
+				</a>
 				<h2 class="title title--semibold add__title">
 					Создание объявления
 				</h2>
-				<button class="add__draft-button button button--sm button--flex button--light-blue">
+				<a class="add__draft-button button  button--flex button--light-blue" href="drafts.html">
 					К черновикам
 					<svg width="20" height="20">
 						<use xlink:href="/icons.svg#blue-arrow-right"></use>
 					</svg>
-				</button>
+				</a>
 			</div>
 			<form class="add__main-form">
 				<div class="add__item">
@@ -172,54 +177,86 @@
 									<use xlink:href="/icons.svg#add-estate"></use>
 								</svg>
 								Недвижимость</button>
+							<button class="select__option"
+							        data-value="work"
+							        data-icon-value="add-work"
+							        type="button">
+								<svg width="20" height="20">
+									<use xlink:href="/icons.svg#add-work"></use>
+								</svg>
+								Работа</button>
+							<button class="select__option"
+							        data-value="hobby"
+							        data-icon-value="add-hobby"
+							        type="button">
+								<svg width="20" height="20">
+									<use xlink:href="/icons.svg#add-hobby"></use>
+								</svg>
+								Хобби и спорт</button>
+							<button class="select__option"
+							        data-value="fashion"
+							        data-icon-value="add-fashion"
+							        type="button">
+								<svg width="20" height="20">
+									<use xlink:href="/icons.svg#add-fashion"></use>
+								</svg>
+								Мода и стиль</button>
+							<button class="select__option"
+							        data-value="animals"
+							        data-icon-value="add-animals"
+							        type="button">
+								<svg width="20" height="20">
+									<use xlink:href="/icons.svg#add-animals"></use>
+								</svg>
+								Животные</button>
+							<button class="select__option"
+							        data-value="business"
+							        data-icon-value="add-business"
+							        type="button">
+								<svg width="20" height="20">
+									<use xlink:href="/icons.svg#add-business"></use>
+								</svg>
+								Бизнес и услуги</button>
+							<button class="select__option"
+							        data-value="toys"
+							        data-icon-value="add-toys"
+							        type="button">
+								<svg width="20" height="20">
+									<use xlink:href="/icons.svg#add-toys"></use>
+								</svg>
+								Детский мир</button>
+							<button class="select__option"
+							        data-value="electronics"
+							        data-icon-value="add-electronics"
+							        type="button">
+								<svg width="20" height="20">
+									<use xlink:href="/icons.svg#add-electronics"></use>
+								</svg>
+								Электроника</button>
+							<button class="select__option"
+							        data-value="spare-parts"
+							        data-icon-value="add-spare-parts"
+							        type="button">
+								<svg width="20" height="20">
+									<use xlink:href="/icons.svg#add-spare-parts"></use>
+								</svg>
+								Запчасти</button>
+							<button class="select__option"
+							        data-value="home-garden"
+							        data-icon-value="add-home-garden"
+							        type="button">
+								<svg width="20" height="20">
+									<use xlink:href="/icons.svg#add-home-garden"></use>
+								</svg>
+								Дом и сад</button>
 
 						</div>
 						<input type="hidden" name="section">
 					</div>
 				</div>
-<!--				<div class="add__item">-->
-<!--					<h5 class="title title&#45;&#45;semibold h-18 add__item-title">-->
-<!--						Категория-->
-<!--					</h5>-->
-<!--					<div class="select">-->
-<!--						<button class="select__trigger" type="button">-->
-<!--							<span>Выберите страну</span>-->
-<!--							<svg  width="24" height="24">-->
-<!--								<use xlink:href="/icons.svg#arrow-bottom"></use>-->
-<!--							</svg>-->
-<!--						</button>-->
-<!--						<div class="select__dropdown custom-scroll">-->
-<!--							<button class="select__option"-->
-<!--							        data-value="estate"-->
-<!--							        type="button">-->
-<!--								Недвижимость</button>-->
-
-<!--						</div>-->
-<!--						<input type="hidden" name="country">-->
-<!--					</div>-->
-<!--					<div class="select">-->
-<!--						<button class="select__trigger" type="button">-->
-<!--							<span>Выберите страну</span>-->
-<!--							<svg  width="24" height="24">-->
-<!--								<use xlink:href="/icons.svg#arrow-bottom"></use>-->
-<!--							</svg>-->
-<!--						</button>-->
-<!--						<div class="select__dropdown custom-scroll">-->
-<!--							<button class="select__option"-->
-<!--							        data-value="estate"-->
-<!--							        type="button">-->
-<!--								Недвижимость</button>-->
-
-<!--						</div>-->
-<!--						<input type="hidden" name="country">-->
-<!--					</div>-->
-<!--				</div>-->
-<!--				<button class="add__main-form-button button button&#45;&#45;sm">-->
-<!--					Выбрать-->
-<!--				</button>-->
 				<div class="add__dynamic" data-add-dynamic></div>
-
-				<button class="add__main-form-button button button--sm" type="button" data-add-choose disabled hidden>
+				<button class="add__main-form-button button "
+				        type="button" data-add-choose disabled hidden>
 					Выбрать
 				</button>
 			</form>
@@ -278,3 +315,5 @@
 <script type="module" src="/src/main.js"></script>
 </body>
 </html>
+
+
