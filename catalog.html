@@ -124,6 +124,67 @@
 	</nav>
 </div>
 
+<div class="overlay">
+	<div class="modal apply" data-modal-type="apply">
+		<button class="modal__close">
+			<svg width="12" height="12">
+				<use xlink:href="/icons.svg#modal-close"></use>
+			</svg>
+		</button>
+		<form class="apply__form">
+			<h2 class="title title--semibold title--center">Выбор города или региона</h2>
+			<div class="apply__form-wrapper">
+				<div class="select apply__select">
+					<button class="select__trigger" type="button">
+						<span>Выберите страну</span>
+						<svg width="24" height="24">
+							<use xlink:href="/icons.svg#arrow-bottom"></use>
+						</svg>
+					</button>
+
+					<div class="select__dropdown custom-scroll">
+						<button class="select__option" data-value="am" type="button">Армения</button>
+						<button class="select__option" data-value="ge" type="button">Грузия</button>
+						<button class="select__option" data-value="ge" type="button">Грузия</button>
+						<button class="select__option" data-value="ge" type="button">Грузия</button>
+						<button class="select__option" data-value="ge" type="button">Грузия</button>
+						<button class="select__option" data-value="ge" type="button">Грузия</button>
+						<button class="select__option" data-value="ge" type="button">Грузия</button>
+						<button class="select__option" data-value="ge" type="button">Грузия</button>
+						<button class="select__option" data-value="ge" type="button">Грузия</button>
+						<button class="select__option" data-value="ge" type="button">Грузия</button>
+						<button class="select__option" data-value="ge" type="button">Грузия</button>
+						<button class="select__option" data-value="ge" type="button">Грузия</button>
+						<button class="select__option" data-value="ge" type="button">Грузия</button>
+						<button class="select__option" data-value="ge" type="button">Грузия</button>
+						<button class="select__option" data-value="ge" type="button">Грузия</button>
+						<button class="select__option" data-value="ge" type="button">Грузия</button>
+						<button class="select__option" data-value="ge" type="button">Грузия</button>
+						<button class="select__option" data-value="ge" type="button">Грузия</button>
+						<button class="select__option" data-value="ge" type="button">Грузия</button>
+					</div>
+
+					<input type="hidden" name="country">
+				</div>
+				<label class="checkbox">
+					<input type="checkbox" name="checkbox"/>
+					<span class="checkbox__box"></span>
+					<span class="checkbox__text">Сначала в выбранном регионе</span>
+				</label>
+			</div>
+			<div class="apply__form-wrapper">
+				<h5 class="title title--center title--semibold">
+					Указать адрес
+				</h5>
+				<input class="input apply__input" name="info" placeholder="Улица и номер дома" />
+			</div>
+			<button class="button  apply__button">
+				Показать объявления
+			</button>
+		</form>
+	</div>
+</div>
+
 <main class="main">
 
 	<section class="top">
@@ -147,7 +208,7 @@
 					<h1 class="title title--semibold top__title">«Mercedes» в <span>Москве</span></h1>
 					<div class="top__form-wrapper">
 						<form class="top__form">
-							<button class="top__location" type="button">
+							<button class="top__location modal-button" data-type="apply" type="button">
 								<svg class="top__location-icon" width="28" height="28">
 									<use xlink:href="/icons.svg#location"></use>
 								</svg>
@@ -188,8 +249,8 @@
 	<section class="catalog">
 		<div class="container catalog__row">
 			<div class="catalog__mob">
-				<button class="catalog__location" type="button">
-					<svg class="top__location-icon" width="28" height="28">
+				<button class="catalog__location modal-button" data-type="apply" type="button">
+					<svg  width="28" height="28">
 						<use xlink:href="/icons.svg#location"></use>
 					</svg>
 					<span>Москва</span>

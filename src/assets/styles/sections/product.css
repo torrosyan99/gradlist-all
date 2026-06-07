@@ -13,6 +13,25 @@
     max-width: 100%;
 }
 
+.product__main-swiper {
+    position: relative;
+}
+
+.product__select-button--top {
+    display: none;
+}
+
+.product__select-button--overlay {
+    display: block;
+}
+
+.product__main-swiper .product__select-button--overlay {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 20;
+}
+
 .product__top {
     display: flex;
     align-items: flex-start;
@@ -331,6 +350,14 @@
 
     .product__back-button {
         margin-right: auto;
+    }
+
+    .product__select-button--top {
+        display: block;
+    }
+
+    .product__select-button--overlay {
+        display: none;
     }
 
     .product__tabs-item {

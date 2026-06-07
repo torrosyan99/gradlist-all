@@ -19,28 +19,28 @@
 		<nav class="header__nav">
 			<ul class="header__list">
 				<li class="header__list-item">
-					<a class="header__link" href="advertisements.html">
+					<a class="header__link" href="#">
 						Объявления
 					</a>
 				</li>
 				<li class="header__list-item">
-					<a class="header__link" href="questions.html">
+					<a class="header__link" href="#">
 						Помощь
 					</a>
 				</li>
 				<li class="header__list-item">
-					<a class="header__link" href="catalog.html">
+					<a class="header__link" href="#">
 						Услуги
 					</a>
 				</li>
 				<li class="header__list-item">
-					<a class="header__link" href="favorites.html">
+					<a class="header__link" href="#">
 						Избранное
 					</a>
 				</li>
 			</ul>
 			<div class="header__actions">
-				<a class="header__action" href="favorites.html" aria-label="Избранное">
+				<a class="header__action" href="#" aria-label="Избранное">
 					<svg width="32" height="32">
 						<use xlink:href="/icons.svg#header-heart"></use>
 					</svg>
@@ -53,27 +53,27 @@
 					<span class="notification__badge">3</span>
 				</a>
 
-				<a class="header__action" href="messages.html" aria-label="Сообщения">
+				<a class="header__action" href="#" aria-label="Сообщения">
 					<svg width="32" height="32">
 						<use xlink:href="/icons.svg#header-message"></use>
 					</svg>
 				</a>
 			</div>
 		</nav>
-		<a class="button button--flex header__button" href="/add.html">
+		<button class="button button--flex modal-button header__button" data-type="apply">
 			<svg width="24" height="24">
 				<use xlink:href="/icons.svg#plus"></use>
 			</svg>
 			Подать объявление
-		</a>
-		<a class="header__user" href="profile.html" aria-label="Профиль">
+		</button>
+		<div class="header__user">
 			<svg width="42" height="42">
 				<use xlink:href="/icons.svg#person"></use>
 			</svg>
 			<svg width="24" height="24">
 				<use xlink:href="/icons.svg#chevron-bottom"></use>
 			</svg>
-		</a>
+		</div>
 	</div>
 </header>
 
@@ -81,7 +81,7 @@
 	<nav class="menu__nav">
 		<ul class="menu__list">
 			<li class="menu__item">
-				<a class="menu__link" href="index.html">
+				<a class="menu__link" href="/public">
 					<svg width="32" height="32">
 						<use xlink:href="/icons.svg#menu-home"></use>
 					</svg>
@@ -89,7 +89,7 @@
 				</a>
 			</li>
 			<li class="menu__item">
-				<a class="menu__link" href="favorites.html">
+				<a class="menu__link" href="#">
 					<svg width="32" height="32">
 						<use xlink:href="/icons.svg#menu-heart"></use>
 					</svg>
@@ -97,7 +97,7 @@
 				</a>
 			</li>
 			<li class="menu__item">
-				<a class="menu__link" href="add.html">
+				<a class="menu__link" href="#">
 					<svg width="32" height="32">
 						<use xlink:href="/icons.svg#menu-add"></use>
 					</svg>
@@ -105,7 +105,7 @@
 				</a>
 			</li>
 			<li class="menu__item">
-				<a class="menu__link" href="messages.html">
+				<a class="menu__link" href="#">
 					<svg width="32" height="32">
 						<use xlink:href="/icons.svg#menu-message"></use>
 					</svg>
@@ -113,7 +113,7 @@
 				</a>
 			</li>
 			<li class="menu__item">
-				<a class="menu__link" href="profile.html">
+				<a class="menu__link" href="#">
 					<svg width="32" height="32">
 						<use xlink:href="/icons.svg#menu-profile"></use>
 					</svg>
@@ -174,7 +174,7 @@
 							<use xlink:href="/icons.svg#box-share"></use>
 						</svg>
 					</button>
-					<button class="product__select-button icon-button">
+					<button class="product__select-button product__select-button--top icon-button" type="button" aria-label="Add to favorites">
 						<svg>
 							<use xlink:href="/icons.svg#box-heart"></use>
 						</svg>
@@ -209,6 +209,11 @@
 								                               src="/images/product-main.png"
 								                               alt="main-product-img"/></div>
 							</div>
+							<button class="product__select-button product__select-button--overlay icon-button" type="button" aria-label="Add to favorites">
+								<svg>
+									<use xlink:href="/icons.svg#box-heart"></use>
+								</svg>
+							</button>
 							<button class="product__slider-prev product__slider-button">
 								<svg width="48" height="48">
 									<use xlink:href="/icons.svg#slider-icon"></use>
